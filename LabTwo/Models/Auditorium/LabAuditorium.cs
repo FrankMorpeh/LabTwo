@@ -1,6 +1,8 @@
-﻿namespace LabTwo.Models.Auditorium
+﻿using LabTwo.Models.Workers.Engineers;
+
+namespace LabTwo.Models.Auditoriums
 {
-    public class LabAuditorium : Auditorium
+    public class LabAuditorium : Auditorium, IEquatable<LabAuditorium>
     {
         private int itsNumberOfDevices;
 
@@ -10,9 +12,17 @@
         {
             itsNumberOfDevices = 0;
         }
-        public LabAuditorium(string codeName, int capacity, int numberOfDevices) : base(codeName, capacity)
+        public LabAuditorium(string codeName, int capacity, List<Engineer> engineers, int numberOfDevices) 
+            : base(codeName, capacity, engineers)
         {
             itsNumberOfDevices = numberOfDevices;
+        }
+
+
+        public bool Equals(LabAuditorium rhs)
+        {
+            return itsCodeName == rhs.itsCodeName && itsCapacity == rhs.itsCapacity && itsEngineers.Equals(rhs.itsEngineers)
+                && itsNumberOfDevices == rhs.itsNumberOfDevices;
         }
     }
 }

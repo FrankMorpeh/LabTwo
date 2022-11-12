@@ -2,7 +2,7 @@
 
 namespace LabTwo.Models.Students
 {
-    public class Student : Person
+    public class Student : Person, IEquatable<Student>
     {
         private string itsRecordBookNumber;
         private int itsYearInUniversity;
@@ -19,6 +19,13 @@ namespace LabTwo.Models.Students
         {
             itsRecordBookNumber = recordBookNumber;
             itsYearInUniversity = yearInUniversity;
+        }
+
+
+        public bool Equals(Student rhs)
+        {
+            return itsName == rhs.itsName && itsAge == rhs.itsAge && itsRecordBookNumber == rhs.itsRecordBookNumber
+                && itsYearInUniversity == rhs.itsYearInUniversity;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace LabTwo.Models.Subjects
 {
-    public class Subject
+    public class Subject : IEquatable<Subject>
     {
         private string itsName;
         private double itsCredit;
@@ -17,6 +17,12 @@
         {
             itsName = name;
             itsCredit = credit;
+        }
+
+
+        public bool Equals(Subject rhs)
+        {
+            return itsName == rhs.itsName && itsCredit == rhs.itsCredit;
         }
     }
 }

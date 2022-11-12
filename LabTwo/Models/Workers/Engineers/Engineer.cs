@@ -1,6 +1,6 @@
 ﻿namespace LabTwo.Models.Workers.Engineers
 {
-    public class Engineer : Worker
+    public class Engineer : Worker, IEquatable<Engineer>
     {
         private EngineerClass itsEngineerClass;
         
@@ -13,6 +13,12 @@
         public Engineer(string name, int age, double salary, EngineerClass engineerClass) : base(name, age, salary)
         {
             itsEngineerClass = engineerClass;
+        }
+
+
+        public bool Equals(Engineer rhs)
+        {
+            return itsName == rhs.itsName && itsAge == rhs.itsAge && itsSalary == rhs.itsSalary && itsEngineerClass == rhs.itsEngineerClass;
         }
     }
 }

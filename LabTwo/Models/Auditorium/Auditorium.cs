@@ -1,6 +1,6 @@
 ﻿using LabTwo.Models.Workers.Engineers;
 
-namespace LabTwo.Models.Auditorium
+namespace LabTwo.Models.Auditoriums
 {
     public abstract class Auditorium
     {
@@ -10,6 +10,7 @@ namespace LabTwo.Models.Auditorium
 
         public string CodeName { get { return itsCodeName; } set { itsCodeName = value; } }
         public int Capacity { get { return itsCapacity; } set { itsCapacity = value; } }
+        public string NamesOfEngineers { get { return EngineersToString(); } }
 
         public Auditorium()
         {
@@ -35,5 +36,17 @@ namespace LabTwo.Models.Auditorium
             }
         }
         public void RemoveEngineer(Engineer engineer) { itsEngineers.Remove(engineer); }
+
+        private string EngineersToString()
+        {
+            string engineers = string.Empty;
+            for (int i = 0; i < itsEngineers.Count; i++)
+            {
+                engineers += itsEngineers[i].Name;
+                if (i + 1 < itsEngineers.Count)
+                    engineers += ", ";
+            }
+            return engineers;
+        }
     }
 }
