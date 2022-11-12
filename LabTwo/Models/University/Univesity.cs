@@ -2,7 +2,6 @@
 using LabTwo.Models.Workers;
 using LabTwo.Models.Auditoriums;
 using LabTwo.Models.Departments;
-using System.Reflection;
 
 namespace LabTwo.Models.University
 {
@@ -124,6 +123,17 @@ namespace LabTwo.Models.University
         public int GetHashCode(University university)
         {
             return university.itsName.GetHashCode() + university.itsFoundationYear.GetHashCode() - university.itsRank.GetHashCode();
+        }
+
+
+        /*
+            Operators
+        */
+        public static University operator+(University lhs, University rhs)
+        {
+            return new University(lhs.Name + " and " + rhs.Name, 2022, (lhs.Rank + rhs.Rank) / 2
+                , lhs.Departments.Concat(rhs.Departments).ToList(), lhs.Workers.Concat(rhs.Workers).ToList()
+                , lhs.Students.Concat(rhs.Students).ToList(), lhs.Auditoriums.Concat(rhs.Auditoriums).ToList());
         }
     }
 }

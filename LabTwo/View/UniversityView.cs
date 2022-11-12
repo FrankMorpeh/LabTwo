@@ -7,7 +7,6 @@ using LabTwo.Models.University;
 using LabTwo.Models.Workers;
 using LabTwo.Models.Workers.Engineers;
 using LabTwo.Models.Workers.Teachers;
-using System;
 
 namespace LabTwo.View
 {
@@ -18,6 +17,10 @@ namespace LabTwo.View
         public UniversityView() { itsUniversityController = null; }
         public UniversityView(UniversityController universityController) { itsUniversityController = universityController; }
 
+
+        /*
+            Displaying info
+        */
         public void ShowPreviewInfo(ComboBox comboBox) // shows the names of the unis in the combobox
         {
             foreach (University university in itsUniversityController.Universities)
@@ -33,6 +36,7 @@ namespace LabTwo.View
         public void ShowWorkersInfo(int index, ListView listView)
         {
             SetWorkerColumns(listView);
+
             foreach (Worker worker in itsUniversityController[index].Workers)
                 listView.Items.Add(new ListViewItem(new string[] { worker.Name, Convert.ToString(worker.Age)
                         , Convert.ToString(worker.Salary) }));

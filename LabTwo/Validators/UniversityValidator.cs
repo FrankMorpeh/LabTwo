@@ -2,44 +2,26 @@
 
 namespace LabTwo.Validators
 {
-    delegate void StringConversionDelegate(string value, ref bool isValid);
     public static class UniversityValidator
     {
         public static List<IWarning> CheckUniversity(string name, string foundationYear, string rank)
         {
             List<IWarning> warnings = new List<IWarning>();
-            if (NameIsValid(name) == false)
+            if (CommonValidator.UniversityNameIsValid(name) == false)
                 warnings.Add(new IncorrectUniversityName());
-            else if (FoundationYearIsValid(foundationYear) == false)
+            if (FoundationYearIsValid(foundationYear) == false)
                 warnings.Add(new IncorrectFoundationYear());
-            else if (RankIsValid(rank) == false)
+            if (RankIsValid(rank) == false)
                 warnings.Add(new IncorrectRank());
             return warnings;
         }
-        private static bool NameIsValid(string name)
-        {
-            return name != string.Empty && name.Any(s => Char.IsLetter(s));
-        }
-        private static bool MakeStringConversionCheck(string value, StringConversionDelegate stringConversionDelegate)
-        {
-            bool isValid = true;
-            try
-            {
-                stringConversionDelegate(value, ref isValid);
-            }
-            catch (Exception)
-            {
-                isValid = false;
-            }
-            return isValid;
-        }
         private static bool FoundationYearIsValid(string strFoundationYear)
         {
-            return MakeStringConversionCheck(strFoundationYear, ConvertAndCheckFoundationYear);
+            return CommonValidator.MakeStringConversionCheck(strFoundationYear, ConvertAndCheckFoundationYear);
         }
         private static bool RankIsValid(string strRank)
         {
-            return MakeStringConversionCheck(strRank, ConvertAndCheckRank);
+            return CommonValidator.MakeStringConversionCheck(strRank, ConvertAndCheckRank);
         }
         private static void ConvertAndCheckFoundationYear(string strFoundationYear, ref bool isValid)
         {
