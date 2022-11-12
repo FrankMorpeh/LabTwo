@@ -13,5 +13,6 @@ namespace LabTwo.Controllers.UniversityController
 
         public void AddUniversity(University university) { itsUniversities.Add(university); }
         public void RemoveUniverstityAt(int index) { itsUniversities.RemoveAt(index); }
+        public University this[int index] { get { return itsUniversities[index]; } set { itsUniversities[index] = value; } }
     }
 }
