@@ -11,6 +11,7 @@ namespace LabTwo.Models.Auditoriums
         public string CodeName { get { return itsCodeName; } set { itsCodeName = value; } }
         public int Capacity { get { return itsCapacity; } set { itsCapacity = value; } }
         public string NamesOfEngineers { get { return EngineersToString(); } }
+        public List<Engineer> Engineers { get { return itsEngineers; } set { itsEngineers = value; } }
 
         public Auditorium()
         {
