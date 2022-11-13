@@ -2,13 +2,18 @@
 {
     public static class WarningDisplayer
     {
-        public static void ShowWarning(Panel warningPanel, Label warningText, List<IWarning> warnings)
+        public static void ShowWarning(Panel warningPanel, TextBox warningTextBox, List<IWarning> warnings)
         {
-            warningText.Text = string.Empty; // clear previous text if there is some
-            warningText.Text += "Some errors occured:\r\n\r\n";
+            warningTextBox.Text = string.Empty; // clear previous text if there is some
+            warningTextBox.Text += "Some errors occured:\r\n\r\n";
             foreach (IWarning warning in warnings)
-                warningText.Text += "- " + warning.Text + "\r\n";
+                warningTextBox.Text += "- " + warning.Text + "\r\n";
             warningPanel.Show();
+        }
+        public static void CloseWarning(Panel warningPanel, TextBox warningTextBox)
+        {
+            warningPanel.Hide();
+            warningTextBox.Text = string.Empty;
         }
     }
 }

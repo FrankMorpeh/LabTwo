@@ -7,6 +7,7 @@ namespace LabTwo.Controllers.UniversityController
         private List<University> itsUniversities;
 
         public List<University> Universities { get { return itsUniversities; } set { itsUniversities = value; } }
+        public int Count { get { return itsUniversities.Count; } }
 
         public UniversityController() { itsUniversities = new List<University>(); }
         public UniversityController(List<University> universities) { itsUniversities = universities; }
