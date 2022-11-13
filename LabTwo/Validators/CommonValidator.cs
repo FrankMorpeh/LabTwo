@@ -23,6 +23,17 @@ namespace LabTwo.Validators
             if (age < 0 || age > 150)
                 isValid = false;
         }
+        public static bool WorkerSalaryIsValid(string salary)
+        {
+            return MakeStringConversionCheck(salary, ConvertAndCheckSalary);
+        }
+        private static void ConvertAndCheckSalary(string strSalary, ref bool isValid)
+        {
+            double salary = Convert.ToDouble(strSalary);
+            if (salary < 0)
+                isValid = false;
+        }
+
         public static bool NumberBiggerThanZero(string number)
         {
             return MakeStringConversionCheck(number, ConvertAndCheckNumberForBiggerThanZero);
@@ -45,6 +56,10 @@ namespace LabTwo.Validators
                 isValid = false;
             }
             return isValid;
+        }
+        public static bool NameIsEmpty(string name)
+        {
+            return name == string.Empty;
         }
     }
 }

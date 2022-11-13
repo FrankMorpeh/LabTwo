@@ -94,4 +94,16 @@
 
         public string Text { get; private set; }
     }
+    public class IncorrectSalary : IWarning
+    {
+        public IncorrectSalary() { Text = "Salary must not be less than zero"; }
+
+        public string Text { get; private set; }
+    }
+    public class IncorrectScientificTitle : IWarning
+    {
+        public IncorrectScientificTitle() { Text = "You haven't chosen the scientific title of the teacher"; }
+
+        public string Text { get; private set; }
+    }
 }
