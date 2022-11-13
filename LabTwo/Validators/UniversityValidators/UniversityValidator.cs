@@ -1,6 +1,6 @@
 ﻿using LabTwo.Warnings;
 
-namespace LabTwo.Validators
+namespace LabTwo.Validators.UniversityValidators
 {
     public static class UniversityValidator
     {

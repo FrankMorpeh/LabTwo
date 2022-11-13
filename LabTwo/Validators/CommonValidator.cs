@@ -1,4 +1,6 @@
-﻿namespace LabTwo.Validators
+﻿using System.Diagnostics;
+
+namespace LabTwo.Validators
 {
     public delegate void StringConversionDelegate(string value, ref bool isValid);
     public static class CommonValidator
@@ -19,6 +21,16 @@
         {
             int age = Convert.ToInt32(strAge);
             if (age < 0 || age > 150)
+                isValid = false;
+        }
+        public static bool NumberBiggerThanZero(string number)
+        {
+            return MakeStringConversionCheck(number, ConvertAndCheckNumberForBiggerThanZero);
+        }
+        private static void ConvertAndCheckNumberForBiggerThanZero(string strNumber, ref bool isValid)
+        {
+            int number = Convert.ToInt32(strNumber);
+            if (number < 0)
                 isValid = false;
         }
         public static bool MakeStringConversionCheck(string value, StringConversionDelegate stringConversionDelegate)

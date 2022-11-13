@@ -1,7 +1,7 @@
-﻿using LabTwo.Models.Subjects;
-using LabTwo.Warnings;
+﻿using LabTwo.Warnings;
+using LabTwo.Validators.SubjectsValidators;
 
-namespace LabTwo.Validators
+namespace LabTwo.Validators.DepartmentValidators
 {
     public static class DepartmentValidator
     {

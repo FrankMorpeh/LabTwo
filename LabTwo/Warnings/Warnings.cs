@@ -70,4 +70,28 @@
 
         public string Text { get; private set; }
     }
+    public class IncorrectAuditoriumName : IWarning
+    {
+        public IncorrectAuditoriumName() { Text = "Auditory name must not be empty"; }
+
+        public string Text { get; private set; }
+    }
+    public class IncorrectCapacity : IWarning
+    {
+        public IncorrectCapacity() { Text = "Capacity of an auditorium must be bigger than zero"; }
+
+        public string Text { get; private set; }
+    }
+    public class IncorrectNumberOfRowsInAuditorium : IWarning
+    {
+        public IncorrectNumberOfRowsInAuditorium() { Text = "Number of rows in an auditorium must not be less than zero"; }
+
+        public string Text { get; private set; }
+    }
+    public class IncorrectNumberOfDevicesInAuditorium : IWarning
+    {
+        public IncorrectNumberOfDevicesInAuditorium() { Text = "Number of devices in an auditorium must not be less than zero"; }
+
+        public string Text { get; private set; }
+    }
 }

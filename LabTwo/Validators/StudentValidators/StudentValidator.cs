@@ -1,6 +1,6 @@
 ﻿using LabTwo.Warnings;
 
-namespace LabTwo.Validators
+namespace LabTwo.Validators.StudentValidators
 {
     public static class StudentValidator
     {
@@ -19,7 +19,7 @@ namespace LabTwo.Validators
         }
         private static bool RecordBookNumberIsValid(string recordBookNumber)
         {
-            return recordBookNumber != string.Empty && recordBookNumber.All(r => Char.IsDigit(r)); // if it is not empty, and all characters are digits 
+            return recordBookNumber != string.Empty && recordBookNumber.All(r => char.IsDigit(r)); // if it is not empty, and all characters are digits 
         }
         private static bool YearInUniversityIsValid(string yearInUniversity)
         {
