@@ -15,6 +15,14 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainInfoPanelFormStorage = new MainInfoPanelFormStorage();
         }
 
+        public void ShowMainInfoPanel()
+        {
+            itsMainWindow.mainInfoPanel.Show();
+        }
+        public void HideMainInfoPanel()
+        {
+            itsMainWindow.mainInfoPanel.Hide();
+        }
         public void SaveChanges()
         {
             List<IWarning> warnings = UniversityValidator.CheckUniversity(itsMainWindow.universityNameTextBox.Text
@@ -24,9 +32,14 @@ namespace LabTwo.ViewInteractors.Handlers
                 itsMainInfoPanelFormStorage.UniversityName = itsMainWindow.universityNameTextBox.Text;
                 itsMainInfoPanelFormStorage.YearOfFoundation = itsMainWindow.foundationYearTextBox.Text;
                 itsMainInfoPanelFormStorage.Rank = itsMainWindow.rankTextBox.Text;
+                BlockSaveChangesButton();
             }
             else
                 WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, warnings);
+        }
+        private void BlockSaveChangesButton()
+        {
+            itsMainWindow.saveMainInfoButton.Enabled = false;
         }
     }
 }

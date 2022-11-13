@@ -3,7 +3,7 @@ using LabTwo.Validators.DepartmentValidators;
 using LabTwo.Warnings;
 using LabTwo.Models.Subjects;
 using LabTwo.Converters.DepartmentConverters;
-using LabTwo.Warnings;
+using LabTwo.View;
 
 namespace LabTwo.ViewInteractors.Handlers
 {
@@ -15,25 +15,43 @@ namespace LabTwo.ViewInteractors.Handlers
         public DepartmentsInfoPanelHandler(Form1 mainWindow)
         {
             itsMainWindow = mainWindow;
-            itsDepartmentsInfoPanelFormStorage = new DepartmentsInfoPanelFormStorage();
+            itsDepartmentsInfoPanelFormStorage = new DepartmentsInfoPanelFormStorage() { Departments = new List<Models.Departments.Department>() };
         }
 
         /*
             TODO: add real lists
         */
-        public void AddDepartment()
+        public void ShowDepartmentsPanel()
         {
-            if (AddDepartmentToList() == true)
-                UpdateDepartmentListView();
+            itsMainWindow.departmentsPanel.Show();
+            ShowDepartments();
         }
-        private bool AddDepartmentToList()
+        public void HideDepartmentsPanel()
+        {
+            itsMainWindow.departmentsPanel.Hide();
+        }
+        public DepartmentsInfoPanelFormStorage GetTemporaryDepartments()
+        {
+            return itsDepartmentsInfoPanelFormStorage;
+        }
+        private void ShowDepartments()
+        {
+            itsMainWindow.departmentsListView.Items.Clear();
+            UniversityView.ShowDepartmentsInfo(itsDepartmentsInfoPanelFormStorage.Departments, itsMainWindow.departmentsListView);
+        }
+        public void AddDepartment(SubjectsInfoPanelFormStorage subjectsInfoPanelFormStorage)
+        {
+            if (AddDepartmentToList(subjectsInfoPanelFormStorage) == true)
+                ShowDepartments();
+        }
+        private bool AddDepartmentToList(SubjectsInfoPanelFormStorage subjectsInfoPanelFormStorage)
         {
             List<IWarning> warnings = DepartmentValidator.CheckDepartment(itsMainWindow.departmentNameTextBox.Text
                 , itsMainWindow.deaneryCabinetNumberTextBox.Text, new List<string>(), new List<string>());
             if (warnings.Count == 0)
             {
-                itsMainWindow.departments.Add(DepartmentConverter.ToDepartment(itsMainWindow.departmentNameTextBox.Text
-                    , itsMainWindow.deaneryCabinetNumberTextBox.Text, new List<Subject>()));
+                itsDepartmentsInfoPanelFormStorage.Departments.Add(DepartmentConverter.ToDepartment(itsMainWindow.departmentNameTextBox.Text
+                    , itsMainWindow.deaneryCabinetNumberTextBox.Text, subjectsInfoPanelFormStorage.Subjects));
                 return true;
             }
             else
@@ -42,12 +60,13 @@ namespace LabTwo.ViewInteractors.Handlers
                 return false;
             }
         }
-        private void UpdateDepartmentListView()
+        public void BlockSubjectAddingButton()
         {
-            if (itsMainWindow.universityController.Count > 0)
-                itsMainWindow.universityView.ShowDepartmentInfo(itsMainWindow.universityController.Count - 1, itsMainWindow.departmentsListView);
-            else
-                itsMainWindow.universityView.ShowDepartmentInfo(itsMainWindow.universityController.Count, itsMainWindow.departmentsListView);
+            itsMainWindow.addStudentsButton.Enabled = false;
+        }
+        public void UnblockSubjectAddingButton()
+        {
+            itsMainWindow.addStudentsButton.Enabled = true;
         }
     }
 }

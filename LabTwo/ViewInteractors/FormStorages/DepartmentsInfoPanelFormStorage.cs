@@ -1,11 +1,9 @@
-﻿using LabTwo.Models.Subjects;
+﻿using LabTwo.Models.Departments;
 
 namespace LabTwo.ViewInteractors.FormStorages
 {
     public class DepartmentsInfoPanelFormStorage
     {
-        public string DepartmentName { get; set; }
-        public int DeaneryCabinetNumber { get; set; }
-        public List<Subject> Subjects { get; set; }
+        public List<Department> Departments { get; set; }
     }
 }

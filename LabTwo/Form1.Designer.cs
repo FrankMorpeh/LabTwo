@@ -34,16 +34,7 @@ namespace LabTwo
             this.warningPanel = new System.Windows.Forms.Panel();
             this.warningTextBox = new System.Windows.Forms.TextBox();
             this.okWarningButton = new System.Windows.Forms.Button();
-            this.mainInfoPanel = new System.Windows.Forms.Panel();
-            this.saveMainInfoButton = new System.Windows.Forms.Button();
-            this.rankTextBox = new System.Windows.Forms.TextBox();
-            this.foundationYearTextBox = new System.Windows.Forms.TextBox();
-            this.universityNameTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.departmentsPanel = new System.Windows.Forms.Panel();
-            this.saveDepartmentsButton = new System.Windows.Forms.Button();
             this.departmentsListView = new System.Windows.Forms.ListView();
             this.addDepartmentButton = new System.Windows.Forms.Button();
             this.addStudentsButton = new System.Windows.Forms.Button();
@@ -52,6 +43,22 @@ namespace LabTwo
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.mainInfoPanel = new System.Windows.Forms.Panel();
+            this.saveMainInfoButton = new System.Windows.Forms.Button();
+            this.rankTextBox = new System.Windows.Forms.TextBox();
+            this.foundationYearTextBox = new System.Windows.Forms.TextBox();
+            this.universityNameTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.subjectsPanel = new System.Windows.Forms.Panel();
+            this.saveSubjectsButton = new System.Windows.Forms.Button();
+            this.subjectsListView = new System.Windows.Forms.ListView();
+            this.addSubjectButton = new System.Windows.Forms.Button();
+            this.subjectCreditTextBox = new System.Windows.Forms.TextBox();
+            this.subjectNameTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.createUniversityButton = new System.Windows.Forms.Button();
             this.auditoriumsButton = new System.Windows.Forms.Button();
             this.engineersButton = new System.Windows.Forms.Button();
@@ -66,8 +73,9 @@ namespace LabTwo
             this.mainPanel.SuspendLayout();
             this.addUniversityPanel.SuspendLayout();
             this.warningPanel.SuspendLayout();
-            this.mainInfoPanel.SuspendLayout();
             this.departmentsPanel.SuspendLayout();
+            this.mainInfoPanel.SuspendLayout();
+            this.subjectsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -88,6 +96,7 @@ namespace LabTwo
             this.addUniversityPanel.Controls.Add(this.warningPanel);
             this.addUniversityPanel.Controls.Add(this.mainInfoPanel);
             this.addUniversityPanel.Controls.Add(this.departmentsPanel);
+            this.addUniversityPanel.Controls.Add(this.subjectsPanel);
             this.addUniversityPanel.Controls.Add(this.createUniversityButton);
             this.addUniversityPanel.Controls.Add(this.auditoriumsButton);
             this.addUniversityPanel.Controls.Add(this.engineersButton);
@@ -99,6 +108,7 @@ namespace LabTwo
             this.addUniversityPanel.Name = "addUniversityPanel";
             this.addUniversityPanel.Size = new System.Drawing.Size(881, 533);
             this.addUniversityPanel.TabIndex = 5;
+            this.addUniversityPanel.Hide();
             // 
             // warningPanel
             // 
@@ -131,6 +141,97 @@ namespace LabTwo
             this.okWarningButton.Text = "OK";
             this.okWarningButton.UseVisualStyleBackColor = true;
             this.okWarningButton.Click += new System.EventHandler(this.okWarningButton_Click);
+            // 
+            // departmentsPanel
+            // 
+            this.departmentsPanel.Controls.Add(this.departmentsListView);
+            this.departmentsPanel.Controls.Add(this.addDepartmentButton);
+            this.departmentsPanel.Controls.Add(this.addStudentsButton);
+            this.departmentsPanel.Controls.Add(this.deaneryCabinetNumberTextBox);
+            this.departmentsPanel.Controls.Add(this.departmentNameTextBox);
+            this.departmentsPanel.Controls.Add(this.label7);
+            this.departmentsPanel.Controls.Add(this.label6);
+            this.departmentsPanel.Controls.Add(this.label5);
+            this.departmentsPanel.Location = new System.Drawing.Point(198, 28);
+            this.departmentsPanel.Name = "departmentsPanel";
+            this.departmentsPanel.Size = new System.Drawing.Size(663, 478);
+            this.departmentsPanel.TabIndex = 10;
+            this.departmentsPanel.Hide();
+            // 
+            // departmentsListView
+            // 
+            this.departmentsListView.Location = new System.Drawing.Point(44, 244);
+            this.departmentsListView.Name = "departmentsListView";
+            this.departmentsListView.Size = new System.Drawing.Size(270, 139);
+            this.departmentsListView.TabIndex = 13;
+            this.departmentsListView.UseCompatibleStateImageBehavior = false;
+            this.departmentsListView.View = System.Windows.Forms.View.Details;
+            this.departmentsListView.Columns.Add("Name");
+            this.departmentsListView.Columns.Add("Deanery cabinet");
+            // 
+            // addDepartmentButton
+            // 
+            this.addDepartmentButton.Location = new System.Drawing.Point(44, 183);
+            this.addDepartmentButton.Name = "addDepartmentButton";
+            this.addDepartmentButton.Size = new System.Drawing.Size(129, 46);
+            this.addDepartmentButton.TabIndex = 12;
+            this.addDepartmentButton.Text = "Add department";
+            this.addDepartmentButton.UseVisualStyleBackColor = true;
+            this.addDepartmentButton.Click += new System.EventHandler(this.addDepartmentButton_Click);
+            // 
+            // addStudentsButton
+            // 
+            this.addStudentsButton.Location = new System.Drawing.Point(162, 126);
+            this.addStudentsButton.Name = "addStudentsButton";
+            this.addStudentsButton.Size = new System.Drawing.Size(117, 36);
+            this.addStudentsButton.TabIndex = 11;
+            this.addStudentsButton.Text = "Add students";
+            this.addStudentsButton.UseVisualStyleBackColor = true;
+            this.addStudentsButton.Click += new System.EventHandler(this.addStudentsButton_Click);
+            // 
+            // deaneryCabinetNumberTextBox
+            // 
+            this.deaneryCabinetNumberTextBox.Location = new System.Drawing.Point(334, 81);
+            this.deaneryCabinetNumberTextBox.Name = "deaneryCabinetNumberTextBox";
+            this.deaneryCabinetNumberTextBox.Size = new System.Drawing.Size(206, 27);
+            this.deaneryCabinetNumberTextBox.TabIndex = 4;
+            // 
+            // departmentNameTextBox
+            // 
+            this.departmentNameTextBox.Location = new System.Drawing.Point(264, 28);
+            this.departmentNameTextBox.Name = "departmentNameTextBox";
+            this.departmentNameTextBox.Size = new System.Drawing.Size(206, 27);
+            this.departmentNameTextBox.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(44, 125);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 32);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Subjects:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(44, 75);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(284, 32);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Deanery cabinet number:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(44, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(214, 32);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Department name:";
             // 
             // mainInfoPanel
             // 
@@ -207,101 +308,85 @@ namespace LabTwo
             this.label2.TabIndex = 0;
             this.label2.Text = "University name:";
             // 
-            // departmentsPanel
+            // subjectsPanel
             // 
-            this.departmentsPanel.Controls.Add(this.saveDepartmentsButton);
-            this.departmentsPanel.Controls.Add(this.departmentsListView);
-            this.departmentsPanel.Controls.Add(this.addDepartmentButton);
-            this.departmentsPanel.Controls.Add(this.addStudentsButton);
-            this.departmentsPanel.Controls.Add(this.deaneryCabinetNumberTextBox);
-            this.departmentsPanel.Controls.Add(this.departmentNameTextBox);
-            this.departmentsPanel.Controls.Add(this.label7);
-            this.departmentsPanel.Controls.Add(this.label6);
-            this.departmentsPanel.Controls.Add(this.label5);
-            this.departmentsPanel.Location = new System.Drawing.Point(198, 28);
-            this.departmentsPanel.Name = "departmentsPanel";
-            this.departmentsPanel.Size = new System.Drawing.Size(663, 478);
-            this.departmentsPanel.TabIndex = 10;
+            this.subjectsPanel.Controls.Add(this.saveSubjectsButton);
+            this.subjectsPanel.Controls.Add(this.subjectsListView);
+            this.subjectsPanel.Controls.Add(this.addSubjectButton);
+            this.subjectsPanel.Controls.Add(this.subjectCreditTextBox);
+            this.subjectsPanel.Controls.Add(this.subjectNameTextBox);
+            this.subjectsPanel.Controls.Add(this.label9);
+            this.subjectsPanel.Controls.Add(this.label8);
+            this.subjectsPanel.Location = new System.Drawing.Point(186, 27);
+            this.subjectsPanel.Name = "subjectsPanel";
+            this.subjectsPanel.Size = new System.Drawing.Size(673, 463);
+            this.subjectsPanel.TabIndex = 11;
+            this.subjectsPanel.Hide();
             // 
-            // saveDepartmentsButton
+            // saveSubjectsButton
             // 
-            this.saveDepartmentsButton.Location = new System.Drawing.Point(44, 409);
-            this.saveDepartmentsButton.Name = "saveDepartmentsButton";
-            this.saveDepartmentsButton.Size = new System.Drawing.Size(125, 55);
-            this.saveDepartmentsButton.TabIndex = 11;
-            this.saveDepartmentsButton.Text = "Save departments";
-            this.saveDepartmentsButton.UseVisualStyleBackColor = true;
+            this.saveSubjectsButton.Location = new System.Drawing.Point(38, 373);
+            this.saveSubjectsButton.Name = "saveSubjectsButton";
+            this.saveSubjectsButton.Size = new System.Drawing.Size(129, 48);
+            this.saveSubjectsButton.TabIndex = 14;
+            this.saveSubjectsButton.Text = "Save subjects";
+            this.saveSubjectsButton.UseVisualStyleBackColor = true;
+            this.saveSubjectsButton.Click += new System.EventHandler(this.saveSubjectsButton_Click);
             // 
-            // departmentsListView
+            // subjectsListView
             // 
-            this.departmentsListView.Location = new System.Drawing.Point(44, 244);
-            this.departmentsListView.Name = "departmentsListView";
-            this.departmentsListView.Size = new System.Drawing.Size(270, 139);
-            this.departmentsListView.TabIndex = 13;
-            this.departmentsListView.UseCompatibleStateImageBehavior = false;
+            this.subjectsListView.Location = new System.Drawing.Point(38, 211);
+            this.subjectsListView.Name = "subjectsListView";
+            this.subjectsListView.Size = new System.Drawing.Size(229, 135);
+            this.subjectsListView.TabIndex = 13;
+            this.subjectsListView.UseCompatibleStateImageBehavior = false;
+            this.subjectsListView.View = System.Windows.Forms.View.Details;
+            this.subjectsListView.Columns.Add("Name");
+            this.subjectsListView.Columns.Add("Credit");
             // 
-            // addDepartmentButton
+            // addSubjectButton
             // 
-            this.addDepartmentButton.Location = new System.Drawing.Point(44, 183);
-            this.addDepartmentButton.Name = "addDepartmentButton";
-            this.addDepartmentButton.Size = new System.Drawing.Size(129, 46);
-            this.addDepartmentButton.TabIndex = 12;
-            this.addDepartmentButton.Text = "Add department";
-            this.addDepartmentButton.UseVisualStyleBackColor = true;
-            this.addDepartmentButton.Click += new System.EventHandler(this.addDepartmentButton_Click);
+            this.addSubjectButton.Location = new System.Drawing.Point(38, 146);
+            this.addSubjectButton.Name = "addSubjectButton";
+            this.addSubjectButton.Size = new System.Drawing.Size(104, 38);
+            this.addSubjectButton.TabIndex = 12;
+            this.addSubjectButton.Text = "Add subject";
+            this.addSubjectButton.UseVisualStyleBackColor = true;
+            this.addSubjectButton.Click += new System.EventHandler(this.addSubjectButton_Click);
             // 
-            // addStudentsButton
+            // subjectCreditTextBox
             // 
-            this.addStudentsButton.Location = new System.Drawing.Point(162, 126);
-            this.addStudentsButton.Name = "addStudentsButton";
-            this.addStudentsButton.Size = new System.Drawing.Size(117, 36);
-            this.addStudentsButton.TabIndex = 11;
-            this.addStudentsButton.Text = "Add students";
-            this.addStudentsButton.UseVisualStyleBackColor = true;
+            this.subjectCreditTextBox.Location = new System.Drawing.Point(209, 99);
+            this.subjectCreditTextBox.Name = "subjectCreditTextBox";
+            this.subjectCreditTextBox.Size = new System.Drawing.Size(166, 27);
+            this.subjectCreditTextBox.TabIndex = 3;
             // 
-            // deaneryCabinetNumberTextBox
+            // subjectNameTextBox
             // 
-            this.deaneryCabinetNumberTextBox.Location = new System.Drawing.Point(334, 81);
-            this.deaneryCabinetNumberTextBox.Name = "deaneryCabinetNumberTextBox";
-            this.deaneryCabinetNumberTextBox.Size = new System.Drawing.Size(206, 27);
-            this.deaneryCabinetNumberTextBox.TabIndex = 4;
+            this.subjectNameTextBox.Location = new System.Drawing.Point(209, 47);
+            this.subjectNameTextBox.Name = "subjectNameTextBox";
+            this.subjectNameTextBox.Size = new System.Drawing.Size(166, 27);
+            this.subjectNameTextBox.TabIndex = 2;
             // 
-            // departmentNameTextBox
+            // label9
             // 
-            this.departmentNameTextBox.Location = new System.Drawing.Point(264, 28);
-            this.departmentNameTextBox.Name = "departmentNameTextBox";
-            this.departmentNameTextBox.Size = new System.Drawing.Size(206, 27);
-            this.departmentNameTextBox.TabIndex = 3;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(38, 94);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(165, 32);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Subject credit:";
             // 
-            // label7
+            // label8
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(44, 125);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 32);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Students:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(44, 75);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(284, 32);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Deanery cabinet number:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(44, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(214, 32);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Department name:";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(38, 41);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(165, 32);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Subject name:";
             // 
             // createUniversityButton
             // 
@@ -421,10 +506,12 @@ namespace LabTwo
             this.addUniversityPanel.ResumeLayout(false);
             this.warningPanel.ResumeLayout(false);
             this.warningPanel.PerformLayout();
-            this.mainInfoPanel.ResumeLayout(false);
-            this.mainInfoPanel.PerformLayout();
             this.departmentsPanel.ResumeLayout(false);
             this.departmentsPanel.PerformLayout();
+            this.mainInfoPanel.ResumeLayout(false);
+            this.mainInfoPanel.PerformLayout();
+            this.subjectsPanel.ResumeLayout(false);
+            this.subjectsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -459,11 +546,18 @@ namespace LabTwo
         public Label label5;
         public Label label6;
         public Label label7;
-        public Button saveDepartmentsButton;
         public ListView departmentsListView;
         public Button addDepartmentButton;
         public Button addStudentsButton;
         public TextBox deaneryCabinetNumberTextBox;
         public TextBox departmentNameTextBox;
+        public Panel subjectsPanel;
+        public Button saveSubjectsButton;
+        public ListView subjectsListView;
+        public Button addSubjectButton;
+        public TextBox subjectCreditTextBox;
+        public TextBox subjectNameTextBox;
+        public Label label9;
+        public Label label8;
     }
 }

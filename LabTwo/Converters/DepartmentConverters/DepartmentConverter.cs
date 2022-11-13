@@ -7,7 +7,7 @@ namespace LabTwo.Converters.DepartmentConverters
     {
         public static Department ToDepartment(string departmentName, string deaneryCabinetNumber, List<Subject> subjects)
         {
-            return new Department(departmentName, Convert.ToInt32(departmentName), subjects);
+            return new Department(departmentName, Convert.ToInt32(deaneryCabinetNumber), subjects);
         }
     }
 }

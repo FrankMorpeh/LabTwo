@@ -1,10 +1,18 @@
-﻿using LabTwo.Models.Subjects;
-using LabTwo.Warnings;
+﻿using LabTwo.Warnings;
 
 namespace LabTwo.Validators.SubjectsValidators
 {
-    public static class SubjectsValidator
+    public static class SubjectValidator
     {
+        public static List<IWarning> CheckSubject(string subjectName, string subjectCredit)
+        {
+            List<IWarning> warnings = new List<IWarning>();
+            if (CommonValidator.UniversityNameIsValid(subjectName) == false)
+                warnings.Add(new IncorrectSubjectName());
+            if (CreditIsValid(subjectCredit) == false)
+                warnings.Add(new IncorrectSubjectCredit());
+            return warnings;
+        }
         public static List<IWarning> CheckSubjects(List<string> subjectNames, List<string> subjectCredits)
         {
             List<IWarning> warnings = new List<IWarning>();

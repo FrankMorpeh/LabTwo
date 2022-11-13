@@ -1,6 +1,7 @@
 using LabTwo.Controllers.UniversityController;
 using LabTwo.Models.Departments;
 using LabTwo.Models.Students;
+using LabTwo.Models.Subjects;
 using LabTwo.View;
 using LabTwo.ViewInteractors.Handlers;
 using LabTwo.Warnings;
@@ -11,10 +12,9 @@ namespace LabTwo
     {
         public MainInfoPanelHandler mainInfoPanelHandler;
         public DepartmentsInfoPanelHandler departmentsInfoPanelHandler;
+        public SubjectsInfoPanelHandler subjectsInfoPanelHandler;
         public UniversityController universityController;
         public UniversityView universityView;
-        public List<Department> departments;
-        public List<Student> students;
         public Form1()
         {
             InitializeComponent();
@@ -22,8 +22,6 @@ namespace LabTwo
 
             universityController = new UniversityController();
             universityView = new UniversityView(universityController);
-            departments = new List<Department>();
-            students = new List<Student>();
 
             universityView.ShowPreviewInfo(universityComboBox);
         }
@@ -31,16 +29,18 @@ namespace LabTwo
         {
             mainInfoPanelHandler = new MainInfoPanelHandler(this);
             departmentsInfoPanelHandler = new DepartmentsInfoPanelHandler(this);
+            subjectsInfoPanelHandler = new SubjectsInfoPanelHandler(this);
         }
 
         private void addUniversityButton_Click(object sender, EventArgs e)
         {
+            mainInfoPanel.Hide();
             addUniversityPanel.Show();
         }
 
         private void mainInfoButton_Click(object sender, EventArgs e)
         {
-            mainInfoPanel.Show();
+            mainInfoPanelHandler.ShowMainInfoPanel();
         }
 
         private void okWarningButton_Click(object sender, EventArgs e)
@@ -55,13 +55,32 @@ namespace LabTwo
 
         private void addDepartmentButton_Click(object sender, EventArgs e)
         {
-            departmentsInfoPanelHandler.AddDepartment();
+            departmentsInfoPanelHandler.AddDepartment(subjectsInfoPanelHandler.GetTemporarySubjects());
+            departmentsInfoPanelHandler.UnblockSubjectAddingButton();
         }
 
         private void departmentsButton_Click(object sender, EventArgs e)
         {
-            mainInfoPanel.Hide();
-            departmentsPanel.Show();
+            mainInfoPanelHandler.HideMainInfoPanel();
+            departmentsInfoPanelHandler.ShowDepartmentsPanel();
+        }
+
+        private void addStudentsButton_Click(object sender, EventArgs e)
+        {
+            departmentsInfoPanelHandler.HideDepartmentsPanel();
+            subjectsInfoPanelHandler.ShowSubjectsPanel();
+        }
+        
+        private void addSubjectButton_Click(object sender, EventArgs e)
+        {
+            subjectsInfoPanelHandler.AddSubject();
+        }
+
+        private void saveSubjectsButton_Click(object sender, EventArgs e)
+        {
+            subjectsInfoPanelHandler.HideSubjectsPanel();
+            departmentsInfoPanelHandler.ShowDepartmentsPanel();
+            departmentsInfoPanelHandler.BlockSubjectAddingButton();
         }
     }
 }

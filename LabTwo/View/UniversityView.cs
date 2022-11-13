@@ -89,12 +89,13 @@ namespace LabTwo.View
 
             listView.Refresh();
         }
-        public void ShowDepartmentInfo(int index, ListView listView)
+        public void ShowDepartmentsInfo(int index, ListView listView)
         {
-            listView.Columns.Add("Name");
-            listView.Columns.Add("Deanery cabinet number");
-
-            foreach (Department department in itsUniversityController[index].Departments)
+            ShowDepartmentsInfo(itsUniversityController[index].Departments, listView);
+        }
+        public static void ShowDepartmentsInfo(List<Department> departments, ListView listView)
+        {
+            foreach (Department department in departments)
                 listView.Items.Add(new ListViewItem(new string[] { department.Name
                     , Convert.ToString(department.DeaneryCabinetNumber) }));
 
@@ -102,10 +103,11 @@ namespace LabTwo.View
         }
         public void ShowSubjectsInfo(int index, int depIndex, ListView listView)
         {
-            listView.Columns.Add("Name");
-            listView.Columns.Add("Credit");
-
-            foreach (Subject subject in itsUniversityController[index].Departments[depIndex].Subjects)
+            ShowSubjectsInfo(itsUniversityController[index].Departments[depIndex].Subjects, listView);
+        }
+        public static void ShowSubjectsInfo(List<Subject> subjects, ListView listView)
+        {
+            foreach (Subject subject in subjects)
                 listView.Items.Add(new ListViewItem(new string[] { subject.Name, Convert.ToString(subject.Credit) }));
 
             listView.Refresh();

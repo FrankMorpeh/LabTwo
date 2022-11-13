@@ -13,7 +13,7 @@ namespace LabTwo.Validators.DepartmentValidators
                 warnings.Add(new IncorrectDepartmentName());
             if (IsDeaneryCabinetNumberValid(deaneryCabinetNumber) == false)
                 warnings.Add(new IncorrectDeaneryCabinetNumber());
-            warnings.AddRange(SubjectsValidator.CheckSubjects(subjectNames, subjectCredits));
+            warnings.AddRange(SubjectValidator.CheckSubjects(subjectNames, subjectCredits));
             return warnings;
         }
         private static bool IsDeaneryCabinetNumberValid(string deaneryCabinetNumber)
