@@ -15,6 +15,12 @@ namespace LabTwo.ViewInteractors.Handlers
         {
             itsMainWindow = mainWindow;
             itsSubjectsInfoPanelFormStorage = new SubjectsInfoPanelFormStorage();
+            AddColumnsToListView();
+        }
+        private void AddColumnsToListView()
+        {
+            itsMainWindow.subjectsListView.Columns.Add("Name");
+            itsMainWindow.subjectsListView.Columns.Add("Credit");
         }
 
         public SubjectsInfoPanelFormStorage GetTemporarySubjects()

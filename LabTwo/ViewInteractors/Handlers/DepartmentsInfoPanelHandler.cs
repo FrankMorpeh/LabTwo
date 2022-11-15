@@ -1,7 +1,6 @@
 ﻿using LabTwo.ViewInteractors.FormStorages;
 using LabTwo.Validators.DepartmentValidators;
 using LabTwo.Warnings;
-using LabTwo.Models.Subjects;
 using LabTwo.Converters.DepartmentConverters;
 using LabTwo.View;
 
@@ -16,6 +15,12 @@ namespace LabTwo.ViewInteractors.Handlers
         {
             itsMainWindow = mainWindow;
             itsDepartmentsInfoPanelFormStorage = new DepartmentsInfoPanelFormStorage() { Departments = new List<Models.Departments.Department>() };
+            AddColumnsToListView();
+        }
+        private void AddColumnsToListView()
+        {
+            itsMainWindow.departmentsListView.Columns.Add("Name");
+            itsMainWindow.departmentsListView.Columns.Add("Deanery cabinet");
         }
 
         /*
@@ -62,11 +67,11 @@ namespace LabTwo.ViewInteractors.Handlers
         }
         public void BlockSubjectAddingButton()
         {
-            itsMainWindow.addStudentsButton.Enabled = false;
+            itsMainWindow.addSubjectsButton.Enabled = false;
         }
         public void UnblockSubjectAddingButton()
         {
-            itsMainWindow.addStudentsButton.Enabled = true;
+            itsMainWindow.addSubjectsButton.Enabled = true;
         }
     }
 }

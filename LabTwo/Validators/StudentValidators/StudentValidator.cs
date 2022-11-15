@@ -19,7 +19,7 @@ namespace LabTwo.Validators.StudentValidators
         }
         private static bool RecordBookNumberIsValid(string recordBookNumber)
         {
-            return recordBookNumber != string.Empty && recordBookNumber.All(r => char.IsDigit(r)); // if it is not empty, and all characters are digits 
+            return recordBookNumber != string.Empty && recordBookNumber.All(r => char.IsLetter(r)); // if it is not empty, and all characters are digits 
         }
         private static bool YearInUniversityIsValid(string yearInUniversity)
         {

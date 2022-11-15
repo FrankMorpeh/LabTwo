@@ -13,6 +13,7 @@ namespace LabTwo
         public MainInfoPanelHandler mainInfoPanelHandler;
         public DepartmentsInfoPanelHandler departmentsInfoPanelHandler;
         public SubjectsInfoPanelHandler subjectsInfoPanelHandler;
+        public StudentsInfoPanelHandler studentsInfoPanelHandler;
         public UniversityController universityController;
         public UniversityView universityView;
         public Form1()
@@ -30,6 +31,7 @@ namespace LabTwo
             mainInfoPanelHandler = new MainInfoPanelHandler(this);
             departmentsInfoPanelHandler = new DepartmentsInfoPanelHandler(this);
             subjectsInfoPanelHandler = new SubjectsInfoPanelHandler(this);
+            studentsInfoPanelHandler = new StudentsInfoPanelHandler(this);
         }
 
         private void addUniversityButton_Click(object sender, EventArgs e)
@@ -65,7 +67,7 @@ namespace LabTwo
             departmentsInfoPanelHandler.ShowDepartmentsPanel();
         }
 
-        private void addStudentsButton_Click(object sender, EventArgs e)
+        private void addSubjectsButton_Click(object sender, EventArgs e)
         {
             departmentsInfoPanelHandler.HideDepartmentsPanel();
             subjectsInfoPanelHandler.ShowSubjectsPanel();
@@ -81,6 +83,11 @@ namespace LabTwo
             subjectsInfoPanelHandler.HideSubjectsPanel();
             departmentsInfoPanelHandler.ShowDepartmentsPanel();
             departmentsInfoPanelHandler.BlockSubjectAddingButton();
+        }
+
+        private void addStudentButton_Click(object sender, EventArgs e)
+        {
+            studentsInfoPanelHandler.AddStudent();
         }
     }
 }

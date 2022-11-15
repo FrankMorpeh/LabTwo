@@ -35,8 +35,6 @@ namespace LabTwo.View
         }
         public void ShowWorkersInfo(int index, ListView listView)
         {
-            SetWorkerColumns(listView);
-
             foreach (Worker worker in itsUniversityController[index].Workers)
                 listView.Items.Add(new ListViewItem(new string[] { worker.Name, Convert.ToString(worker.Age)
                         , Convert.ToString(worker.Salary) }));
@@ -45,7 +43,6 @@ namespace LabTwo.View
         }
         public void ShowTeachersInfo(int index, ListView listView)
         {
-            SetWorkerColumns(listView);
             listView.Columns.Add("Scientific title");
 
             foreach (Teacher teacher in itsUniversityController[index].Workers.OfType<Teacher>())
@@ -56,29 +53,24 @@ namespace LabTwo.View
 
             listView.Refresh();
         }
-        public void ShowStudentsInfo(int index, ListView listView)
+        public static void ShowStudentsInfo(List<Student> students, ListView listView)
         {
-            FormStudentsListView(listView, itsUniversityController[index].Students);
-        }
-        public void ShowStudentsOfTeacherInfo(int index, int teacherIndex, ListView listView)
-        {
-            FormStudentsListView(listView, itsUniversityController[index].Workers.OfType<Teacher>().ToList()[teacherIndex].Students);
-        }
-        private void FormStudentsListView(ListView listView, List<Student> students)
-        {
-            SetPersonColumns(listView);
-            listView.Columns.Add("Record book");
-            listView.Columns.Add("Year in university");
-
             foreach (Student student in students)
                 listView.Items.Add(new ListViewItem(new string[] { student.Name, Convert.ToString(student.Age)
                     , student.RecordBookNumber, Convert.ToString(student.YearInUniversity) }));
 
             listView.Refresh();
         }
+        public void ShowStudentsInfo(int index, ListView listView)
+        {
+            ShowStudentsInfo(itsUniversityController[index].Students, listView);
+        }
+        public void ShowStudentsOfTeacherInfo(int index, int teacherIndex, ListView listView)
+        {
+            ShowStudentsInfo(itsUniversityController[index].Workers.OfType<Teacher>().ToList()[teacherIndex].Students, listView);
+        }
         public void ShowEngineersInfo(int index, ListView listView)
         {
-            SetWorkerColumns(listView);
             listView.Columns.Add("Engineer class");
 
             foreach (Engineer engineer in itsUniversityController[index].Workers.OfType<Engineer>())
@@ -124,21 +116,6 @@ namespace LabTwo.View
                 , Convert.ToString(auditorium.Capacity), auditorium.NamesOfEngineers }));
 
             listView.Refresh();
-        }
-
-
-        /*
-            Helping private methods
-        */
-        private void SetPersonColumns(ListView listView)
-        {
-            listView.Columns.Add("Name");
-            listView.Columns.Add("Age");
-        }
-        private void SetWorkerColumns(ListView listView)
-        {
-            SetPersonColumns(listView);
-            listView.Columns.Add("Salary");
         }
     }
 }
