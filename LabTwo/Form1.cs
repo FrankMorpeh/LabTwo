@@ -4,7 +4,6 @@ using LabTwo.Converters.StudentConverters;
 using LabTwo.View;
 using LabTwo.ViewInteractors.Handlers;
 using LabTwo.Warnings;
-using static System.Windows.Forms.ListView;
 
 namespace LabTwo
 {
@@ -16,6 +15,7 @@ namespace LabTwo
         public StudentsInfoPanelHandler studentsInfoPanelHandler;
         public TeacherInfoPanelHandler teacherInfoPanelHandler;
         public StudentsOfTeacherInfoPanelHandler studentsOfTeacherInfoPanelHandler;
+        public EngineerInfoPanelHandler engineerInfoPanelHandler;
         public PanelController panelController;
         public UniversityController universityController;
         public UniversityView universityView;
@@ -37,6 +37,7 @@ namespace LabTwo
             studentsInfoPanelHandler = new StudentsInfoPanelHandler(this);
             teacherInfoPanelHandler = new TeacherInfoPanelHandler(this);
             studentsOfTeacherInfoPanelHandler = new StudentsOfTeacherInfoPanelHandler(this, teacherInfoPanelHandler);
+            engineerInfoPanelHandler = new EngineerInfoPanelHandler(this);
             panelController = new PanelController(this);
         }
 
@@ -118,6 +119,11 @@ namespace LabTwo
         private void addStudentToTeacherButton_Click(object sender, EventArgs e)
         {
             panelController.ShowPanel(studentsOfTeacherInfoPanelHandler);
+        }
+
+        private void addEngineerButton_Click(object sender, EventArgs e)
+        {
+            engineerInfoPanelHandler.AddEngineer();
         }
     }
 }

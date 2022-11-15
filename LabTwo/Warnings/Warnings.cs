@@ -100,9 +100,9 @@
 
         public string Text { get; private set; }
     }
-    public class IncorrectScientificTitle : IWarning
+    public class IncorrectEngineerClass : IWarning
     {
-        public IncorrectScientificTitle() { Text = "You haven't chosen the scientific title of the teacher"; }
+        public IncorrectEngineerClass() { Text = "You haven't chosen the class of the engineer"; }
 
         public string Text { get; private set; }
     }

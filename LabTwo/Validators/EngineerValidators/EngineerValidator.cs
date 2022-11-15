@@ -14,7 +14,7 @@ namespace LabTwo.Validators.EngineerValidators
             if (CommonValidator.WorkerSalaryIsValid(salary) == false)
                 warnings.Add(new IncorrectSalary());
             if (CommonValidator.NameIsEmpty(engineerClass))
-                warnings.Add(new IncorrectScientificTitle());
+                warnings.Add(new IncorrectEngineerClass());
             return warnings;
         }
     }

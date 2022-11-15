@@ -31,6 +31,17 @@ namespace LabTwo
         {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.addUniversityPanel = new System.Windows.Forms.Panel();
+            this.engineerPanel = new System.Windows.Forms.Panel();
+            this.engineerClassComboBox = new System.Windows.Forms.ComboBox();
+            this.addEngineerButton = new System.Windows.Forms.Button();
+            this.engineerListView = new System.Windows.Forms.ListView();
+            this.engineerSalaryTextBox = new System.Windows.Forms.TextBox();
+            this.engineerAgeTextBox = new System.Windows.Forms.TextBox();
+            this.engineerNameTextBox = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.studentsOfTeacherPanel = new System.Windows.Forms.Panel();
             this.chooseStudentsOfTeacherButton = new System.Windows.Forms.Button();
             this.studentsOfTeacherListView = new System.Windows.Forms.ListView();
@@ -96,6 +107,7 @@ namespace LabTwo
             this.label1 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.addUniversityPanel.SuspendLayout();
+            this.engineerPanel.SuspendLayout();
             this.studentsOfTeacherPanel.SuspendLayout();
             this.teachersPanel.SuspendLayout();
             this.warningPanel.SuspendLayout();
@@ -120,6 +132,7 @@ namespace LabTwo
             // 
             // addUniversityPanel
             // 
+            this.addUniversityPanel.Controls.Add(this.engineerPanel);
             this.addUniversityPanel.Controls.Add(this.studentsOfTeacherPanel);
             this.addUniversityPanel.Controls.Add(this.teachersPanel);
             this.addUniversityPanel.Controls.Add(this.warningPanel);
@@ -139,6 +152,111 @@ namespace LabTwo
             this.addUniversityPanel.Size = new System.Drawing.Size(881, 533);
             this.addUniversityPanel.TabIndex = 5;
             // 
+            // engineerPanel
+            // 
+            this.engineerPanel.Controls.Add(this.engineerClassComboBox);
+            this.engineerPanel.Controls.Add(this.addEngineerButton);
+            this.engineerPanel.Controls.Add(this.engineerListView);
+            this.engineerPanel.Controls.Add(this.engineerSalaryTextBox);
+            this.engineerPanel.Controls.Add(this.engineerAgeTextBox);
+            this.engineerPanel.Controls.Add(this.engineerNameTextBox);
+            this.engineerPanel.Controls.Add(this.label20);
+            this.engineerPanel.Controls.Add(this.label19);
+            this.engineerPanel.Controls.Add(this.label18);
+            this.engineerPanel.Controls.Add(this.label17);
+            this.engineerPanel.Location = new System.Drawing.Point(219, 39);
+            this.engineerPanel.Name = "engineerPanel";
+            this.engineerPanel.Size = new System.Drawing.Size(624, 443);
+            this.engineerPanel.TabIndex = 15;
+            // 
+            // engineerClassComboBox
+            // 
+            this.engineerClassComboBox.FormattingEnabled = true;
+            this.engineerClassComboBox.Location = new System.Drawing.Point(225, 172);
+            this.engineerClassComboBox.Name = "engineerClassComboBox";
+            this.engineerClassComboBox.Size = new System.Drawing.Size(107, 28);
+            this.engineerClassComboBox.TabIndex = 17;
+            // 
+            // addEngineerButton
+            // 
+            this.addEngineerButton.Location = new System.Drawing.Point(56, 221);
+            this.addEngineerButton.Name = "addEngineerButton";
+            this.addEngineerButton.Size = new System.Drawing.Size(130, 39);
+            this.addEngineerButton.TabIndex = 16;
+            this.addEngineerButton.Text = "Add engineer";
+            this.addEngineerButton.UseVisualStyleBackColor = true;
+            this.addEngineerButton.Click += new System.EventHandler(this.addEngineerButton_Click);
+            // 
+            // engineerListView
+            // 
+            this.engineerListView.Location = new System.Drawing.Point(56, 282);
+            this.engineerListView.Name = "engineerListView";
+            this.engineerListView.Size = new System.Drawing.Size(328, 149);
+            this.engineerListView.TabIndex = 8;
+            this.engineerListView.UseCompatibleStateImageBehavior = false;
+            this.engineerListView.View = System.Windows.Forms.View.Details;
+            // 
+            // engineerSalaryTextBox
+            // 
+            this.engineerSalaryTextBox.Location = new System.Drawing.Point(138, 131);
+            this.engineerSalaryTextBox.Name = "engineerSalaryTextBox";
+            this.engineerSalaryTextBox.Size = new System.Drawing.Size(125, 27);
+            this.engineerSalaryTextBox.TabIndex = 6;
+            // 
+            // engineerAgeTextBox
+            // 
+            this.engineerAgeTextBox.Location = new System.Drawing.Point(117, 88);
+            this.engineerAgeTextBox.Name = "engineerAgeTextBox";
+            this.engineerAgeTextBox.Size = new System.Drawing.Size(62, 27);
+            this.engineerAgeTextBox.TabIndex = 5;
+            // 
+            // engineerNameTextBox
+            // 
+            this.engineerNameTextBox.Location = new System.Drawing.Point(141, 44);
+            this.engineerNameTextBox.Name = "engineerNameTextBox";
+            this.engineerNameTextBox.Size = new System.Drawing.Size(243, 27);
+            this.engineerNameTextBox.TabIndex = 4;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(50, 168);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(169, 32);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "Engineer class:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(50, 125);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(82, 32);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Salary:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(50, 82);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(61, 32);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Age:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(50, 39);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(83, 32);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Name:";
+            // 
             // studentsOfTeacherPanel
             // 
             this.studentsOfTeacherPanel.Controls.Add(this.chooseStudentsOfTeacherButton);
@@ -147,7 +265,6 @@ namespace LabTwo
             this.studentsOfTeacherPanel.Name = "studentsOfTeacherPanel";
             this.studentsOfTeacherPanel.Size = new System.Drawing.Size(669, 480);
             this.studentsOfTeacherPanel.TabIndex = 14;
-            studentsOfTeacherPanel.Hide();
             // 
             // chooseStudentsOfTeacherButton
             // 
@@ -756,6 +873,8 @@ namespace LabTwo
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.addUniversityPanel.ResumeLayout(false);
+            this.engineerPanel.ResumeLayout(false);
+            this.engineerPanel.PerformLayout();
             this.studentsOfTeacherPanel.ResumeLayout(false);
             this.teachersPanel.ResumeLayout(false);
             this.teachersPanel.PerformLayout();
@@ -840,5 +959,16 @@ namespace LabTwo
         public Button chooseStudentsOfTeacherButton;
         public ListView studentsOfTeacherListView;
         public Button addTeacherButton;
+        public Panel engineerPanel;
+        public TextBox engineerSalaryTextBox;
+        public TextBox engineerAgeTextBox;
+        public TextBox engineerNameTextBox;
+        public Label label20;
+        public Label label19;
+        public Label label18;
+        public Label label17;
+        public Button addEngineerButton;
+        public ListView engineerListView;
+        public ComboBox engineerClassComboBox;
     }
 }

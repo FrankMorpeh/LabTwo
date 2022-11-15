@@ -72,17 +72,21 @@ namespace LabTwo.View
         {
             ShowStudentsInfo(itsUniversityController[index].Workers.OfType<Teacher>().ToList()[teacherIndex].Students, listView);
         }
-        public void ShowEngineersInfo(int index, ListView listView)
+        public static void ShowEngineersInfo(List<Engineer> engineers, ListView listView)
         {
-            listView.Columns.Add("Engineer class");
+            listView.Items.Clear();
 
-            foreach (Engineer engineer in itsUniversityController[index].Workers.OfType<Engineer>())
+            foreach (Engineer engineer in engineers)
             {
                 listView.Items.Add(new ListViewItem(new string[] { engineer.Name, Convert.ToString(engineer.Age)
                     , Convert.ToString(engineer.Salary), engineer.EngineerClass.ToString() }));
             }
 
             listView.Refresh();
+        }
+        public void ShowEngineersInfo(int index, ListView listView)
+        {
+            ShowEngineersInfo(itsUniversityController[index].Workers.OfType<Engineer>().ToList(), listView);
         }
         public void ShowDepartmentsInfo(int index, ListView listView)
         {
