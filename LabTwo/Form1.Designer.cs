@@ -31,6 +31,19 @@ namespace LabTwo
         {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.addUniversityPanel = new System.Windows.Forms.Panel();
+            this.auditoriumPanel = new System.Windows.Forms.Panel();
+            this.auditoriumsListView = new System.Windows.Forms.ListView();
+            this.auditoriumCreateButton = new System.Windows.Forms.Button();
+            this.auditoriumAddEngineersButton = new System.Windows.Forms.Button();
+            this.auditoriumTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.auditoriumCapacityTextBox = new System.Windows.Forms.TextBox();
+            this.auditoriumCodeNameTextBox = new System.Windows.Forms.TextBox();
+            this.auditoriumNumberOfRowsOrDevicesTextBox = new System.Windows.Forms.TextBox();
+            this.auditoriumNumberOfDevicesLabel = new System.Windows.Forms.Label();
+            this.auditoriumNumberOfRowsLabel = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.engineerPanel = new System.Windows.Forms.Panel();
             this.engineerClassComboBox = new System.Windows.Forms.ComboBox();
             this.addEngineerButton = new System.Windows.Forms.Button();
@@ -107,6 +120,7 @@ namespace LabTwo
             this.label1 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.addUniversityPanel.SuspendLayout();
+            this.auditoriumPanel.SuspendLayout();
             this.engineerPanel.SuspendLayout();
             this.studentsOfTeacherPanel.SuspendLayout();
             this.teachersPanel.SuspendLayout();
@@ -132,6 +146,7 @@ namespace LabTwo
             // 
             // addUniversityPanel
             // 
+            this.addUniversityPanel.Controls.Add(this.auditoriumPanel);
             this.addUniversityPanel.Controls.Add(this.engineerPanel);
             this.addUniversityPanel.Controls.Add(this.studentsOfTeacherPanel);
             this.addUniversityPanel.Controls.Add(this.teachersPanel);
@@ -151,6 +166,131 @@ namespace LabTwo
             this.addUniversityPanel.Name = "addUniversityPanel";
             this.addUniversityPanel.Size = new System.Drawing.Size(881, 533);
             this.addUniversityPanel.TabIndex = 5;
+            // 
+            // auditoriumPanel
+            // 
+            this.auditoriumPanel.Controls.Add(this.auditoriumsListView);
+            this.auditoriumPanel.Controls.Add(this.auditoriumCreateButton);
+            this.auditoriumPanel.Controls.Add(this.auditoriumAddEngineersButton);
+            this.auditoriumPanel.Controls.Add(this.auditoriumTypeComboBox);
+            this.auditoriumPanel.Controls.Add(this.auditoriumCapacityTextBox);
+            this.auditoriumPanel.Controls.Add(this.auditoriumCodeNameTextBox);
+            this.auditoriumPanel.Controls.Add(this.auditoriumNumberOfRowsOrDevicesTextBox);
+            this.auditoriumPanel.Controls.Add(this.auditoriumNumberOfDevicesLabel);
+            this.auditoriumPanel.Controls.Add(this.auditoriumNumberOfRowsLabel);
+            this.auditoriumPanel.Controls.Add(this.label23);
+            this.auditoriumPanel.Controls.Add(this.label22);
+            this.auditoriumPanel.Controls.Add(this.label21);
+            this.auditoriumPanel.Location = new System.Drawing.Point(214, 37);
+            this.auditoriumPanel.Name = "auditoriumPanel";
+            this.auditoriumPanel.Size = new System.Drawing.Size(621, 451);
+            this.auditoriumPanel.TabIndex = 16;
+            // 
+            // auditoriumsListView
+            // 
+            this.auditoriumsListView.Location = new System.Drawing.Point(68, 353);
+            this.auditoriumsListView.Name = "auditoriumsListView";
+            this.auditoriumsListView.Size = new System.Drawing.Size(326, 90);
+            this.auditoriumsListView.TabIndex = 18;
+            this.auditoriumsListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // auditoriumCreateButton
+            // 
+            this.auditoriumCreateButton.Location = new System.Drawing.Point(63, 280);
+            this.auditoriumCreateButton.Name = "auditoriumCreateButton";
+            this.auditoriumCreateButton.Size = new System.Drawing.Size(127, 55);
+            this.auditoriumCreateButton.TabIndex = 17;
+            this.auditoriumCreateButton.Text = "Create auditorium";
+            this.auditoriumCreateButton.UseVisualStyleBackColor = true;
+            // 
+            // auditoriumAddEngineersButton
+            // 
+            this.auditoriumAddEngineersButton.Location = new System.Drawing.Point(63, 225);
+            this.auditoriumAddEngineersButton.Name = "auditoriumAddEngineersButton";
+            this.auditoriumAddEngineersButton.Size = new System.Drawing.Size(127, 37);
+            this.auditoriumAddEngineersButton.TabIndex = 9;
+            this.auditoriumAddEngineersButton.Text = "Add engineers";
+            this.auditoriumAddEngineersButton.UseVisualStyleBackColor = true;
+            // 
+            // auditoriumTypeComboBox
+            // 
+            this.auditoriumTypeComboBox.FormattingEnabled = true;
+            this.auditoriumTypeComboBox.Location = new System.Drawing.Point(128, 25);
+            this.auditoriumTypeComboBox.Name = "auditoriumTypeComboBox";
+            this.auditoriumTypeComboBox.Size = new System.Drawing.Size(155, 28);
+            this.auditoriumTypeComboBox.TabIndex = 8;
+            this.auditoriumTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.auditoriumTypeComboBox_Changed);
+            // 
+            // auditoriumCapacityTextBox
+            // 
+            this.auditoriumCapacityTextBox.Location = new System.Drawing.Point(169, 116);
+            this.auditoriumCapacityTextBox.Name = "auditoriumCapacityTextBox";
+            this.auditoriumCapacityTextBox.Size = new System.Drawing.Size(136, 27);
+            this.auditoriumCapacityTextBox.TabIndex = 7;
+            // 
+            // auditoriumCodeNameTextBox
+            // 
+            this.auditoriumCodeNameTextBox.Location = new System.Drawing.Point(197, 66);
+            this.auditoriumCodeNameTextBox.Name = "auditoriumCodeNameTextBox";
+            this.auditoriumCodeNameTextBox.Size = new System.Drawing.Size(173, 27);
+            this.auditoriumCodeNameTextBox.TabIndex = 6;
+            // 
+            // auditoriumNumberOfRowsOrDevicesTextBox
+            // 
+            this.auditoriumNumberOfRowsOrDevicesTextBox.Location = new System.Drawing.Point(282, 167);
+            this.auditoriumNumberOfRowsOrDevicesTextBox.Name = "auditoriumNumberOfRowsOrDevicesTextBox";
+            this.auditoriumNumberOfRowsOrDevicesTextBox.Size = new System.Drawing.Size(76, 27);
+            this.auditoriumNumberOfRowsOrDevicesTextBox.TabIndex = 5;
+            // 
+            // auditoriumNumberOfDevicesLabel
+            // 
+            this.auditoriumNumberOfDevicesLabel.AutoSize = true;
+            this.auditoriumNumberOfDevicesLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.auditoriumNumberOfDevicesLabel.Location = new System.Drawing.Point(53, 161);
+            this.auditoriumNumberOfDevicesLabel.Name = "auditoriumNumberOfDevicesLabel";
+            this.auditoriumNumberOfDevicesLabel.Size = new System.Drawing.Size(222, 32);
+            this.auditoriumNumberOfDevicesLabel.TabIndex = 4;
+            this.auditoriumNumberOfDevicesLabel.Text = "Number of devices:";
+            // 
+            // auditoriumNumberOfRowsLabel
+            // 
+            this.auditoriumNumberOfRowsLabel.AutoSize = true;
+            this.auditoriumNumberOfRowsLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.auditoriumNumberOfRowsLabel.Location = new System.Drawing.Point(54, 156);
+            this.auditoriumNumberOfRowsLabel.Name = "auditoriumNumberOfRowsLabel";
+            this.auditoriumNumberOfRowsLabel.Size = new System.Drawing.Size(192, 32);
+            this.auditoriumNumberOfRowsLabel.TabIndex = 3;
+            this.auditoriumNumberOfRowsLabel.Text = "Number of rows:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label23.Location = new System.Drawing.Point(54, 109);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(109, 32);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Capacity:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label22.Location = new System.Drawing.Point(54, 60);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(142, 32);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Code name:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label21.Location = new System.Drawing.Point(54, 18);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(70, 32);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Type:";
             // 
             // engineerPanel
             // 
@@ -781,6 +921,7 @@ namespace LabTwo
             this.engineersButton.TabIndex = 5;
             this.engineersButton.Text = "Engineers";
             this.engineersButton.UseVisualStyleBackColor = true;
+            this.engineersButton.Click += new System.EventHandler(this.engineersButton_Click);
             // 
             // teachersButton
             // 
@@ -873,6 +1014,8 @@ namespace LabTwo
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.addUniversityPanel.ResumeLayout(false);
+            this.auditoriumPanel.ResumeLayout(false);
+            this.auditoriumPanel.PerformLayout();
             this.engineerPanel.ResumeLayout(false);
             this.engineerPanel.PerformLayout();
             this.studentsOfTeacherPanel.ResumeLayout(false);
@@ -970,5 +1113,18 @@ namespace LabTwo
         public Button addEngineerButton;
         public ListView engineerListView;
         public ComboBox engineerClassComboBox;
+        public Panel auditoriumPanel;
+        public Label label23;
+        public Label label22;
+        public Label label21;
+        public Label auditoriumNumberOfDevicesLabel;
+        public Label auditoriumNumberOfRowsLabel;
+        public ListView auditoriumsListView;
+        public Button auditoriumCreateButton;
+        public Button auditoriumAddEngineersButton;
+        public ComboBox auditoriumTypeComboBox;
+        public TextBox auditoriumCapacityTextBox;
+        public TextBox auditoriumCodeNameTextBox;
+        public TextBox auditoriumNumberOfRowsOrDevicesTextBox;
     }
 }

@@ -16,6 +16,7 @@ namespace LabTwo
         public TeacherInfoPanelHandler teacherInfoPanelHandler;
         public StudentsOfTeacherInfoPanelHandler studentsOfTeacherInfoPanelHandler;
         public EngineerInfoPanelHandler engineerInfoPanelHandler;
+        public AuditoriumInfoPanelHandler auditoriumInfoPanelHandler;
         public PanelController panelController;
         public UniversityController universityController;
         public UniversityView universityView;
@@ -38,6 +39,7 @@ namespace LabTwo
             teacherInfoPanelHandler = new TeacherInfoPanelHandler(this);
             studentsOfTeacherInfoPanelHandler = new StudentsOfTeacherInfoPanelHandler(this, teacherInfoPanelHandler);
             engineerInfoPanelHandler = new EngineerInfoPanelHandler(this);
+            auditoriumInfoPanelHandler = new AuditoriumInfoPanelHandler(this);
             panelController = new PanelController(this);
         }
 
@@ -124,6 +126,16 @@ namespace LabTwo
         private void addEngineerButton_Click(object sender, EventArgs e)
         {
             engineerInfoPanelHandler.AddEngineer();
+        }
+
+        private void engineersButton_Click(object sender, EventArgs e)
+        {
+            panelController.ShowPanel(engineerInfoPanelHandler);
+        }
+
+        private void auditoriumTypeComboBox_Changed(object sender, EventArgs e)
+        {
+            auditoriumInfoPanelHandler.ChangeLabelAccordingToCurrentAuditoriumType();
         }
     }
 }

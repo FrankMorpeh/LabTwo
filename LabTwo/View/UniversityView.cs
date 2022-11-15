@@ -114,18 +114,19 @@ namespace LabTwo.View
 
             listView.Refresh();
         }
-        public void ShowAuditoriumsInfo(int index, ListView listView)
+        public static void ShowAuditoriumsInfo(List<Auditorium> auditoriums, ListView listView)
         {
-            listView.Columns.Add("Auditorium type");
-            listView.Columns.Add("Code name");
-            listView.Columns.Add("Capacity");
-            listView.Columns.Add("Engineers");
-
-            foreach (Auditorium auditorium in itsUniversityController[index].Auditoriums)
+            foreach (Auditorium auditorium in auditoriums)
+            {
                 listView.Items.Add(new ListViewItem(new string[] { auditorium.GetType().Name, auditorium.CodeName
                 , Convert.ToString(auditorium.Capacity), auditorium.NamesOfEngineers }));
+            }
 
             listView.Refresh();
+        }
+        public void ShowAuditoriumsInfo(int index, ListView listView)
+        {
+            ShowAuditoriumsInfo(itsUniversityController[index].Auditoriums, listView);
         }
     }
 }
