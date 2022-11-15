@@ -31,17 +31,6 @@ namespace LabTwo
         {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.addUniversityPanel = new System.Windows.Forms.Panel();
-            this.studentsPanel = new System.Windows.Forms.Panel();
-            this.studentsListView = new System.Windows.Forms.ListView();
-            this.addStudentButton = new System.Windows.Forms.Button();
-            this.studentYearInUniversityTextBox = new System.Windows.Forms.TextBox();
-            this.studentRecordBookTextBox = new System.Windows.Forms.TextBox();
-            this.studentAgeTextBox = new System.Windows.Forms.TextBox();
-            this.studentNameTextBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.warningPanel = new System.Windows.Forms.Panel();
             this.warningTextBox = new System.Windows.Forms.TextBox();
             this.okWarningButton = new System.Windows.Forms.Button();
@@ -70,6 +59,17 @@ namespace LabTwo
             this.subjectNameTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.studentsPanel = new System.Windows.Forms.Panel();
+            this.studentsListView = new System.Windows.Forms.ListView();
+            this.addStudentButton = new System.Windows.Forms.Button();
+            this.studentYearInUniversityTextBox = new System.Windows.Forms.TextBox();
+            this.studentRecordBookTextBox = new System.Windows.Forms.TextBox();
+            this.studentAgeTextBox = new System.Windows.Forms.TextBox();
+            this.studentNameTextBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.createUniversityButton = new System.Windows.Forms.Button();
             this.auditoriumsButton = new System.Windows.Forms.Button();
             this.engineersButton = new System.Windows.Forms.Button();
@@ -83,11 +83,11 @@ namespace LabTwo
             this.label1 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.addUniversityPanel.SuspendLayout();
-            this.studentsPanel.SuspendLayout();
             this.warningPanel.SuspendLayout();
             this.mainInfoPanel.SuspendLayout();
             this.departmentsPanel.SuspendLayout();
             this.subjectsPanel.SuspendLayout();
+            this.studentsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -106,10 +106,10 @@ namespace LabTwo
             // addUniversityPanel
             // 
             this.addUniversityPanel.Controls.Add(this.warningPanel);
-            this.addUniversityPanel.Controls.Add(this.studentsPanel);
             this.addUniversityPanel.Controls.Add(this.mainInfoPanel);
             this.addUniversityPanel.Controls.Add(this.departmentsPanel);
             this.addUniversityPanel.Controls.Add(this.subjectsPanel);
+            this.addUniversityPanel.Controls.Add(this.studentsPanel);
             this.addUniversityPanel.Controls.Add(this.createUniversityButton);
             this.addUniversityPanel.Controls.Add(this.auditoriumsButton);
             this.addUniversityPanel.Controls.Add(this.engineersButton);
@@ -121,110 +121,6 @@ namespace LabTwo
             this.addUniversityPanel.Name = "addUniversityPanel";
             this.addUniversityPanel.Size = new System.Drawing.Size(881, 533);
             this.addUniversityPanel.TabIndex = 5;
-            // 
-            // studentsPanel
-            // 
-            this.studentsPanel.Controls.Add(this.studentsListView);
-            this.studentsPanel.Controls.Add(this.addStudentButton);
-            this.studentsPanel.Controls.Add(this.studentYearInUniversityTextBox);
-            this.studentsPanel.Controls.Add(this.studentRecordBookTextBox);
-            this.studentsPanel.Controls.Add(this.studentAgeTextBox);
-            this.studentsPanel.Controls.Add(this.studentNameTextBox);
-            this.studentsPanel.Controls.Add(this.label13);
-            this.studentsPanel.Controls.Add(this.label12);
-            this.studentsPanel.Controls.Add(this.label11);
-            this.studentsPanel.Controls.Add(this.label10);
-            this.studentsPanel.Location = new System.Drawing.Point(205, 39);
-            this.studentsPanel.Name = "studentsPanel";
-            this.studentsPanel.Size = new System.Drawing.Size(642, 457);
-            this.studentsPanel.TabIndex = 12;
-            // 
-            // studentsListView
-            // 
-            this.studentsListView.Location = new System.Drawing.Point(56, 281);
-            this.studentsListView.Name = "studentsListView";
-            this.studentsListView.Size = new System.Drawing.Size(362, 158);
-            this.studentsListView.TabIndex = 9;
-            this.studentsListView.UseCompatibleStateImageBehavior = false;
-            this.studentsListView.View = System.Windows.Forms.View.Details;
-            // 
-            // addStudentButton
-            // 
-            this.addStudentButton.Location = new System.Drawing.Point(51, 213);
-            this.addStudentButton.Name = "addStudentButton";
-            this.addStudentButton.Size = new System.Drawing.Size(128, 48);
-            this.addStudentButton.TabIndex = 8;
-            this.addStudentButton.Text = "Add student";
-            this.addStudentButton.UseVisualStyleBackColor = true;
-            this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
-            // 
-            // studentYearInUniversityTextBox
-            // 
-            this.studentYearInUniversityTextBox.Location = new System.Drawing.Point(257, 165);
-            this.studentYearInUniversityTextBox.Name = "studentYearInUniversityTextBox";
-            this.studentYearInUniversityTextBox.Size = new System.Drawing.Size(57, 27);
-            this.studentYearInUniversityTextBox.TabIndex = 7;
-            // 
-            // studentRecordBookTextBox
-            // 
-            this.studentRecordBookTextBox.Location = new System.Drawing.Point(205, 122);
-            this.studentRecordBookTextBox.Name = "studentRecordBookTextBox";
-            this.studentRecordBookTextBox.Size = new System.Drawing.Size(174, 27);
-            this.studentRecordBookTextBox.TabIndex = 6;
-            // 
-            // studentAgeTextBox
-            // 
-            this.studentAgeTextBox.Location = new System.Drawing.Point(118, 79);
-            this.studentAgeTextBox.Name = "studentAgeTextBox";
-            this.studentAgeTextBox.Size = new System.Drawing.Size(57, 27);
-            this.studentAgeTextBox.TabIndex = 5;
-            // 
-            // studentNameTextBox
-            // 
-            this.studentNameTextBox.Location = new System.Drawing.Point(140, 32);
-            this.studentNameTextBox.Name = "studentNameTextBox";
-            this.studentNameTextBox.Size = new System.Drawing.Size(225, 27);
-            this.studentNameTextBox.TabIndex = 4;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(51, 159);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(200, 32);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Year in university:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(51, 117);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(153, 32);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Record book:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(51, 73);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 32);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Age:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(51, 26);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 32);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Name:";
             // 
             // warningPanel
             // 
@@ -497,6 +393,110 @@ namespace LabTwo
             this.label8.TabIndex = 0;
             this.label8.Text = "Subject name:";
             // 
+            // studentsPanel
+            // 
+            this.studentsPanel.Controls.Add(this.studentsListView);
+            this.studentsPanel.Controls.Add(this.addStudentButton);
+            this.studentsPanel.Controls.Add(this.studentYearInUniversityTextBox);
+            this.studentsPanel.Controls.Add(this.studentRecordBookTextBox);
+            this.studentsPanel.Controls.Add(this.studentAgeTextBox);
+            this.studentsPanel.Controls.Add(this.studentNameTextBox);
+            this.studentsPanel.Controls.Add(this.label13);
+            this.studentsPanel.Controls.Add(this.label12);
+            this.studentsPanel.Controls.Add(this.label11);
+            this.studentsPanel.Controls.Add(this.label10);
+            this.studentsPanel.Location = new System.Drawing.Point(205, 39);
+            this.studentsPanel.Name = "studentsPanel";
+            this.studentsPanel.Size = new System.Drawing.Size(642, 457);
+            this.studentsPanel.TabIndex = 12;
+            // 
+            // studentsListView
+            // 
+            this.studentsListView.Location = new System.Drawing.Point(56, 281);
+            this.studentsListView.Name = "studentsListView";
+            this.studentsListView.Size = new System.Drawing.Size(362, 158);
+            this.studentsListView.TabIndex = 9;
+            this.studentsListView.UseCompatibleStateImageBehavior = false;
+            this.studentsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // addStudentButton
+            // 
+            this.addStudentButton.Location = new System.Drawing.Point(51, 213);
+            this.addStudentButton.Name = "addStudentButton";
+            this.addStudentButton.Size = new System.Drawing.Size(128, 48);
+            this.addStudentButton.TabIndex = 8;
+            this.addStudentButton.Text = "Add student";
+            this.addStudentButton.UseVisualStyleBackColor = true;
+            this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
+            // 
+            // studentYearInUniversityTextBox
+            // 
+            this.studentYearInUniversityTextBox.Location = new System.Drawing.Point(257, 165);
+            this.studentYearInUniversityTextBox.Name = "studentYearInUniversityTextBox";
+            this.studentYearInUniversityTextBox.Size = new System.Drawing.Size(57, 27);
+            this.studentYearInUniversityTextBox.TabIndex = 7;
+            // 
+            // studentRecordBookTextBox
+            // 
+            this.studentRecordBookTextBox.Location = new System.Drawing.Point(205, 122);
+            this.studentRecordBookTextBox.Name = "studentRecordBookTextBox";
+            this.studentRecordBookTextBox.Size = new System.Drawing.Size(174, 27);
+            this.studentRecordBookTextBox.TabIndex = 6;
+            // 
+            // studentAgeTextBox
+            // 
+            this.studentAgeTextBox.Location = new System.Drawing.Point(118, 79);
+            this.studentAgeTextBox.Name = "studentAgeTextBox";
+            this.studentAgeTextBox.Size = new System.Drawing.Size(57, 27);
+            this.studentAgeTextBox.TabIndex = 5;
+            // 
+            // studentNameTextBox
+            // 
+            this.studentNameTextBox.Location = new System.Drawing.Point(140, 32);
+            this.studentNameTextBox.Name = "studentNameTextBox";
+            this.studentNameTextBox.Size = new System.Drawing.Size(225, 27);
+            this.studentNameTextBox.TabIndex = 4;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(51, 159);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(200, 32);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Year in university:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(51, 117);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(153, 32);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Record book:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(51, 73);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 32);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Age:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(51, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(83, 32);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Name:";
+            // 
             // createUniversityButton
             // 
             this.createUniversityButton.Location = new System.Drawing.Point(25, 467);
@@ -541,6 +541,7 @@ namespace LabTwo
             this.studentsButton.TabIndex = 3;
             this.studentsButton.Text = "Students";
             this.studentsButton.UseVisualStyleBackColor = true;
+            this.studentsButton.Click += new System.EventHandler(this.studentsButton_Click);
             // 
             // departmentsButton
             // 
@@ -613,8 +614,6 @@ namespace LabTwo
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.addUniversityPanel.ResumeLayout(false);
-            this.studentsPanel.ResumeLayout(false);
-            this.studentsPanel.PerformLayout();
             this.warningPanel.ResumeLayout(false);
             this.warningPanel.PerformLayout();
             this.mainInfoPanel.ResumeLayout(false);
@@ -623,6 +622,8 @@ namespace LabTwo
             this.departmentsPanel.PerformLayout();
             this.subjectsPanel.ResumeLayout(false);
             this.subjectsPanel.PerformLayout();
+            this.studentsPanel.ResumeLayout(false);
+            this.studentsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

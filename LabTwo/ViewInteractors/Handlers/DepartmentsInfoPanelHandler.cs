@@ -6,7 +6,7 @@ using LabTwo.View;
 
 namespace LabTwo.ViewInteractors.Handlers
 {
-    public class DepartmentsInfoPanelHandler
+    public class DepartmentsInfoPanelHandler : IPanelHandler
     {
         private Form1 itsMainWindow;
         DepartmentsInfoPanelFormStorage itsDepartmentsInfoPanelFormStorage;
@@ -23,15 +23,12 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.departmentsListView.Columns.Add("Deanery cabinet");
         }
 
-        /*
-            TODO: add real lists
-        */
-        public void ShowDepartmentsPanel()
+        public void ShowPanel()
         {
             itsMainWindow.departmentsPanel.Show();
             ShowDepartments();
         }
-        public void HideDepartmentsPanel()
+        public void HidePanel()
         {
             itsMainWindow.departmentsPanel.Hide();
         }

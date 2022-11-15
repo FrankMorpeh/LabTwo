@@ -4,7 +4,7 @@ using LabTwo.Warnings;
 
 namespace LabTwo.ViewInteractors.Handlers
 {
-    public class MainInfoPanelHandler
+    public class MainInfoPanelHandler : IPanelHandler
     {
         private Form1 itsMainWindow;
         private MainInfoPanelFormStorage itsMainInfoPanelFormStorage;
@@ -15,11 +15,11 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainInfoPanelFormStorage = new MainInfoPanelFormStorage();
         }
 
-        public void ShowMainInfoPanel()
+        public void ShowPanel()
         {
             itsMainWindow.mainInfoPanel.Show();
         }
-        public void HideMainInfoPanel()
+        public void HidePanel()
         {
             itsMainWindow.mainInfoPanel.Hide();
         }

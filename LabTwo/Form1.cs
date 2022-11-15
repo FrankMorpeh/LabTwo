@@ -1,7 +1,5 @@
+using LabTwo.Controllers;
 using LabTwo.Controllers.UniversityController;
-using LabTwo.Models.Departments;
-using LabTwo.Models.Students;
-using LabTwo.Models.Subjects;
 using LabTwo.View;
 using LabTwo.ViewInteractors.Handlers;
 using LabTwo.Warnings;
@@ -13,6 +11,7 @@ namespace LabTwo
         public MainInfoPanelHandler mainInfoPanelHandler;
         public DepartmentsInfoPanelHandler departmentsInfoPanelHandler;
         public SubjectsInfoPanelHandler subjectsInfoPanelHandler;
+        public PanelController panelController;
         public StudentsInfoPanelHandler studentsInfoPanelHandler;
         public UniversityController universityController;
         public UniversityView universityView;
@@ -32,6 +31,7 @@ namespace LabTwo
             departmentsInfoPanelHandler = new DepartmentsInfoPanelHandler(this);
             subjectsInfoPanelHandler = new SubjectsInfoPanelHandler(this);
             studentsInfoPanelHandler = new StudentsInfoPanelHandler(this);
+            panelController = new PanelController(this);
         }
 
         private void addUniversityButton_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace LabTwo
 
         private void mainInfoButton_Click(object sender, EventArgs e)
         {
-            mainInfoPanelHandler.ShowMainInfoPanel();
+            panelController.ShowPanel(mainInfoPanelHandler);
         }
 
         private void okWarningButton_Click(object sender, EventArgs e)
@@ -63,14 +63,12 @@ namespace LabTwo
 
         private void departmentsButton_Click(object sender, EventArgs e)
         {
-            mainInfoPanelHandler.HideMainInfoPanel();
-            departmentsInfoPanelHandler.ShowDepartmentsPanel();
+            panelController.ShowPanel(departmentsInfoPanelHandler);
         }
 
         private void addSubjectsButton_Click(object sender, EventArgs e)
         {
-            departmentsInfoPanelHandler.HideDepartmentsPanel();
-            subjectsInfoPanelHandler.ShowSubjectsPanel();
+            panelController.ShowPanel(subjectsInfoPanelHandler);
         }
         
         private void addSubjectButton_Click(object sender, EventArgs e)
@@ -80,14 +78,18 @@ namespace LabTwo
 
         private void saveSubjectsButton_Click(object sender, EventArgs e)
         {
-            subjectsInfoPanelHandler.HideSubjectsPanel();
-            departmentsInfoPanelHandler.ShowDepartmentsPanel();
+            panelController.ShowPanel(departmentsInfoPanelHandler);
             departmentsInfoPanelHandler.BlockSubjectAddingButton();
         }
 
         private void addStudentButton_Click(object sender, EventArgs e)
         {
             studentsInfoPanelHandler.AddStudent();
+        }
+
+        private void studentsButton_Click(object sender, EventArgs e)
+        {
+            panelController.ShowPanel(studentsInfoPanelHandler);
         }
     }
 }

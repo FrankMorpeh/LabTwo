@@ -6,7 +6,7 @@ using LabTwo.Warnings;
 
 namespace LabTwo.ViewInteractors.Handlers
 {
-    public class SubjectsInfoPanelHandler
+    public class SubjectsInfoPanelHandler : IPanelHandler
     {
         private Form1 itsMainWindow;
         private SubjectsInfoPanelFormStorage itsSubjectsInfoPanelFormStorage;
@@ -27,7 +27,7 @@ namespace LabTwo.ViewInteractors.Handlers
         {
             return itsSubjectsInfoPanelFormStorage;
         }
-        public void ShowSubjectsPanel()
+        public void ShowPanel()
         {
             itsSubjectsInfoPanelFormStorage.Subjects = new List<Models.Subjects.Subject>();
             EmptyOldValues();
@@ -39,7 +39,7 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.subjectNameTextBox.Text = string.Empty;
             itsMainWindow.subjectCreditTextBox.Text = string.Empty;
         }
-        public void HideSubjectsPanel()
+        public void HidePanel()
         {
             itsMainWindow.subjectsPanel.Hide();
         }

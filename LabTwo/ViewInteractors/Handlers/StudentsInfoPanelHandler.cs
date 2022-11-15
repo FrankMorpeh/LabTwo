@@ -6,7 +6,7 @@ using LabTwo.Warnings;
 
 namespace LabTwo.ViewInteractors.Handlers
 {
-    public class StudentsInfoPanelHandler
+    public class StudentsInfoPanelHandler : IPanelHandler
     {
         private Form1 itsMainWindow;
         private StudentsInfoPanelFormStorage itsStudentsInfoPanelFormStorage;
@@ -25,6 +25,14 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.studentsListView.Columns.Add("Year in university");
         }
 
+        public void ShowPanel()
+        {
+            itsMainWindow.studentsPanel.Show();
+        }
+        public void HidePanel()
+        {
+            itsMainWindow.studentsPanel.Hide();
+        }
         public void AddStudent()
         {
             List<IWarning> warnings = StudentValidator.CheckStudent(itsMainWindow.studentNameTextBox.Text, itsMainWindow.studentAgeTextBox.Text
