@@ -1,8 +1,10 @@
 using LabTwo.Controllers;
 using LabTwo.Controllers.UniversityController;
+using LabTwo.Converters.StudentConverters;
 using LabTwo.View;
 using LabTwo.ViewInteractors.Handlers;
 using LabTwo.Warnings;
+using static System.Windows.Forms.ListView;
 
 namespace LabTwo
 {
@@ -11,8 +13,10 @@ namespace LabTwo
         public MainInfoPanelHandler mainInfoPanelHandler;
         public DepartmentsInfoPanelHandler departmentsInfoPanelHandler;
         public SubjectsInfoPanelHandler subjectsInfoPanelHandler;
-        public PanelController panelController;
         public StudentsInfoPanelHandler studentsInfoPanelHandler;
+        public TeacherInfoPanelHandler teacherInfoPanelHandler;
+        public StudentsOfTeacherInfoPanelHandler studentsOfTeacherInfoPanelHandler;
+        public PanelController panelController;
         public UniversityController universityController;
         public UniversityView universityView;
         public Form1()
@@ -31,6 +35,8 @@ namespace LabTwo
             departmentsInfoPanelHandler = new DepartmentsInfoPanelHandler(this);
             subjectsInfoPanelHandler = new SubjectsInfoPanelHandler(this);
             studentsInfoPanelHandler = new StudentsInfoPanelHandler(this);
+            teacherInfoPanelHandler = new TeacherInfoPanelHandler(this);
+            studentsOfTeacherInfoPanelHandler = new StudentsOfTeacherInfoPanelHandler(this, teacherInfoPanelHandler);
             panelController = new PanelController(this);
         }
 
@@ -90,6 +96,28 @@ namespace LabTwo
         private void studentsButton_Click(object sender, EventArgs e)
         {
             panelController.ShowPanel(studentsInfoPanelHandler);
+        }
+
+        private void chooseStudentsOfTeacherButton_Click(object sender, EventArgs e)
+        {
+            studentsOfTeacherInfoPanelHandler.ChooseStudentsForTeacher(StudentConverter.ToStudentList(studentsInfoPanelHandler.GetStudents()
+                , studentsOfTeacherListView.SelectedIndices));
+            panelController.ShowPanel(teacherInfoPanelHandler);
+        }
+
+        private void addTeacherButton_Click(object sender, EventArgs e)
+        {
+            teacherInfoPanelHandler.AddTeacher();
+        }
+
+        private void teachersButton_Click(object sender, EventArgs e)
+        {
+            panelController.ShowPanel(teacherInfoPanelHandler);
+        }
+
+        private void addStudentToTeacherButton_Click(object sender, EventArgs e)
+        {
+            panelController.ShowPanel(studentsOfTeacherInfoPanelHandler);
         }
     }
 }

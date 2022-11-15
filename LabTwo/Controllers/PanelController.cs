@@ -6,10 +6,11 @@ namespace LabTwo.Controllers
     {
         private List<IPanelHandler> itsPanelHandlers;
 
-        public PanelController(Form1 mainWindow) 
+        public PanelController(Form1 mainWindow)
         {
             itsPanelHandlers = new List<IPanelHandler>() { mainWindow.mainInfoPanelHandler, mainWindow.departmentsInfoPanelHandler
-                , mainWindow.subjectsInfoPanelHandler, mainWindow.studentsInfoPanelHandler };
+                , mainWindow.subjectsInfoPanelHandler, mainWindow.studentsInfoPanelHandler, mainWindow.teacherInfoPanelHandler
+                , mainWindow.studentsOfTeacherInfoPanelHandler };
         }
 
         public void ShowPanel(IPanelHandler panelHandler)
@@ -18,16 +19,8 @@ namespace LabTwo.Controllers
             {
                 if (handler != panelHandler)
                     handler.HidePanel();
-            }
-            IPanelHandler panelHandlerToShow = itsPanelHandlers.Where(ph => ph == panelHandler).SingleOrDefault();
-            panelHandlerToShow.ShowPanel();
-        }
-        public void HidePanelsExceptFor(IPanelHandler panelHandler)
-        {
-            foreach (IPanelHandler handler in itsPanelHandlers)
-            {
-                if (handler != panelHandler)
-                    handler.HidePanel();
+                else
+                    handler.ShowPanel();
             }
         }
     }

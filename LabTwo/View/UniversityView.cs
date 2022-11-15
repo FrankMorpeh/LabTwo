@@ -41,20 +41,23 @@ namespace LabTwo.View
 
             listView.Refresh();
         }
-        public void ShowTeachersInfo(int index, ListView listView)
+        public static void ShowTeachersInfo(List<Teacher> teachers, ListView listView)
         {
-            listView.Columns.Add("Scientific title");
-
-            foreach (Teacher teacher in itsUniversityController[index].Workers.OfType<Teacher>())
+            foreach (Teacher teacher in teachers)
             {
                 listView.Items.Add(new ListViewItem(new string[] { teacher.Name, Convert.ToString(teacher.Age)
-                        , Convert.ToString(teacher.Salary), teacher.ScientificTitle.ToString() }));
+                        , Convert.ToString(teacher.Salary)}));
             }
 
             listView.Refresh();
         }
+        public void ShowTeachersInfo(int index, ListView listView)
+        {
+            ShowTeachersInfo(itsUniversityController[index].Workers.OfType<Teacher>().ToList(), listView);
+        }
         public static void ShowStudentsInfo(List<Student> students, ListView listView)
         {
+            listView.Items.Clear();
             foreach (Student student in students)
                 listView.Items.Add(new ListViewItem(new string[] { student.Name, Convert.ToString(student.Age)
                     , student.RecordBookNumber, Convert.ToString(student.YearInUniversity) }));
@@ -87,6 +90,8 @@ namespace LabTwo.View
         }
         public static void ShowDepartmentsInfo(List<Department> departments, ListView listView)
         {
+            listView.Items.Clear();
+
             foreach (Department department in departments)
                 listView.Items.Add(new ListViewItem(new string[] { department.Name
                     , Convert.ToString(department.DeaneryCabinetNumber) }));
@@ -99,6 +104,7 @@ namespace LabTwo.View
         }
         public static void ShowSubjectsInfo(List<Subject> subjects, ListView listView)
         {
+            listView.Items.Clear();
             foreach (Subject subject in subjects)
                 listView.Items.Add(new ListViewItem(new string[] { subject.Name, Convert.ToString(subject.Credit) }));
 

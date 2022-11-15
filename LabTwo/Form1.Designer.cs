@@ -31,6 +31,19 @@ namespace LabTwo
         {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.addUniversityPanel = new System.Windows.Forms.Panel();
+            this.studentsOfTeacherPanel = new System.Windows.Forms.Panel();
+            this.chooseStudentsOfTeacherButton = new System.Windows.Forms.Button();
+            this.studentsOfTeacherListView = new System.Windows.Forms.ListView();
+            this.teachersPanel = new System.Windows.Forms.Panel();
+            this.addTeacherButton = new System.Windows.Forms.Button();
+            this.teachersListView = new System.Windows.Forms.ListView();
+            this.addStudentToTeacherButton = new System.Windows.Forms.Button();
+            this.teacherSalaryTextBox = new System.Windows.Forms.TextBox();
+            this.teacherAgeTextBox = new System.Windows.Forms.TextBox();
+            this.teacherNameTextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.warningPanel = new System.Windows.Forms.Panel();
             this.warningTextBox = new System.Windows.Forms.TextBox();
             this.okWarningButton = new System.Windows.Forms.Button();
@@ -83,6 +96,8 @@ namespace LabTwo
             this.label1 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.addUniversityPanel.SuspendLayout();
+            this.studentsOfTeacherPanel.SuspendLayout();
+            this.teachersPanel.SuspendLayout();
             this.warningPanel.SuspendLayout();
             this.mainInfoPanel.SuspendLayout();
             this.departmentsPanel.SuspendLayout();
@@ -105,6 +120,8 @@ namespace LabTwo
             // 
             // addUniversityPanel
             // 
+            this.addUniversityPanel.Controls.Add(this.studentsOfTeacherPanel);
+            this.addUniversityPanel.Controls.Add(this.teachersPanel);
             this.addUniversityPanel.Controls.Add(this.warningPanel);
             this.addUniversityPanel.Controls.Add(this.mainInfoPanel);
             this.addUniversityPanel.Controls.Add(this.departmentsPanel);
@@ -121,6 +138,130 @@ namespace LabTwo
             this.addUniversityPanel.Name = "addUniversityPanel";
             this.addUniversityPanel.Size = new System.Drawing.Size(881, 533);
             this.addUniversityPanel.TabIndex = 5;
+            // 
+            // studentsOfTeacherPanel
+            // 
+            this.studentsOfTeacherPanel.Controls.Add(this.chooseStudentsOfTeacherButton);
+            this.studentsOfTeacherPanel.Controls.Add(this.studentsOfTeacherListView);
+            this.studentsOfTeacherPanel.Location = new System.Drawing.Point(196, 24);
+            this.studentsOfTeacherPanel.Name = "studentsOfTeacherPanel";
+            this.studentsOfTeacherPanel.Size = new System.Drawing.Size(669, 480);
+            this.studentsOfTeacherPanel.TabIndex = 14;
+            studentsOfTeacherPanel.Hide();
+            // 
+            // chooseStudentsOfTeacherButton
+            // 
+            this.chooseStudentsOfTeacherButton.Location = new System.Drawing.Point(262, 376);
+            this.chooseStudentsOfTeacherButton.Name = "chooseStudentsOfTeacherButton";
+            this.chooseStudentsOfTeacherButton.Size = new System.Drawing.Size(144, 62);
+            this.chooseStudentsOfTeacherButton.TabIndex = 1;
+            this.chooseStudentsOfTeacherButton.Text = "Choose";
+            this.chooseStudentsOfTeacherButton.UseVisualStyleBackColor = true;
+            this.chooseStudentsOfTeacherButton.Click += new System.EventHandler(this.chooseStudentsOfTeacherButton_Click);
+            // 
+            // studentsOfTeacherListView
+            // 
+            this.studentsOfTeacherListView.Location = new System.Drawing.Point(71, 51);
+            this.studentsOfTeacherListView.Name = "studentsOfTeacherListView";
+            this.studentsOfTeacherListView.Size = new System.Drawing.Size(523, 297);
+            this.studentsOfTeacherListView.TabIndex = 0;
+            this.studentsOfTeacherListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // teachersPanel
+            // 
+            this.teachersPanel.Controls.Add(this.addTeacherButton);
+            this.teachersPanel.Controls.Add(this.teachersListView);
+            this.teachersPanel.Controls.Add(this.addStudentToTeacherButton);
+            this.teachersPanel.Controls.Add(this.teacherSalaryTextBox);
+            this.teachersPanel.Controls.Add(this.teacherAgeTextBox);
+            this.teachersPanel.Controls.Add(this.teacherNameTextBox);
+            this.teachersPanel.Controls.Add(this.label16);
+            this.teachersPanel.Controls.Add(this.label15);
+            this.teachersPanel.Controls.Add(this.label14);
+            this.teachersPanel.Location = new System.Drawing.Point(201, 32);
+            this.teachersPanel.Name = "teachersPanel";
+            this.teachersPanel.Size = new System.Drawing.Size(666, 470);
+            this.teachersPanel.TabIndex = 13;
+            // 
+            // addTeacherButton
+            // 
+            this.addTeacherButton.Location = new System.Drawing.Point(63, 240);
+            this.addTeacherButton.Name = "addTeacherButton";
+            this.addTeacherButton.Size = new System.Drawing.Size(120, 58);
+            this.addTeacherButton.TabIndex = 16;
+            this.addTeacherButton.Text = "Add teacher";
+            this.addTeacherButton.UseVisualStyleBackColor = true;
+            this.addTeacherButton.Click += new System.EventHandler(this.addTeacherButton_Click);
+            // 
+            // teachersListView
+            // 
+            this.teachersListView.Location = new System.Drawing.Point(63, 309);
+            this.teachersListView.Name = "teachersListView";
+            this.teachersListView.Size = new System.Drawing.Size(289, 133);
+            this.teachersListView.TabIndex = 15;
+            this.teachersListView.UseCompatibleStateImageBehavior = false;
+            this.teachersListView.View = System.Windows.Forms.View.Details;
+            // 
+            // addStudentToTeacherButton
+            // 
+            this.addStudentToTeacherButton.Location = new System.Drawing.Point(63, 183);
+            this.addStudentToTeacherButton.Name = "addStudentToTeacherButton";
+            this.addStudentToTeacherButton.Size = new System.Drawing.Size(110, 39);
+            this.addStudentToTeacherButton.TabIndex = 14;
+            this.addStudentToTeacherButton.Text = "Add students";
+            this.addStudentToTeacherButton.UseVisualStyleBackColor = true;
+            this.addStudentToTeacherButton.Click += new System.EventHandler(this.addStudentToTeacherButton_Click);
+            // 
+            // teacherSalaryTextBox
+            // 
+            this.teacherSalaryTextBox.Location = new System.Drawing.Point(151, 136);
+            this.teacherSalaryTextBox.Name = "teacherSalaryTextBox";
+            this.teacherSalaryTextBox.Size = new System.Drawing.Size(137, 27);
+            this.teacherSalaryTextBox.TabIndex = 5;
+            // 
+            // teacherAgeTextBox
+            // 
+            this.teacherAgeTextBox.Location = new System.Drawing.Point(130, 95);
+            this.teacherAgeTextBox.Name = "teacherAgeTextBox";
+            this.teacherAgeTextBox.Size = new System.Drawing.Size(59, 27);
+            this.teacherAgeTextBox.TabIndex = 4;
+            // 
+            // teacherNameTextBox
+            // 
+            this.teacherNameTextBox.Location = new System.Drawing.Point(152, 51);
+            this.teacherNameTextBox.Name = "teacherNameTextBox";
+            this.teacherNameTextBox.Size = new System.Drawing.Size(253, 27);
+            this.teacherNameTextBox.TabIndex = 3;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(63, 131);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(82, 32);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Salary:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(63, 89);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 32);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Age:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(63, 45);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 32);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Name:";
             // 
             // warningPanel
             // 
@@ -532,6 +673,7 @@ namespace LabTwo
             this.teachersButton.TabIndex = 4;
             this.teachersButton.Text = "Teachers";
             this.teachersButton.UseVisualStyleBackColor = true;
+            this.teachersButton.Click += new System.EventHandler(this.teachersButton_Click);
             // 
             // studentsButton
             // 
@@ -614,6 +756,9 @@ namespace LabTwo
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.addUniversityPanel.ResumeLayout(false);
+            this.studentsOfTeacherPanel.ResumeLayout(false);
+            this.teachersPanel.ResumeLayout(false);
+            this.teachersPanel.PerformLayout();
             this.warningPanel.ResumeLayout(false);
             this.warningPanel.PerformLayout();
             this.mainInfoPanel.ResumeLayout(false);
@@ -682,5 +827,18 @@ namespace LabTwo
         public Label label11;
         public Label label10;
         public ListView studentsListView;
+        public Panel teachersPanel;
+        public ListView teachersListView;
+        public Button addStudentToTeacherButton;
+        public TextBox teacherSalaryTextBox;
+        public TextBox teacherAgeTextBox;
+        public TextBox teacherNameTextBox;
+        public Label label16;
+        public Label label15;
+        public Label label14;
+        public Panel studentsOfTeacherPanel;
+        public Button chooseStudentsOfTeacherButton;
+        public ListView studentsOfTeacherListView;
+        public Button addTeacherButton;
     }
 }

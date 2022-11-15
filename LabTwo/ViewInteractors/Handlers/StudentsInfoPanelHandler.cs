@@ -1,4 +1,5 @@
 ﻿using LabTwo.Converters.StudentConverters;
+using LabTwo.Models.Students;
 using LabTwo.Validators.StudentValidators;
 using LabTwo.View;
 using LabTwo.ViewInteractors.FormStorages;
@@ -25,6 +26,10 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.studentsListView.Columns.Add("Year in university");
         }
 
+        public List<Student> GetStudents()
+        {
+            return itsStudentsInfoPanelFormStorage.Students;
+        }
         public void ShowPanel()
         {
             itsMainWindow.studentsPanel.Show();
