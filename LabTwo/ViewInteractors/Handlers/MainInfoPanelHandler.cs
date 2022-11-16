@@ -8,6 +8,7 @@ namespace LabTwo.ViewInteractors.Handlers
     {
         private Form1 itsMainWindow;
         private MainInfoPanelFormStorage itsMainInfoPanelFormStorage;
+        public MainInfoPanelFormStorage MainInfoPanelFormStorage { get { return itsMainInfoPanelFormStorage; } }
 
         public MainInfoPanelHandler(Form1 mainWindow)
         {

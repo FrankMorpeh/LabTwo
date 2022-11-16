@@ -41,11 +41,14 @@ namespace LabTwo.Models.Auditoriums
         private string EngineersToString()
         {
             string engineers = string.Empty;
-            for (int i = 0; i < itsEngineers.Count; i++)
+            if (itsEngineers.Count > 0)
             {
-                engineers += itsEngineers[i].Name;
-                if (i + 1 < itsEngineers.Count)
-                    engineers += ", ";
+                for (int i = 0; i < itsEngineers.Count; i++)
+                {
+                    engineers += itsEngineers[i].Name;
+                    if (i + 1 < itsEngineers.Count)
+                        engineers += ", ";
+                }
             }
             return engineers;
         }

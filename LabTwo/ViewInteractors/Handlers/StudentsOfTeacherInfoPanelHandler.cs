@@ -1,5 +1,8 @@
-﻿using LabTwo.Models.Students;
+﻿using LabTwo.Converters.StudentConverters;
+using LabTwo.Models.Students;
+using LabTwo.Validators.StudentValidators;
 using LabTwo.View;
+using LabTwo.Warnings;
 
 namespace LabTwo.ViewInteractors.Handlers
 {
@@ -12,6 +15,14 @@ namespace LabTwo.ViewInteractors.Handlers
         {
             itsMainWindow = mainWindow;
             itsStudentsForTeacherChosenEvent += teacherInfoPanelHandler.OnAddStudents;
+            AddColumnsToListView();
+        }
+        private void AddColumnsToListView()
+        {
+            itsMainWindow.studentsOfTeacherListView.Columns.Add("Name");
+            itsMainWindow.studentsOfTeacherListView.Columns.Add("Age");
+            itsMainWindow.studentsOfTeacherListView.Columns.Add("Record book");
+            itsMainWindow.studentsOfTeacherListView.Columns.Add("Year in university");
         }
 
         public void ShowPanel()
@@ -24,9 +35,15 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.studentsOfTeacherPanel.Hide();
         }
 
-        public void ChooseStudentsForTeacher(List<Student> students)
+        public void ChooseStudentsForTeacher()
         {
-            itsStudentsForTeacherChosenEvent(students);
+            List<Student> studentsOfTeacher = StudentConverter.ToStudentList(itsMainWindow.studentsInfoPanelHandler.GetStudents()
+                , itsMainWindow.studentsOfTeacherListView.SelectedIndices);
+            List<IWarning> warnings = StudentValidator.CheckStudentsOfTeacher(studentsOfTeacher);
+            if (warnings.Count == 0)
+                itsStudentsForTeacherChosenEvent(studentsOfTeacher);
+            else
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, warnings);
         }
     }
 }

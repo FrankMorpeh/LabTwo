@@ -1,4 +1,5 @@
-﻿using LabTwo.Warnings;
+﻿using LabTwo.Models.Students;
+using LabTwo.Warnings;
 
 namespace LabTwo.Validators.StudentValidators
 {
@@ -30,6 +31,13 @@ namespace LabTwo.Validators.StudentValidators
             int yearInUniversity = Convert.ToInt32(strYearInUniversity);
             if (yearInUniversity < 1 || yearInUniversity > 6)
                 isValid = false;
+        }
+        public static List<IWarning> CheckStudentsOfTeacher(List<Student> students)
+        {
+            if (students.Count <= 10)
+                return new List<IWarning>();
+            else
+                return new List<IWarning>() { new IncorrectStudentsForTeacher() };
         }
     }
 }

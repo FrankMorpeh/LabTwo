@@ -1,4 +1,5 @@
 ﻿using LabTwo.Converters.WorkerConverters;
+using LabTwo.Models.Workers.Engineers;
 using LabTwo.Validators.EngineerValidators;
 using LabTwo.View;
 using LabTwo.ViewInteractors.FormStorages;
@@ -10,6 +11,8 @@ namespace LabTwo.ViewInteractors.Handlers
     {
         private Form1 itsMainWindow;
         private EngineerInfoPanelFormStorage itsEngineerInfoPanelFormStorage;
+
+        public EngineerInfoPanelFormStorage EngineerInfoPanelFormStorage { get { return itsEngineerInfoPanelFormStorage; } }
 
         public EngineerInfoPanelHandler(Form1 mainWindow)
         {
@@ -32,6 +35,10 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.engineerClassComboBox.Items.Add("Third");
         }
 
+        public List<Engineer> GetEngineers()
+        {
+            return itsEngineerInfoPanelFormStorage.Engineers;
+        }
         public void ShowPanel()
         {
             itsMainWindow.engineerPanel.Show();

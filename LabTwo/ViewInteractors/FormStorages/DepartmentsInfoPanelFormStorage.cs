@@ -4,6 +4,6 @@ namespace LabTwo.ViewInteractors.FormStorages
 {
     public class DepartmentsInfoPanelFormStorage
     {
-        public List<Department> Departments { get; set; }
+        public List<Department> Departments { get; set; } = new();
     }
 }

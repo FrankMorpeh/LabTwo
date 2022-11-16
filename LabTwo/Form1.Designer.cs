@@ -30,7 +30,22 @@ namespace LabTwo
         private void InitializeComponent()
         {
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.warningPanel = new System.Windows.Forms.Panel();
+            this.warningTextBox = new System.Windows.Forms.TextBox();
+            this.okWarningButton = new System.Windows.Forms.Button();
             this.addUniversityPanel = new System.Windows.Forms.Panel();
+            this.mainInfoPanel = new System.Windows.Forms.Panel();
+            this.saveMainInfoButton = new System.Windows.Forms.Button();
+            this.rankTextBox = new System.Windows.Forms.TextBox();
+            this.foundationYearTextBox = new System.Windows.Forms.TextBox();
+            this.universityNameTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.mainInfoButton = new System.Windows.Forms.Button();
+            this.engineersOfAuditoriumPanel = new System.Windows.Forms.Panel();
+            this.chooseEngineersOfAuditoriumButton = new System.Windows.Forms.Button();
+            this.engineersOfAuditoriumListView = new System.Windows.Forms.ListView();
             this.auditoriumPanel = new System.Windows.Forms.Panel();
             this.auditoriumsListView = new System.Windows.Forms.ListView();
             this.auditoriumCreateButton = new System.Windows.Forms.Button();
@@ -68,17 +83,6 @@ namespace LabTwo
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.warningPanel = new System.Windows.Forms.Panel();
-            this.warningTextBox = new System.Windows.Forms.TextBox();
-            this.okWarningButton = new System.Windows.Forms.Button();
-            this.mainInfoPanel = new System.Windows.Forms.Panel();
-            this.saveMainInfoButton = new System.Windows.Forms.Button();
-            this.rankTextBox = new System.Windows.Forms.TextBox();
-            this.foundationYearTextBox = new System.Windows.Forms.TextBox();
-            this.universityNameTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.departmentsPanel = new System.Windows.Forms.Panel();
             this.departmentsListView = new System.Windows.Forms.ListView();
             this.addDepartmentButton = new System.Windows.Forms.Button();
@@ -113,19 +117,19 @@ namespace LabTwo
             this.teachersButton = new System.Windows.Forms.Button();
             this.studentsButton = new System.Windows.Forms.Button();
             this.departmentsButton = new System.Windows.Forms.Button();
-            this.mainInfoButton = new System.Windows.Forms.Button();
             this.universityComboBox = new System.Windows.Forms.ComboBox();
             this.openUniversityButton = new System.Windows.Forms.Button();
             this.addUniversityButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
+            this.warningPanel.SuspendLayout();
             this.addUniversityPanel.SuspendLayout();
+            this.mainInfoPanel.SuspendLayout();
+            this.engineersOfAuditoriumPanel.SuspendLayout();
             this.auditoriumPanel.SuspendLayout();
             this.engineerPanel.SuspendLayout();
             this.studentsOfTeacherPanel.SuspendLayout();
             this.teachersPanel.SuspendLayout();
-            this.warningPanel.SuspendLayout();
-            this.mainInfoPanel.SuspendLayout();
             this.departmentsPanel.SuspendLayout();
             this.subjectsPanel.SuspendLayout();
             this.studentsPanel.SuspendLayout();
@@ -134,6 +138,7 @@ namespace LabTwo
             // mainPanel
             // 
             this.mainPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mainPanel.Controls.Add(this.warningPanel);
             this.mainPanel.Controls.Add(this.addUniversityPanel);
             this.mainPanel.Controls.Add(this.universityComboBox);
             this.mainPanel.Controls.Add(this.openUniversityButton);
@@ -144,28 +149,177 @@ namespace LabTwo
             this.mainPanel.Size = new System.Drawing.Size(890, 536);
             this.mainPanel.TabIndex = 0;
             // 
+            // warningPanel
+            // 
+            this.warningPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.warningPanel.Controls.Add(this.warningTextBox);
+            this.warningPanel.Controls.Add(this.okWarningButton);
+            this.warningPanel.Location = new System.Drawing.Point(303, 159);
+            this.warningPanel.Name = "warningPanel";
+            this.warningPanel.Size = new System.Drawing.Size(309, 240);
+            this.warningPanel.TabIndex = 0;
+            warningPanel.Hide();
+            // 
+            // warningTextBox
+            // 
+            this.warningTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.warningTextBox.Location = new System.Drawing.Point(41, 25);
+            this.warningTextBox.Multiline = true;
+            this.warningTextBox.Name = "warningTextBox";
+            this.warningTextBox.ReadOnly = true;
+            this.warningTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.warningTextBox.Size = new System.Drawing.Size(219, 150);
+            this.warningTextBox.TabIndex = 1;
+            // 
+            // okWarningButton
+            // 
+            this.okWarningButton.Location = new System.Drawing.Point(126, 187);
+            this.okWarningButton.Name = "okWarningButton";
+            this.okWarningButton.Size = new System.Drawing.Size(54, 31);
+            this.okWarningButton.TabIndex = 0;
+            this.okWarningButton.Text = "OK";
+            this.okWarningButton.UseVisualStyleBackColor = true;
+            this.okWarningButton.Click += new System.EventHandler(this.okWarningButton_Click);
+            // 
             // addUniversityPanel
             // 
+            addUniversityPanel.Hide();
+            this.addUniversityPanel.Controls.Add(this.mainInfoButton);
+            this.addUniversityPanel.Controls.Add(this.departmentsButton);
+            this.addUniversityPanel.Controls.Add(this.studentsButton);
+            this.addUniversityPanel.Controls.Add(this.teachersButton);
+            this.addUniversityPanel.Controls.Add(this.engineersButton);
+            this.addUniversityPanel.Controls.Add(this.auditoriumsButton);
+            this.addUniversityPanel.Controls.Add(this.createUniversityButton);
+
+            this.addUniversityPanel.Controls.Add(this.mainInfoPanel);
+            this.addUniversityPanel.Controls.Add(this.departmentsPanel);
+            this.addUniversityPanel.Controls.Add(this.engineersOfAuditoriumPanel);
             this.addUniversityPanel.Controls.Add(this.auditoriumPanel);
             this.addUniversityPanel.Controls.Add(this.engineerPanel);
             this.addUniversityPanel.Controls.Add(this.studentsOfTeacherPanel);
             this.addUniversityPanel.Controls.Add(this.teachersPanel);
-            this.addUniversityPanel.Controls.Add(this.warningPanel);
-            this.addUniversityPanel.Controls.Add(this.mainInfoPanel);
-            this.addUniversityPanel.Controls.Add(this.departmentsPanel);
             this.addUniversityPanel.Controls.Add(this.subjectsPanel);
             this.addUniversityPanel.Controls.Add(this.studentsPanel);
-            this.addUniversityPanel.Controls.Add(this.createUniversityButton);
-            this.addUniversityPanel.Controls.Add(this.auditoriumsButton);
-            this.addUniversityPanel.Controls.Add(this.engineersButton);
-            this.addUniversityPanel.Controls.Add(this.teachersButton);
-            this.addUniversityPanel.Controls.Add(this.studentsButton);
-            this.addUniversityPanel.Controls.Add(this.departmentsButton);
-            this.addUniversityPanel.Controls.Add(this.mainInfoButton);
+
+
             this.addUniversityPanel.Location = new System.Drawing.Point(6, 3);
             this.addUniversityPanel.Name = "addUniversityPanel";
             this.addUniversityPanel.Size = new System.Drawing.Size(881, 533);
             this.addUniversityPanel.TabIndex = 5;
+            // 
+            // mainInfoPanel
+            // 
+            this.mainInfoPanel.Controls.Add(this.saveMainInfoButton);
+            this.mainInfoPanel.Controls.Add(this.rankTextBox);
+            this.mainInfoPanel.Controls.Add(this.foundationYearTextBox);
+            this.mainInfoPanel.Controls.Add(this.universityNameTextBox);
+            this.mainInfoPanel.Controls.Add(this.label4);
+            this.mainInfoPanel.Controls.Add(this.label3);
+            this.mainInfoPanel.Controls.Add(this.label2);
+            this.mainInfoPanel.Location = new System.Drawing.Point(185, 18);
+            this.mainInfoPanel.Name = "mainInfoPanel";
+            this.mainInfoPanel.Size = new System.Drawing.Size(686, 503);
+            this.mainInfoPanel.TabIndex = 8;
+            // 
+            // saveMainInfoButton
+            // 
+            this.saveMainInfoButton.Location = new System.Drawing.Point(40, 243);
+            this.saveMainInfoButton.Name = "saveMainInfoButton";
+            this.saveMainInfoButton.Size = new System.Drawing.Size(125, 55);
+            this.saveMainInfoButton.TabIndex = 9;
+            this.saveMainInfoButton.Text = "Save changes";
+            this.saveMainInfoButton.UseVisualStyleBackColor = true;
+            this.saveMainInfoButton.Click += new System.EventHandler(this.saveMainInfoButton_Click);
+            // 
+            // rankTextBox
+            // 
+            this.rankTextBox.Location = new System.Drawing.Point(117, 166);
+            this.rankTextBox.Name = "rankTextBox";
+            this.rankTextBox.Size = new System.Drawing.Size(188, 27);
+            this.rankTextBox.TabIndex = 5;
+            // 
+            // foundationYearTextBox
+            // 
+            this.foundationYearTextBox.Location = new System.Drawing.Point(242, 109);
+            this.foundationYearTextBox.Name = "foundationYearTextBox";
+            this.foundationYearTextBox.Size = new System.Drawing.Size(188, 27);
+            this.foundationYearTextBox.TabIndex = 4;
+            // 
+            // universityNameTextBox
+            // 
+            this.universityNameTextBox.Location = new System.Drawing.Point(242, 48);
+            this.universityNameTextBox.Name = "universityNameTextBox";
+            this.universityNameTextBox.Size = new System.Drawing.Size(188, 27);
+            this.universityNameTextBox.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(40, 161);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 32);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Rank:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(40, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(179, 32);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Founation year:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(40, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(191, 32);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "University name:";
+            // 
+            // mainInfoButton
+            // 
+            this.mainInfoButton.Location = new System.Drawing.Point(25, 18);
+            this.mainInfoButton.Name = "mainInfoButton";
+            this.mainInfoButton.Size = new System.Drawing.Size(125, 55);
+            this.mainInfoButton.TabIndex = 1;
+            this.mainInfoButton.Text = "Main";
+            this.mainInfoButton.UseVisualStyleBackColor = true;
+            this.mainInfoButton.Click += new System.EventHandler(this.mainInfoButton_Click);
+            // 
+            // engineersOfAuditoriumPanel
+            // 
+            this.engineersOfAuditoriumPanel.Controls.Add(this.chooseEngineersOfAuditoriumButton);
+            this.engineersOfAuditoriumPanel.Controls.Add(this.engineersOfAuditoriumListView);
+            this.engineersOfAuditoriumPanel.Location = new System.Drawing.Point(188, 29);
+            this.engineersOfAuditoriumPanel.Name = "engineersOfAuditoriumPanel";
+            this.engineersOfAuditoriumPanel.Size = new System.Drawing.Size(668, 476);
+            this.engineersOfAuditoriumPanel.TabIndex = 17;
+            // 
+            // chooseEngineersOfAuditoriumButton
+            // 
+            this.chooseEngineersOfAuditoriumButton.Location = new System.Drawing.Point(271, 402);
+            this.chooseEngineersOfAuditoriumButton.Name = "chooseEngineersOfAuditoriumButton";
+            this.chooseEngineersOfAuditoriumButton.Size = new System.Drawing.Size(128, 56);
+            this.chooseEngineersOfAuditoriumButton.TabIndex = 1;
+            this.chooseEngineersOfAuditoriumButton.Text = "Choose";
+            this.chooseEngineersOfAuditoriumButton.UseVisualStyleBackColor = true;
+            this.chooseEngineersOfAuditoriumButton.Click += new System.EventHandler(this.chooseEngineersOfAuditoriumButton_Click);
+            // 
+            // engineersOfAuditoriumListView
+            // 
+            this.engineersOfAuditoriumListView.Location = new System.Drawing.Point(73, 32);
+            this.engineersOfAuditoriumListView.Name = "engineersOfAuditoriumListView";
+            this.engineersOfAuditoriumListView.Size = new System.Drawing.Size(527, 349);
+            this.engineersOfAuditoriumListView.TabIndex = 0;
+            this.engineersOfAuditoriumListView.UseCompatibleStateImageBehavior = false;
+            this.engineersOfAuditoriumListView.View = System.Windows.Forms.View.Details;
             // 
             // auditoriumPanel
             // 
@@ -193,6 +347,7 @@ namespace LabTwo
             this.auditoriumsListView.Size = new System.Drawing.Size(326, 90);
             this.auditoriumsListView.TabIndex = 18;
             this.auditoriumsListView.UseCompatibleStateImageBehavior = false;
+            this.auditoriumsListView.View = System.Windows.Forms.View.Details;
             // 
             // auditoriumCreateButton
             // 
@@ -202,6 +357,7 @@ namespace LabTwo
             this.auditoriumCreateButton.TabIndex = 17;
             this.auditoriumCreateButton.Text = "Create auditorium";
             this.auditoriumCreateButton.UseVisualStyleBackColor = true;
+            this.auditoriumCreateButton.Click += new System.EventHandler(this.auditoriumCreateButton_Click);
             // 
             // auditoriumAddEngineersButton
             // 
@@ -211,6 +367,7 @@ namespace LabTwo
             this.auditoriumAddEngineersButton.TabIndex = 9;
             this.auditoriumAddEngineersButton.Text = "Add engineers";
             this.auditoriumAddEngineersButton.UseVisualStyleBackColor = true;
+            this.auditoriumAddEngineersButton.Click += new System.EventHandler(this.auditoriumAddEngineersButton_Click);
             // 
             // auditoriumTypeComboBox
             // 
@@ -423,6 +580,7 @@ namespace LabTwo
             this.studentsOfTeacherListView.Size = new System.Drawing.Size(523, 297);
             this.studentsOfTeacherListView.TabIndex = 0;
             this.studentsOfTeacherListView.UseCompatibleStateImageBehavior = false;
+            this.studentsOfTeacherListView.View = System.Windows.Forms.View.Details;
             // 
             // teachersPanel
             // 
@@ -519,112 +677,6 @@ namespace LabTwo
             this.label14.Size = new System.Drawing.Size(83, 32);
             this.label14.TabIndex = 0;
             this.label14.Text = "Name:";
-            // 
-            // warningPanel
-            // 
-            this.warningPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.warningPanel.Controls.Add(this.warningTextBox);
-            this.warningPanel.Controls.Add(this.okWarningButton);
-            this.warningPanel.Location = new System.Drawing.Point(303, 159);
-            this.warningPanel.Name = "warningPanel";
-            this.warningPanel.Size = new System.Drawing.Size(309, 240);
-            this.warningPanel.TabIndex = 0;
-            // 
-            // warningTextBox
-            // 
-            this.warningTextBox.BackColor = System.Drawing.SystemColors.Control;
-            this.warningTextBox.Location = new System.Drawing.Point(41, 25);
-            this.warningTextBox.Multiline = true;
-            this.warningTextBox.Name = "warningTextBox";
-            this.warningTextBox.ReadOnly = true;
-            this.warningTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.warningTextBox.Size = new System.Drawing.Size(219, 150);
-            this.warningTextBox.TabIndex = 1;
-            // 
-            // okWarningButton
-            // 
-            this.okWarningButton.Location = new System.Drawing.Point(126, 187);
-            this.okWarningButton.Name = "okWarningButton";
-            this.okWarningButton.Size = new System.Drawing.Size(54, 31);
-            this.okWarningButton.TabIndex = 0;
-            this.okWarningButton.Text = "OK";
-            this.okWarningButton.UseVisualStyleBackColor = true;
-            this.okWarningButton.Click += new System.EventHandler(this.okWarningButton_Click);
-            // 
-            // mainInfoPanel
-            // 
-            this.mainInfoPanel.Controls.Add(this.saveMainInfoButton);
-            this.mainInfoPanel.Controls.Add(this.rankTextBox);
-            this.mainInfoPanel.Controls.Add(this.foundationYearTextBox);
-            this.mainInfoPanel.Controls.Add(this.universityNameTextBox);
-            this.mainInfoPanel.Controls.Add(this.label4);
-            this.mainInfoPanel.Controls.Add(this.label3);
-            this.mainInfoPanel.Controls.Add(this.label2);
-            this.mainInfoPanel.Location = new System.Drawing.Point(185, 18);
-            this.mainInfoPanel.Name = "mainInfoPanel";
-            this.mainInfoPanel.Size = new System.Drawing.Size(686, 503);
-            this.mainInfoPanel.TabIndex = 8;
-            // 
-            // saveMainInfoButton
-            // 
-            this.saveMainInfoButton.Location = new System.Drawing.Point(40, 243);
-            this.saveMainInfoButton.Name = "saveMainInfoButton";
-            this.saveMainInfoButton.Size = new System.Drawing.Size(125, 55);
-            this.saveMainInfoButton.TabIndex = 9;
-            this.saveMainInfoButton.Text = "Save changes";
-            this.saveMainInfoButton.UseVisualStyleBackColor = true;
-            this.saveMainInfoButton.Click += new System.EventHandler(this.saveMainInfoButton_Click);
-            // 
-            // rankTextBox
-            // 
-            this.rankTextBox.Location = new System.Drawing.Point(117, 166);
-            this.rankTextBox.Name = "rankTextBox";
-            this.rankTextBox.Size = new System.Drawing.Size(188, 27);
-            this.rankTextBox.TabIndex = 5;
-            // 
-            // foundationYearTextBox
-            // 
-            this.foundationYearTextBox.Location = new System.Drawing.Point(242, 109);
-            this.foundationYearTextBox.Name = "foundationYearTextBox";
-            this.foundationYearTextBox.Size = new System.Drawing.Size(188, 27);
-            this.foundationYearTextBox.TabIndex = 4;
-            // 
-            // universityNameTextBox
-            // 
-            this.universityNameTextBox.Location = new System.Drawing.Point(242, 48);
-            this.universityNameTextBox.Name = "universityNameTextBox";
-            this.universityNameTextBox.Size = new System.Drawing.Size(188, 27);
-            this.universityNameTextBox.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(40, 161);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 32);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Rank:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(40, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 32);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Founation year:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(40, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 32);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "University name:";
             // 
             // departmentsPanel
             // 
@@ -903,6 +955,7 @@ namespace LabTwo
             this.createUniversityButton.TabIndex = 7;
             this.createUniversityButton.Text = "Create";
             this.createUniversityButton.UseVisualStyleBackColor = true;
+            this.createUniversityButton.Click += new System.EventHandler(this.createUniversityButton_Click);
             // 
             // auditoriumsButton
             // 
@@ -912,6 +965,7 @@ namespace LabTwo
             this.auditoriumsButton.TabIndex = 6;
             this.auditoriumsButton.Text = "Auditoriums";
             this.auditoriumsButton.UseVisualStyleBackColor = true;
+            this.auditoriumsButton.Click += new System.EventHandler(this.auditoriumsButton_Click);
             // 
             // engineersButton
             // 
@@ -952,16 +1006,6 @@ namespace LabTwo
             this.departmentsButton.Text = "Departments";
             this.departmentsButton.UseVisualStyleBackColor = true;
             this.departmentsButton.Click += new System.EventHandler(this.departmentsButton_Click);
-            // 
-            // mainInfoButton
-            // 
-            this.mainInfoButton.Location = new System.Drawing.Point(25, 18);
-            this.mainInfoButton.Name = "mainInfoButton";
-            this.mainInfoButton.Size = new System.Drawing.Size(125, 55);
-            this.mainInfoButton.TabIndex = 1;
-            this.mainInfoButton.Text = "Main";
-            this.mainInfoButton.UseVisualStyleBackColor = true;
-            this.mainInfoButton.Click += new System.EventHandler(this.mainInfoButton_Click);
             // 
             // universityComboBox
             // 
@@ -1013,7 +1057,12 @@ namespace LabTwo
             this.Text = "Form1";
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
+            this.warningPanel.ResumeLayout(false);
+            this.warningPanel.PerformLayout();
             this.addUniversityPanel.ResumeLayout(false);
+            this.mainInfoPanel.ResumeLayout(false);
+            this.mainInfoPanel.PerformLayout();
+            this.engineersOfAuditoriumPanel.ResumeLayout(false);
             this.auditoriumPanel.ResumeLayout(false);
             this.auditoriumPanel.PerformLayout();
             this.engineerPanel.ResumeLayout(false);
@@ -1021,10 +1070,6 @@ namespace LabTwo
             this.studentsOfTeacherPanel.ResumeLayout(false);
             this.teachersPanel.ResumeLayout(false);
             this.teachersPanel.PerformLayout();
-            this.warningPanel.ResumeLayout(false);
-            this.warningPanel.PerformLayout();
-            this.mainInfoPanel.ResumeLayout(false);
-            this.mainInfoPanel.PerformLayout();
             this.departmentsPanel.ResumeLayout(false);
             this.departmentsPanel.PerformLayout();
             this.subjectsPanel.ResumeLayout(false);
@@ -1126,5 +1171,8 @@ namespace LabTwo
         public TextBox auditoriumCapacityTextBox;
         public TextBox auditoriumCodeNameTextBox;
         public TextBox auditoriumNumberOfRowsOrDevicesTextBox;
+        public Panel engineersOfAuditoriumPanel;
+        public Button chooseEngineersOfAuditoriumButton;
+        public ListView engineersOfAuditoriumListView;
     }
 }

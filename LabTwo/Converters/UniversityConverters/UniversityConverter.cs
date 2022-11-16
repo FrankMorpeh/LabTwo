@@ -11,11 +11,11 @@ namespace LabTwo.Converters.UniversityConverters
     public static class UniversityConverter
     {
         public static University ToUniversity(string name, string foundationYear, string rank, List<Department> departments, List<Teacher> teachers
-            , List<Engineer> engineers, List<Student> students, List<LectureAuditorium> lectureAuditoriums, List<LabAuditorium> labAuditoriums)
+            , List<Engineer> engineers, List<Student> students, List<Auditorium> auditoriums)
         {
             return new University(name, Convert.ToInt32(foundationYear), Convert.ToDouble(rank), departments
                 , teachers.Cast<Worker>().Concat(engineers.Cast<Worker>()).ToList(), students
-                , lectureAuditoriums.Cast<Auditorium>().Concat(labAuditoriums.Cast<Auditorium>()).ToList());
+                , auditoriums);
         }
     }
 }

@@ -43,6 +43,8 @@ namespace LabTwo.View
         }
         public static void ShowTeachersInfo(List<Teacher> teachers, ListView listView)
         {
+            listView.Items.Clear();
+
             foreach (Teacher teacher in teachers)
             {
                 listView.Items.Add(new ListViewItem(new string[] { teacher.Name, Convert.ToString(teacher.Age)

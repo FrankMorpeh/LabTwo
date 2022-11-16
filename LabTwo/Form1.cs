@@ -1,6 +1,7 @@
 using LabTwo.Controllers;
 using LabTwo.Controllers.UniversityController;
-using LabTwo.Converters.StudentConverters;
+using LabTwo.Converters.UniversityConverters;
+using LabTwo.Models.Workers;
 using LabTwo.View;
 using LabTwo.ViewInteractors.Handlers;
 using LabTwo.Warnings;
@@ -9,6 +10,7 @@ namespace LabTwo
 {
     public partial class Form1 : Form
     {
+        public MainPanelHandler mainPanelHandler;
         public MainInfoPanelHandler mainInfoPanelHandler;
         public DepartmentsInfoPanelHandler departmentsInfoPanelHandler;
         public SubjectsInfoPanelHandler subjectsInfoPanelHandler;
@@ -17,6 +19,7 @@ namespace LabTwo
         public StudentsOfTeacherInfoPanelHandler studentsOfTeacherInfoPanelHandler;
         public EngineerInfoPanelHandler engineerInfoPanelHandler;
         public AuditoriumInfoPanelHandler auditoriumInfoPanelHandler;
+        public EngineersOfAuditoriumInfoPanelHandler engineersOfAuditoriumInfoPanelHandler;
         public PanelController panelController;
         public UniversityController universityController;
         public UniversityView universityView;
@@ -32,6 +35,7 @@ namespace LabTwo
         }
         private void InitializeExtraViewComponents()
         {
+            mainPanelHandler = new MainPanelHandler(this);
             mainInfoPanelHandler = new MainInfoPanelHandler(this);
             departmentsInfoPanelHandler = new DepartmentsInfoPanelHandler(this);
             subjectsInfoPanelHandler = new SubjectsInfoPanelHandler(this);
@@ -40,12 +44,12 @@ namespace LabTwo
             studentsOfTeacherInfoPanelHandler = new StudentsOfTeacherInfoPanelHandler(this, teacherInfoPanelHandler);
             engineerInfoPanelHandler = new EngineerInfoPanelHandler(this);
             auditoriumInfoPanelHandler = new AuditoriumInfoPanelHandler(this);
+            engineersOfAuditoriumInfoPanelHandler = new EngineersOfAuditoriumInfoPanelHandler(this, auditoriumInfoPanelHandler);
             panelController = new PanelController(this);
         }
 
         private void addUniversityButton_Click(object sender, EventArgs e)
         {
-            mainInfoPanel.Hide();
             addUniversityPanel.Show();
         }
 
@@ -103,8 +107,7 @@ namespace LabTwo
 
         private void chooseStudentsOfTeacherButton_Click(object sender, EventArgs e)
         {
-            studentsOfTeacherInfoPanelHandler.ChooseStudentsForTeacher(StudentConverter.ToStudentList(studentsInfoPanelHandler.GetStudents()
-                , studentsOfTeacherListView.SelectedIndices));
+            studentsOfTeacherInfoPanelHandler.ChooseStudentsForTeacher();
             panelController.ShowPanel(teacherInfoPanelHandler);
         }
 
@@ -136,6 +139,34 @@ namespace LabTwo
         private void auditoriumTypeComboBox_Changed(object sender, EventArgs e)
         {
             auditoriumInfoPanelHandler.ChangeLabelAccordingToCurrentAuditoriumType();
+        }
+
+        private void auditoriumAddEngineersButton_Click(object sender, EventArgs e)
+        {
+            panelController.ShowPanel(engineersOfAuditoriumInfoPanelHandler);
+        }
+
+        private void chooseEngineersOfAuditoriumButton_Click(object sender, EventArgs e)
+        {
+            engineersOfAuditoriumInfoPanelHandler.ChooseEngineers();
+            auditoriumInfoPanelHandler.BlockEngineerAddingButton();
+            panelController.ShowPanel(auditoriumInfoPanelHandler);
+        }
+
+        private void auditoriumsButton_Click(object sender, EventArgs e)
+        {
+            panelController.ShowPanel(auditoriumInfoPanelHandler);
+        }
+
+        private void auditoriumCreateButton_Click(object sender, EventArgs e)
+        {
+            auditoriumInfoPanelHandler.AddAuditorium();
+        }
+
+        private void createUniversityButton_Click(object sender, EventArgs e)
+        {
+            mainPanelHandler.AddUniversity();
+            panelController.ShowPanel(mainPanelHandler);
         }
     }
 }

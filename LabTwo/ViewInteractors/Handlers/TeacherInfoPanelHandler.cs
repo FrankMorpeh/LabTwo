@@ -13,6 +13,8 @@ namespace LabTwo.ViewInteractors.Handlers
         private TeacherInfoPanelFormStorage itsTeacherInfoPanelFormStorage;
         private List<Student> itsStudentsOfTeacher;
 
+        public TeacherInfoPanelFormStorage TeacherInfoPanelFormStorage { get { return itsTeacherInfoPanelFormStorage; } }
+
         public TeacherInfoPanelHandler(Form1 mainWindow)
         {
             itsMainWindow = mainWindow;
@@ -21,9 +23,9 @@ namespace LabTwo.ViewInteractors.Handlers
         }
         private void AddColumnsToListView()
         {
-            itsMainWindow.studentsOfTeacherListView.Columns.Add("Name");
-            itsMainWindow.studentsOfTeacherListView.Columns.Add("Age");
-            itsMainWindow.studentsOfTeacherListView.Columns.Add("Salary");
+            itsMainWindow.teachersListView.Columns.Add("Name");
+            itsMainWindow.teachersListView.Columns.Add("Age");
+            itsMainWindow.teachersListView.Columns.Add("Salary");
         }
 
         public void OnAddStudents(List<Student> students) // called from StudentsOfTeacherInfoPanelHandler

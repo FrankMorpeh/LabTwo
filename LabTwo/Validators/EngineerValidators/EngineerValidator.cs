@@ -1,4 +1,5 @@
-﻿using LabTwo.Warnings;
+﻿using LabTwo.Models.Workers.Engineers;
+using LabTwo.Warnings;
 
 namespace LabTwo.Validators.EngineerValidators
 {
@@ -16,6 +17,13 @@ namespace LabTwo.Validators.EngineerValidators
             if (CommonValidator.NameIsEmpty(engineerClass))
                 warnings.Add(new IncorrectEngineerClass());
             return warnings;
+        }
+        public static List<IWarning> CheckEngineersForAuditorium(List<Engineer> engineers)
+        {
+            if (engineers.Count <= 2)
+                return new List<IWarning>();
+            else
+                return new List<IWarning>() { new IncorrectEngineersForAuditorium() };
         }
     }
 }

@@ -106,4 +106,16 @@
 
         public string Text { get; private set; }
     }
+    public class IncorrectEngineersForAuditorium : IWarning
+    {
+        public IncorrectEngineersForAuditorium() { Text = "There can be only two engineers for one auditorium"; }
+
+        public string Text { get; private set; }
+    }
+    public class IncorrectStudentsForTeacher : IWarning
+    {
+        public IncorrectStudentsForTeacher() { Text = "There can be maximum ten students for one teacher"; }
+
+        public string Text { get; private set; }
+    }
 }

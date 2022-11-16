@@ -2,8 +2,8 @@
 {
     public class MainInfoPanelFormStorage
     {
-        public string UniversityName { get; set; }
-        public string YearOfFoundation { get; set; }
-        public string Rank { get; set; }
+        public string UniversityName { get; set; } = string.Empty;
+        public string YearOfFoundation { get; set; } = string.Empty;
+        public string Rank { get; set; } = string.Empty;
     }
 }

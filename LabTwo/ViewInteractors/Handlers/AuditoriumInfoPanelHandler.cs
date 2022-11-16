@@ -13,6 +13,8 @@ namespace LabTwo.ViewInteractors.Handlers
         private AuditoriumInfoPanelFormStorage itsAuditoriumInfoPanelFormStorage;
         private List<Engineer> itsEngineersOfAuditorium;
 
+        public AuditoriumInfoPanelFormStorage AuditoriumInfoPanelFormStorage { get { return itsAuditoriumInfoPanelFormStorage; } }
+
         public AuditoriumInfoPanelHandler(Form1 mainWindow)
         {
             itsMainWindow = mainWindow;
@@ -54,6 +56,14 @@ namespace LabTwo.ViewInteractors.Handlers
                 itsMainWindow.auditoriumNumberOfDevicesLabel.Show();
             }
         }
+        public void OnAddEngineers(List<Engineer> engineers)
+        {
+            itsEngineersOfAuditorium = engineers;
+        }
+        public void BlockEngineerAddingButton()
+        {
+            itsMainWindow.auditoriumAddEngineersButton.Enabled = false;
+        }
         public void AddAuditorium()
         {
             List<IWarning> warnings = new List<IWarning>();
@@ -67,6 +77,7 @@ namespace LabTwo.ViewInteractors.Handlers
                         itsMainWindow.auditoriumCodeNameTextBox.Text, itsMainWindow.auditoriumCapacityTextBox.Text
                         , itsEngineersOfAuditorium, itsMainWindow.auditoriumNumberOfRowsOrDevicesTextBox.Text));
                     UniversityView.ShowAuditoriumsInfo(itsAuditoriumInfoPanelFormStorage.Auditoriums, itsMainWindow.auditoriumsListView);
+                    itsMainWindow.auditoriumAddEngineersButton.Enabled = false;
                 }
                 else
                     WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, warnings);
@@ -82,6 +93,7 @@ namespace LabTwo.ViewInteractors.Handlers
                         , itsMainWindow.auditoriumCapacityTextBox.Text, itsEngineersOfAuditorium
                         , itsMainWindow.auditoriumNumberOfRowsOrDevicesTextBox.Text));
                     UniversityView.ShowAuditoriumsInfo(itsAuditoriumInfoPanelFormStorage.Auditoriums, itsMainWindow.auditoriumsListView);
+                    itsMainWindow.auditoriumAddEngineersButton.Enabled = false;
                 }
                 else
                     WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, warnings);
