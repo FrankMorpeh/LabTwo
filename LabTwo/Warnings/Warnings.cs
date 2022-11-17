@@ -118,4 +118,10 @@
 
         public string Text { get; private set; }
     }
+    public class UniversityToCombineNotChosen : IWarning
+    {
+        public UniversityToCombineNotChosen() { Text = "You haven't chosen the university to combine"; }
+
+        public string Text { get; private set; }
+    }
 }
