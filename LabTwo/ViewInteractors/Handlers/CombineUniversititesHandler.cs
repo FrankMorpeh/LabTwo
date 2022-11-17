@@ -1,4 +1,5 @@
 ﻿using LabTwo.Models.University;
+using LabTwo.View;
 using LabTwo.Warnings;
 using static System.Windows.Forms.ListView;
 
@@ -24,6 +25,11 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.universitiesToCombineListView.Columns.Add("Rank");
         }
 
+        public void ShowPanel()
+        {
+            itsMainWindow.universitiesToCombineListView.Items.Clear();
+            itsMainWindow.universityView.ShowBasicInfo(itsMainWindow.universitiesToCombineListView);
+        }
         public void ChooseFirstUniversityOrCombineBothUniversities()
         {
             if (itsMainWindow.universitiesToCombineListView.SelectedIndices.Count == 0)
@@ -44,9 +50,11 @@ namespace LabTwo.ViewInteractors.Handlers
                     itsFirstUniversityChosen = false;
                     University combination = itsFirstUniversity +
                         itsMainWindow.universityController[itsMainWindow.universitiesToCombineListView.SelectedIndices[0]];
-                    itsMainWindow.universityComboBox.Items.Add(itsMainWindow.mainInfoPanelHandler.MainInfoPanelFormStorage.UniversityName);
+                    itsMainWindow.universityComboBox.Items.Add(combination.Name);
                     itsMainWindow.chooseUniversityOfCombineBothLabel.Text = "Choose first university:";
                     itsMainWindow.chooseFirstUniversityOfCombineBothButton.Text = "Choose first university:";
+                    itsMainWindow.combineUniversitiesPanel.Hide();
+                    itsMainWindow.mainPanel.Show();
                 }
             }
         }

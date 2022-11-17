@@ -184,13 +184,12 @@ namespace LabTwo
         private void combineUniversitiesButton_Click(object sender, EventArgs e)
         {
             combineUniversitiesPanel.Show();
+            combineUniversititesHandler.ShowPanel();
         }
 
         private void chooseFirstUniversityOfCombineBothButton_Click(object sender, EventArgs e)
         {
             combineUniversititesHandler.ChooseFirstUniversityOrCombineBothUniversities();
-            combineUniversitiesPanel.Hide();
-            mainPanel.Show();
         }
     }
 }

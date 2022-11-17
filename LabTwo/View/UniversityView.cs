@@ -33,6 +33,14 @@ namespace LabTwo.View
             label.Text += "Foundation year: " + itsUniversityController[index].FoundationYear + "\r\n";
             label.Text += "Rank: " + itsUniversityController[index].Rank + "\r\n";
         }
+        public void ShowBasicInfo(ListView listView)
+        {
+            foreach (University university in itsUniversityController.Universities)
+                listView.Items.Add(new ListViewItem(new string[] { university.Name, Convert.ToString(university.FoundationYear)
+                        , Convert.ToString(university.Rank) }));
+
+            listView.Refresh();
+        }
         public void ShowWorkersInfo(int index, ListView listView)
         {
             foreach (Worker worker in itsUniversityController[index].Workers)

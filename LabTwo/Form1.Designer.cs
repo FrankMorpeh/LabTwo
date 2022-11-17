@@ -175,7 +175,7 @@
             this.warningPanel.Name = "warningPanel";
             this.warningPanel.Size = new System.Drawing.Size(309, 240);
             this.warningPanel.TabIndex = 0;
-            warningPanel.Hide();
+            //warningPanel.Hide();
             // 
             // warningTextBox
             // 
