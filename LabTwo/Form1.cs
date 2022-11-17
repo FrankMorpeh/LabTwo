@@ -11,6 +11,7 @@ namespace LabTwo
     public partial class Form1 : Form
     {
         public MainPanelHandler mainPanelHandler;
+        public AddUniversityPanelHandler addUniversityPanelHandler;
         public MainInfoPanelHandler mainInfoPanelHandler;
         public DepartmentsInfoPanelHandler departmentsInfoPanelHandler;
         public SubjectsInfoPanelHandler subjectsInfoPanelHandler;
@@ -36,6 +37,7 @@ namespace LabTwo
         private void InitializeExtraViewComponents()
         {
             mainPanelHandler = new MainPanelHandler(this);
+            addUniversityPanelHandler = new AddUniversityPanelHandler(this);
             mainInfoPanelHandler = new MainInfoPanelHandler(this);
             departmentsInfoPanelHandler = new DepartmentsInfoPanelHandler(this);
             subjectsInfoPanelHandler = new SubjectsInfoPanelHandler(this);
@@ -50,6 +52,7 @@ namespace LabTwo
 
         private void addUniversityButton_Click(object sender, EventArgs e)
         {
+            //panelController.ShowPanel(addUniversityPanelHandler);
             addUniversityPanel.Show();
         }
 
@@ -166,7 +169,16 @@ namespace LabTwo
         private void createUniversityButton_Click(object sender, EventArgs e)
         {
             mainPanelHandler.AddUniversity();
-            panelController.ShowPanel(mainPanelHandler);
+            mainInfoPanel.Hide();
+            departmentsPanel.Hide();
+            studentsPanel.Hide();
+            teachersPanel.Hide();
+            studentsOfTeacherPanel.Hide();
+            engineerPanel.Hide();
+            auditoriumPanel.Hide();
+            engineersOfAuditoriumPanel.Hide();
+            addUniversityPanel.Hide();
+            mainPanel.Show();
         }
     }
 }

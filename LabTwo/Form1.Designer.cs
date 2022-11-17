@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace LabTwo
+﻿namespace LabTwo
 {
     partial class Form1
     {

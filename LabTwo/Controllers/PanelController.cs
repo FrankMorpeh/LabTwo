@@ -8,7 +8,8 @@ namespace LabTwo.Controllers
 
         public PanelController(Form1 mainWindow)
         {
-            itsPanelHandlers = new List<IPanelHandler>() { mainWindow.mainPanelHandler, mainWindow.mainInfoPanelHandler, mainWindow.departmentsInfoPanelHandler
+            itsPanelHandlers = new List<IPanelHandler>() { mainWindow.mainPanelHandler
+                , mainWindow.mainInfoPanelHandler, mainWindow.departmentsInfoPanelHandler
                 , mainWindow.subjectsInfoPanelHandler, mainWindow.studentsInfoPanelHandler, mainWindow.teacherInfoPanelHandler
                 , mainWindow.studentsOfTeacherInfoPanelHandler, mainWindow.engineerInfoPanelHandler, mainWindow.auditoriumInfoPanelHandler
                 , mainWindow.engineersOfAuditoriumInfoPanelHandler };
@@ -20,9 +21,8 @@ namespace LabTwo.Controllers
             {
                 if (handler != panelHandler)
                     handler.HidePanel();
-                else
-                    handler.ShowPanel();
             }
+            panelHandler.ShowPanel();
         }
     }
 }
