@@ -130,4 +130,10 @@
 
         public string Text { get; private set; }
     }
+    public class TeacherNotChosen : IWarning
+    {
+        public TeacherNotChosen() { Text = "You haven't chosen the teacher"; }
+
+        public string Text { get; private set; }
+    }
 }
