@@ -28,10 +28,13 @@
         private void InitializeComponent()
         {
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.combineUniversitiesButton = new System.Windows.Forms.Button();
             this.warningPanel = new System.Windows.Forms.Panel();
             this.warningTextBox = new System.Windows.Forms.TextBox();
             this.okWarningButton = new System.Windows.Forms.Button();
+            this.combineUniversitiesPanel = new System.Windows.Forms.Panel();
+            this.chooseUniversityOfCombineBothLabel = new System.Windows.Forms.Label();
+            this.chooseFirstUniversityOfCombineBothButton = new System.Windows.Forms.Button();
+            this.universitiesToCombineListView = new System.Windows.Forms.ListView();
             this.addUniversityPanel = new System.Windows.Forms.Panel();
             this.mainInfoButton = new System.Windows.Forms.Button();
             this.departmentsButton = new System.Windows.Forms.Button();
@@ -119,13 +122,32 @@
             this.universityComboBox = new System.Windows.Forms.ComboBox();
             this.openUniversityButton = new System.Windows.Forms.Button();
             this.addUniversityButton = new System.Windows.Forms.Button();
+            this.combineUniversitiesButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.combineUniversitiesPanel = new System.Windows.Forms.Panel();
-            this.chooseUniversityOfCombineBothLabel = new System.Windows.Forms.Label();
-            this.chooseFirstUniversityOfCombineBothButton = new System.Windows.Forms.Button();
-            this.universitiesToCombineListView = new System.Windows.Forms.ListView();
+            this.showUniversityPanel = new System.Windows.Forms.Panel();
+            this.showSubjectsOfDepartmentPanel = new System.Windows.Forms.Panel();
+            this.backToDepartmentsButton = new System.Windows.Forms.Button();
+            this.showSubjectsOfDepartmentListView = new System.Windows.Forms.ListView();
+            this.showInfoAboutDepartmentsPanel = new System.Windows.Forms.Panel();
+            this.showSubjectsButton = new System.Windows.Forms.Button();
+            this.showDepartmentsListView = new System.Windows.Forms.ListView();
+            this.showMainInfoAboutUniversityPanel = new System.Windows.Forms.Panel();
+            this.rankLabel = new System.Windows.Forms.Label();
+            this.foundationYearLabel = new System.Windows.Forms.Label();
+            this.universityNameLabel = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.backToMainMenuButton = new System.Windows.Forms.Button();
+            this.showAuditoriumsOfUniversityButton = new System.Windows.Forms.Button();
+            this.showEngineersOfUniveristyButton = new System.Windows.Forms.Button();
+            this.showTeachersOfUniversityButton = new System.Windows.Forms.Button();
+            this.showStudentsOfUniversityButton = new System.Windows.Forms.Button();
+            this.showDepartmentsOfUniversityButton = new System.Windows.Forms.Button();
+            this.showMainInfoAboutUniversityButton = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.warningPanel.SuspendLayout();
+            this.combineUniversitiesPanel.SuspendLayout();
             this.addUniversityPanel.SuspendLayout();
             this.mainInfoPanel.SuspendLayout();
             this.departmentsPanel.SuspendLayout();
@@ -136,14 +158,31 @@
             this.teachersPanel.SuspendLayout();
             this.subjectsPanel.SuspendLayout();
             this.studentsPanel.SuspendLayout();
-            this.combineUniversitiesPanel.SuspendLayout();
+            this.showUniversityPanel.SuspendLayout();
+            this.showSubjectsOfDepartmentPanel.SuspendLayout();
+            this.showInfoAboutDepartmentsPanel.SuspendLayout();
+            this.showMainInfoAboutUniversityPanel.SuspendLayout();
             this.SuspendLayout();
+
+            // Define the border style of the form to a dialog box.
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+
+            // Set the MaximizeBox to false to remove the maximize box.
+            this.MaximizeBox = false;
+
+            // Set the MinimizeBox to false to remove the minimize box.
+            this.MinimizeBox = false;
+
+            // Set the start position of the form to the center of the screen.
+            this.StartPosition = FormStartPosition.CenterScreen;
+
             // 
             // mainPanel
             // 
             this.mainPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mainPanel.Controls.Add(this.combineUniversitiesPanel);
             this.mainPanel.Controls.Add(this.warningPanel);
+            this.mainPanel.Controls.Add(this.showUniversityPanel);
+            this.mainPanel.Controls.Add(this.combineUniversitiesPanel);
             this.mainPanel.Controls.Add(this.addUniversityPanel);
             this.mainPanel.Controls.Add(this.universityComboBox);
             this.mainPanel.Controls.Add(this.openUniversityButton);
@@ -155,17 +194,6 @@
             this.mainPanel.Size = new System.Drawing.Size(890, 536);
             this.mainPanel.TabIndex = 0;
             // 
-            // combineUniversitiesButton
-            // 
-            this.combineUniversitiesButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.combineUniversitiesButton.Location = new System.Drawing.Point(441, 231);
-            this.combineUniversitiesButton.Name = "combineUniversitiesButton";
-            this.combineUniversitiesButton.Size = new System.Drawing.Size(206, 81);
-            this.combineUniversitiesButton.TabIndex = 7;
-            this.combineUniversitiesButton.Text = "Combine universities";
-            this.combineUniversitiesButton.UseVisualStyleBackColor = true;
-            this.combineUniversitiesButton.Click += new System.EventHandler(this.combineUniversitiesButton_Click);
-            // 
             // warningPanel
             // 
             this.warningPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -175,7 +203,7 @@
             this.warningPanel.Name = "warningPanel";
             this.warningPanel.Size = new System.Drawing.Size(309, 240);
             this.warningPanel.TabIndex = 0;
-            //warningPanel.Hide();
+            this.warningPanel.Hide();
             // 
             // warningTextBox
             // 
@@ -197,6 +225,46 @@
             this.okWarningButton.Text = "OK";
             this.okWarningButton.UseVisualStyleBackColor = true;
             this.okWarningButton.Click += new System.EventHandler(this.okWarningButton_Click);
+            // 
+            // combineUniversitiesPanel
+            // 
+            this.combineUniversitiesPanel.Controls.Add(this.chooseUniversityOfCombineBothLabel);
+            this.combineUniversitiesPanel.Controls.Add(this.chooseFirstUniversityOfCombineBothButton);
+            this.combineUniversitiesPanel.Controls.Add(this.universitiesToCombineListView);
+            this.combineUniversitiesPanel.Location = new System.Drawing.Point(3, 3);
+            this.combineUniversitiesPanel.Name = "combineUniversitiesPanel";
+            this.combineUniversitiesPanel.Size = new System.Drawing.Size(884, 530);
+            this.combineUniversitiesPanel.TabIndex = 24;
+            // 
+            // chooseUniversityOfCombineBothLabel
+            // 
+            this.chooseUniversityOfCombineBothLabel.AutoSize = true;
+            this.chooseUniversityOfCombineBothLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chooseUniversityOfCombineBothLabel.Location = new System.Drawing.Point(325, 31);
+            this.chooseUniversityOfCombineBothLabel.Name = "chooseUniversityOfCombineBothLabel";
+            this.chooseUniversityOfCombineBothLabel.Size = new System.Drawing.Size(256, 32);
+            this.chooseUniversityOfCombineBothLabel.TabIndex = 2;
+            this.chooseUniversityOfCombineBothLabel.Text = "Choose first university:";
+            // 
+            // chooseFirstUniversityOfCombineBothButton
+            // 
+            this.chooseFirstUniversityOfCombineBothButton.Location = new System.Drawing.Point(360, 401);
+            this.chooseFirstUniversityOfCombineBothButton.Name = "chooseFirstUniversityOfCombineBothButton";
+            this.chooseFirstUniversityOfCombineBothButton.Size = new System.Drawing.Size(174, 74);
+            this.chooseFirstUniversityOfCombineBothButton.TabIndex = 1;
+            this.chooseFirstUniversityOfCombineBothButton.Text = "Choose first university";
+            this.chooseFirstUniversityOfCombineBothButton.UseVisualStyleBackColor = true;
+            this.chooseFirstUniversityOfCombineBothButton.Click += new System.EventHandler(this.chooseFirstUniversityOfCombineBothButton_Click);
+            // 
+            // universitiesToCombineListView
+            // 
+            this.universitiesToCombineListView.Location = new System.Drawing.Point(199, 92);
+            this.universitiesToCombineListView.MultiSelect = false;
+            this.universitiesToCombineListView.Name = "universitiesToCombineListView";
+            this.universitiesToCombineListView.Size = new System.Drawing.Size(481, 277);
+            this.universitiesToCombineListView.TabIndex = 0;
+            this.universitiesToCombineListView.UseCompatibleStateImageBehavior = false;
+            this.universitiesToCombineListView.View = System.Windows.Forms.View.Details;
             // 
             // addUniversityPanel
             // 
@@ -220,7 +288,6 @@
             this.addUniversityPanel.Name = "addUniversityPanel";
             this.addUniversityPanel.Size = new System.Drawing.Size(881, 533);
             this.addUniversityPanel.TabIndex = 5;
-            addUniversityPanel.Hide();
             // 
             // mainInfoButton
             // 
@@ -1039,6 +1106,7 @@
             this.openUniversityButton.TabIndex = 1;
             this.openUniversityButton.Text = "Open university";
             this.openUniversityButton.UseVisualStyleBackColor = true;
+            this.openUniversityButton.Click += new System.EventHandler(this.openUniversityButton_Click);
             // 
             // addUniversityButton
             // 
@@ -1051,6 +1119,17 @@
             this.addUniversityButton.UseVisualStyleBackColor = true;
             this.addUniversityButton.Click += new System.EventHandler(this.addUniversityButton_Click);
             // 
+            // combineUniversitiesButton
+            // 
+            this.combineUniversitiesButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.combineUniversitiesButton.Location = new System.Drawing.Point(441, 231);
+            this.combineUniversitiesButton.Name = "combineUniversitiesButton";
+            this.combineUniversitiesButton.Size = new System.Drawing.Size(206, 81);
+            this.combineUniversitiesButton.TabIndex = 7;
+            this.combineUniversitiesButton.Text = "Combine universities";
+            this.combineUniversitiesButton.UseVisualStyleBackColor = true;
+            this.combineUniversitiesButton.Click += new System.EventHandler(this.combineUniversitiesButton_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1061,59 +1140,231 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "University:";
             // 
-            // combineUniversitiesPanel
+            // showUniversityPanel
             // 
-            this.combineUniversitiesPanel.Controls.Add(this.chooseUniversityOfCombineBothLabel);
-            this.combineUniversitiesPanel.Controls.Add(this.chooseFirstUniversityOfCombineBothButton);
-            this.combineUniversitiesPanel.Controls.Add(this.universitiesToCombineListView);
-            this.combineUniversitiesPanel.Location = new System.Drawing.Point(3, 3);
-            this.combineUniversitiesPanel.Name = "combineUniversitiesPanel";
-            this.combineUniversitiesPanel.Size = new System.Drawing.Size(884, 530);
-            this.combineUniversitiesPanel.TabIndex = 24;
-            combineUniversitiesPanel.Hide();
+            this.showUniversityPanel.Controls.Add(this.warningPanel);
+            this.showUniversityPanel.Controls.Add(this.showSubjectsOfDepartmentPanel);
+            this.showUniversityPanel.Controls.Add(this.showInfoAboutDepartmentsPanel);
+            this.showUniversityPanel.Controls.Add(this.showMainInfoAboutUniversityPanel);
+            this.showUniversityPanel.Controls.Add(this.backToMainMenuButton);
+            this.showUniversityPanel.Controls.Add(this.showAuditoriumsOfUniversityButton);
+            this.showUniversityPanel.Controls.Add(this.showEngineersOfUniveristyButton);
+            this.showUniversityPanel.Controls.Add(this.showTeachersOfUniversityButton);
+            this.showUniversityPanel.Controls.Add(this.showStudentsOfUniversityButton);
+            this.showUniversityPanel.Controls.Add(this.showDepartmentsOfUniversityButton);
+            this.showUniversityPanel.Controls.Add(this.showMainInfoAboutUniversityButton);
+            this.showUniversityPanel.Location = new System.Drawing.Point(5, 3);
+            this.showUniversityPanel.Name = "showUniversityPanel";
+            this.showUniversityPanel.Size = new System.Drawing.Size(885, 531);
+            this.showUniversityPanel.TabIndex = 1;
             // 
-            // chooseUniversityOfCombineBothLabel
+            // showSubjectsOfDepartmentPanel
             // 
-            this.chooseUniversityOfCombineBothLabel.AutoSize = true;
-            this.chooseUniversityOfCombineBothLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chooseUniversityOfCombineBothLabel.Location = new System.Drawing.Point(325, 31);
-            this.chooseUniversityOfCombineBothLabel.Name = "chooseUniversityOfCombineBothLabel";
-            this.chooseUniversityOfCombineBothLabel.Size = new System.Drawing.Size(256, 32);
-            this.chooseUniversityOfCombineBothLabel.TabIndex = 2;
-            this.chooseUniversityOfCombineBothLabel.Text = "Choose first university:";
+            this.showSubjectsOfDepartmentPanel.Controls.Add(this.backToDepartmentsButton);
+            this.showSubjectsOfDepartmentPanel.Controls.Add(this.showSubjectsOfDepartmentListView);
+            this.showSubjectsOfDepartmentPanel.Location = new System.Drawing.Point(200, 28);
+            this.showSubjectsOfDepartmentPanel.Name = "showSubjectsOfDepartmentPanel";
+            this.showSubjectsOfDepartmentPanel.Size = new System.Drawing.Size(653, 460);
+            this.showSubjectsOfDepartmentPanel.TabIndex = 9;
             // 
-            // chooseFirstUniversityOfCombineBothButton
+            // backToDepartmentsButton
             // 
-            this.chooseFirstUniversityOfCombineBothButton.Location = new System.Drawing.Point(360, 401);
-            this.chooseFirstUniversityOfCombineBothButton.Name = "chooseFirstUniversityOfCombineBothButton";
-            this.chooseFirstUniversityOfCombineBothButton.Size = new System.Drawing.Size(174, 74);
-            this.chooseFirstUniversityOfCombineBothButton.TabIndex = 1;
-            this.chooseFirstUniversityOfCombineBothButton.Text = "Choose first university";
-            this.chooseFirstUniversityOfCombineBothButton.UseVisualStyleBackColor = true;
-            this.chooseFirstUniversityOfCombineBothButton.Click += new System.EventHandler(this.chooseFirstUniversityOfCombineBothButton_Click);
+            this.backToDepartmentsButton.Location = new System.Drawing.Point(274, 380);
+            this.backToDepartmentsButton.Name = "backToDepartmentsButton";
+            this.backToDepartmentsButton.Size = new System.Drawing.Size(132, 61);
+            this.backToDepartmentsButton.TabIndex = 1;
+            this.backToDepartmentsButton.Text = "Back";
+            this.backToDepartmentsButton.UseVisualStyleBackColor = true;
+            this.backToDepartmentsButton.Click += new System.EventHandler(this.backToDepartmentsButton_Click);
             // 
-            // universitiesToCombineListView
+            // showSubjectsOfDepartmentListView
             // 
-            this.universitiesToCombineListView.Location = new System.Drawing.Point(199, 92);
-            this.universitiesToCombineListView.MultiSelect = false;
-            this.universitiesToCombineListView.Name = "universitiesToCombineListView";
-            this.universitiesToCombineListView.Size = new System.Drawing.Size(481, 277);
-            this.universitiesToCombineListView.TabIndex = 0;
-            this.universitiesToCombineListView.UseCompatibleStateImageBehavior = false;
-            this.universitiesToCombineListView.View = System.Windows.Forms.View.Details;
+            this.showSubjectsOfDepartmentListView.Location = new System.Drawing.Point(80, 36);
+            this.showSubjectsOfDepartmentListView.Name = "showSubjectsOfDepartmentListView";
+            this.showSubjectsOfDepartmentListView.Size = new System.Drawing.Size(503, 320);
+            this.showSubjectsOfDepartmentListView.TabIndex = 0;
+            this.showSubjectsOfDepartmentListView.UseCompatibleStateImageBehavior = false;
+            this.showSubjectsOfDepartmentListView.View = System.Windows.Forms.View.Details;
+            // 
+            // showInfoAboutDepartmentsPanel
+            // 
+            this.showInfoAboutDepartmentsPanel.Controls.Add(this.showSubjectsButton);
+            this.showInfoAboutDepartmentsPanel.Controls.Add(this.showDepartmentsListView);
+            this.showInfoAboutDepartmentsPanel.Location = new System.Drawing.Point(186, 21);
+            this.showInfoAboutDepartmentsPanel.Name = "showInfoAboutDepartmentsPanel";
+            this.showInfoAboutDepartmentsPanel.Size = new System.Drawing.Size(684, 495);
+            this.showInfoAboutDepartmentsPanel.TabIndex = 8;
+            // 
+            // showSubjectsButton
+            // 
+            this.showSubjectsButton.Location = new System.Drawing.Point(247, 402);
+            this.showSubjectsButton.Name = "showSubjectsButton";
+            this.showSubjectsButton.Size = new System.Drawing.Size(176, 65);
+            this.showSubjectsButton.TabIndex = 1;
+            this.showSubjectsButton.Text = "Show subjects";
+            this.showSubjectsButton.UseVisualStyleBackColor = true;
+            this.showSubjectsButton.Click += new System.EventHandler(this.showSubjectsButton_Click);
+            // 
+            // showDepartmentsListView
+            // 
+            this.showDepartmentsListView.Location = new System.Drawing.Point(78, 40);
+            this.showDepartmentsListView.Name = "showDepartmentsListView";
+            this.showDepartmentsListView.Size = new System.Drawing.Size(515, 339);
+            this.showDepartmentsListView.TabIndex = 0;
+            this.showDepartmentsListView.UseCompatibleStateImageBehavior = false;
+            this.showDepartmentsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // showMainInfoAboutUniversityPanel
+            // 
+            this.showMainInfoAboutUniversityPanel.Controls.Add(this.rankLabel);
+            this.showMainInfoAboutUniversityPanel.Controls.Add(this.foundationYearLabel);
+            this.showMainInfoAboutUniversityPanel.Controls.Add(this.universityNameLabel);
+            this.showMainInfoAboutUniversityPanel.Controls.Add(this.label26);
+            this.showMainInfoAboutUniversityPanel.Controls.Add(this.label25);
+            this.showMainInfoAboutUniversityPanel.Controls.Add(this.label24);
+            this.showMainInfoAboutUniversityPanel.Location = new System.Drawing.Point(192, 17);
+            this.showMainInfoAboutUniversityPanel.Name = "showMainInfoAboutUniversityPanel";
+            this.showMainInfoAboutUniversityPanel.Size = new System.Drawing.Size(677, 494);
+            this.showMainInfoAboutUniversityPanel.TabIndex = 7;
+            // 
+            // rankLabel
+            // 
+            this.rankLabel.AutoSize = true;
+            this.rankLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rankLabel.Location = new System.Drawing.Point(139, 167);
+            this.rankLabel.Name = "rankLabel";
+            this.rankLabel.Size = new System.Drawing.Size(0, 32);
+            this.rankLabel.TabIndex = 5;
+            // 
+            // foundationYearLabel
+            // 
+            this.foundationYearLabel.AutoSize = true;
+            this.foundationYearLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.foundationYearLabel.Location = new System.Drawing.Point(259, 115);
+            this.foundationYearLabel.Name = "foundationYearLabel";
+            this.foundationYearLabel.Size = new System.Drawing.Size(0, 32);
+            this.foundationYearLabel.TabIndex = 4;
+            // 
+            // universityNameLabel
+            // 
+            this.universityNameLabel.AutoSize = true;
+            this.universityNameLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.universityNameLabel.Location = new System.Drawing.Point(259, 61);
+            this.universityNameLabel.Name = "universityNameLabel";
+            this.universityNameLabel.Size = new System.Drawing.Size(0, 32);
+            this.universityNameLabel.TabIndex = 3;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label26.Location = new System.Drawing.Point(62, 167);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(71, 32);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Rank:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label25.Location = new System.Drawing.Point(62, 115);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(193, 32);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Foundation year:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label24.Location = new System.Drawing.Point(62, 61);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(191, 32);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "University name:";
+            // 
+            // backToMainMenuButton
+            // 
+            this.backToMainMenuButton.Location = new System.Drawing.Point(20, 468);
+            this.backToMainMenuButton.Name = "backToMainMenuButton";
+            this.backToMainMenuButton.Size = new System.Drawing.Size(123, 54);
+            this.backToMainMenuButton.TabIndex = 6;
+            this.backToMainMenuButton.Text = "Back to main menu";
+            this.backToMainMenuButton.UseVisualStyleBackColor = true;
+            // 
+            // showAuditoriumsOfUniversityButton
+            // 
+            this.showAuditoriumsOfUniversityButton.Location = new System.Drawing.Point(20, 359);
+            this.showAuditoriumsOfUniversityButton.Name = "showAuditoriumsOfUniversityButton";
+            this.showAuditoriumsOfUniversityButton.Size = new System.Drawing.Size(123, 54);
+            this.showAuditoriumsOfUniversityButton.TabIndex = 5;
+            this.showAuditoriumsOfUniversityButton.Text = "Auditoriums";
+            this.showAuditoriumsOfUniversityButton.UseVisualStyleBackColor = true;
+            // 
+            // showEngineersOfUniveristyButton
+            // 
+            this.showEngineersOfUniveristyButton.Location = new System.Drawing.Point(20, 289);
+            this.showEngineersOfUniveristyButton.Name = "showEngineersOfUniveristyButton";
+            this.showEngineersOfUniveristyButton.Size = new System.Drawing.Size(123, 54);
+            this.showEngineersOfUniveristyButton.TabIndex = 4;
+            this.showEngineersOfUniveristyButton.Text = "Engineers";
+            this.showEngineersOfUniveristyButton.UseVisualStyleBackColor = true;
+            // 
+            // showTeachersOfUniversityButton
+            // 
+            this.showTeachersOfUniversityButton.Location = new System.Drawing.Point(20, 218);
+            this.showTeachersOfUniversityButton.Name = "showTeachersOfUniversityButton";
+            this.showTeachersOfUniversityButton.Size = new System.Drawing.Size(123, 54);
+            this.showTeachersOfUniversityButton.TabIndex = 3;
+            this.showTeachersOfUniversityButton.Text = "Teachers";
+            this.showTeachersOfUniversityButton.UseVisualStyleBackColor = true;
+            // 
+            // showStudentsOfUniversityButton
+            // 
+            this.showStudentsOfUniversityButton.Location = new System.Drawing.Point(20, 149);
+            this.showStudentsOfUniversityButton.Name = "showStudentsOfUniversityButton";
+            this.showStudentsOfUniversityButton.Size = new System.Drawing.Size(123, 54);
+            this.showStudentsOfUniversityButton.TabIndex = 2;
+            this.showStudentsOfUniversityButton.Text = "Students";
+            this.showStudentsOfUniversityButton.UseVisualStyleBackColor = true;
+            // 
+            // showDepartmentsOfUniversityButton
+            // 
+            this.showDepartmentsOfUniversityButton.Location = new System.Drawing.Point(20, 78);
+            this.showDepartmentsOfUniversityButton.Name = "showDepartmentsOfUniversityButton";
+            this.showDepartmentsOfUniversityButton.Size = new System.Drawing.Size(123, 54);
+            this.showDepartmentsOfUniversityButton.TabIndex = 1;
+            this.showDepartmentsOfUniversityButton.Text = "Departments";
+            this.showDepartmentsOfUniversityButton.UseVisualStyleBackColor = true;
+            this.showDepartmentsOfUniversityButton.Click += new System.EventHandler(this.showDepartmentsOfUniversityPanel_Click);
+            // 
+            // showMainInfoAboutUniversityButton
+            // 
+            this.showMainInfoAboutUniversityButton.Location = new System.Drawing.Point(20, 9);
+            this.showMainInfoAboutUniversityButton.Name = "showMainInfoAboutUniversityButton";
+            this.showMainInfoAboutUniversityButton.Size = new System.Drawing.Size(123, 54);
+            this.showMainInfoAboutUniversityButton.TabIndex = 0;
+            this.showMainInfoAboutUniversityButton.Text = "Main info";
+            this.showMainInfoAboutUniversityButton.UseVisualStyleBackColor = true;
+            this.showMainInfoAboutUniversityButton.Click += new System.EventHandler(this.showMainInfoAboutUniversityButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 537);
+            this.Controls.Add(this.showUniversityPanel);
             this.Controls.Add(this.mainPanel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Shown);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.warningPanel.ResumeLayout(false);
             this.warningPanel.PerformLayout();
+            this.combineUniversitiesPanel.ResumeLayout(false);
+            this.combineUniversitiesPanel.PerformLayout();
             this.addUniversityPanel.ResumeLayout(false);
             this.mainInfoPanel.ResumeLayout(false);
             this.mainInfoPanel.PerformLayout();
@@ -1131,8 +1382,11 @@
             this.subjectsPanel.PerformLayout();
             this.studentsPanel.ResumeLayout(false);
             this.studentsPanel.PerformLayout();
-            this.combineUniversitiesPanel.ResumeLayout(false);
-            this.combineUniversitiesPanel.PerformLayout();
+            this.showUniversityPanel.ResumeLayout(false);
+            this.showSubjectsOfDepartmentPanel.ResumeLayout(false);
+            this.showInfoAboutDepartmentsPanel.ResumeLayout(false);
+            this.showMainInfoAboutUniversityPanel.ResumeLayout(false);
+            this.showMainInfoAboutUniversityPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1236,5 +1490,26 @@
         public Label chooseUniversityOfCombineBothLabel;
         public Button chooseFirstUniversityOfCombineBothButton;
         public ListView universitiesToCombineListView;
+        public Panel showUniversityPanel;
+        public Button backToMainMenuButton;
+        public Button showAuditoriumsOfUniversityButton;
+        public Button showEngineersOfUniveristyButton;
+        public Button showTeachersOfUniversityButton;
+        public Button showStudentsOfUniversityButton;
+        public Button showDepartmentsOfUniversityButton;
+        public Button showMainInfoAboutUniversityButton;
+        public Panel showMainInfoAboutUniversityPanel;
+        public Label rankLabel;
+        public Label foundationYearLabel;
+        public Label universityNameLabel;
+        public Label label26;
+        public Label label25;
+        public Label label24;
+        public Panel showInfoAboutDepartmentsPanel;
+        public Button showSubjectsButton;
+        public ListView showDepartmentsListView;
+        public Panel showSubjectsOfDepartmentPanel;
+        public Button backToDepartmentsButton;
+        public ListView showSubjectsOfDepartmentListView;
     }
 }

@@ -124,4 +124,10 @@
 
         public string Text { get; private set; }
     }
+    public class DepartmentNotChosen : IWarning
+    {
+        public DepartmentNotChosen() { Text = "You haven't chosen the department"; }
+
+        public string Text { get; private set; }
+    }
 }

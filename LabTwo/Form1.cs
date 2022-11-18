@@ -1,9 +1,11 @@
 using LabTwo.Controllers;
 using LabTwo.Controllers.UniversityController;
 using LabTwo.Converters.UniversityConverters;
+using LabTwo.Models.University;
 using LabTwo.Models.Workers;
 using LabTwo.View;
 using LabTwo.ViewInteractors.Handlers;
+using LabTwo.ViewInteractors.Handlers.ShowHandlers;
 using LabTwo.Warnings;
 
 namespace LabTwo
@@ -21,9 +23,16 @@ namespace LabTwo
         public EngineerInfoPanelHandler engineerInfoPanelHandler;
         public AuditoriumInfoPanelHandler auditoriumInfoPanelHandler;
         public EngineersOfAuditoriumInfoPanelHandler engineersOfAuditoriumInfoPanelHandler;
+
+        public MainInfoPanelViewHandler mainInfoPanelViewHandler;
+        public DepartmentsInfoPanelViewHandler departmentsInfoPanelViewHandler;
+        public SubjectsOfDepartmentInfoPanelViewHandler subjectsOfDepartmentInfoPanelViewHandler;
+
         public PanelController panelController;
+        public ShowInfoPanelController showInfoPanelController;
         public UniversityController universityController;
         public UniversityView universityView;
+        public University universityToDisplay;
         public Form1()
         {
             InitializeComponent();
@@ -47,7 +56,18 @@ namespace LabTwo
             engineerInfoPanelHandler = new EngineerInfoPanelHandler(this);
             auditoriumInfoPanelHandler = new AuditoriumInfoPanelHandler(this);
             engineersOfAuditoriumInfoPanelHandler = new EngineersOfAuditoriumInfoPanelHandler(this, auditoriumInfoPanelHandler);
+            
+            mainInfoPanelViewHandler = new MainInfoPanelViewHandler(this);
+            departmentsInfoPanelViewHandler = new DepartmentsInfoPanelViewHandler(this);
+            subjectsOfDepartmentInfoPanelViewHandler = new SubjectsOfDepartmentInfoPanelViewHandler(this);
+
             panelController = new PanelController(this);
+            showInfoPanelController = new ShowInfoPanelController(this);
+
+            universityToDisplay = new University() { Name = "KHNURE", FoundationYear = 1934, Rank = 85.2
+                , Departments = new List<Models.Departments.Department>() { new Models.Departments.Department() { Name = "KIU"
+                , DeaneryCabinetNumber = 123, Subjects = new List<Models.Subjects.Subject>() { new Models.Subjects.Subject("Biology", 3.5) } } } };
+            //panelController.ShowPanel(mainInfoPanelViewHandler);
         }
 
         private void addUniversityButton_Click(object sender, EventArgs e)
@@ -190,6 +210,40 @@ namespace LabTwo
         private void chooseFirstUniversityOfCombineBothButton_Click(object sender, EventArgs e)
         {
             combineUniversititesHandler.ChooseFirstUniversityOrCombineBothUniversities();
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            WarningDisplayer.CloseWarning(warningPanel, warningTextBox);
+            combineUniversitiesPanel.Hide();
+            addUniversityPanel.Hide();
+        }
+
+        private void openUniversityButton_Click(object sender, EventArgs e)
+        {
+            universityToDisplay = universityController[universityComboBox.SelectedIndex];
+        }
+
+        private void showMainInfoAboutUniversityButton_Click(object sender, EventArgs e)
+        {
+            showInfoPanelController.ShowPanel(mainInfoPanelViewHandler);
+        }
+
+        private void showDepartmentsOfUniversityPanel_Click(object sender, EventArgs e)
+        {
+            //showMainInfoAboutUniversityPanel.Hide();
+            //showInfoAboutDepartmentsPanel.Show();
+            showInfoPanelController.ShowPanel(departmentsInfoPanelViewHandler);
+        }
+
+        private void showSubjectsButton_Click(object sender, EventArgs e)
+        {
+            departmentsInfoPanelViewHandler.ShowSubjectsOfDepartment();
+        }
+
+        private void backToDepartmentsButton_Click(object sender, EventArgs e)
+        {
+            showInfoPanelController.ShowPanel(departmentsInfoPanelViewHandler);
         }
     }
 }
