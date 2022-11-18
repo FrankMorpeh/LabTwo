@@ -45,7 +45,7 @@ namespace LabTwo.ViewInteractors.Handlers.ShowHandlers
                 itsMainWindow.showInfoPanelController.ShowPanel(itsMainWindow.studentsOfTeacherInfoPanelViewHandler);
             }
             else
-                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, new List<IWarning>() { new TeacherNotChosen() });
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel2, itsMainWindow.warningTextBox2, new List<IWarning>() { new TeacherNotChosen() });
         }
     }
 }

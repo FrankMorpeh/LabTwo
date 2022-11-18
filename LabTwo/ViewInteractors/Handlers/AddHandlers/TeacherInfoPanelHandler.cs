@@ -45,7 +45,7 @@ namespace LabTwo.ViewInteractors.Handlers
                 itsMainWindow.addStudentToTeacherButton.Enabled = true;
             }
             else
-                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, warnings);
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel3, itsMainWindow.warningTextBox3, warnings);
         }
         public void ShowPanel()
         {

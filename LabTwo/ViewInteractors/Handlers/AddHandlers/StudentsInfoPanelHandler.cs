@@ -50,7 +50,7 @@ namespace LabTwo.ViewInteractors.Handlers
                 UniversityView.ShowStudentsInfo(itsStudentsInfoPanelFormStorage.Students, itsMainWindow.studentsListView);
             }
             else
-                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, warnings);
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel3, itsMainWindow.warningTextBox3, warnings);
         }
     }
 }

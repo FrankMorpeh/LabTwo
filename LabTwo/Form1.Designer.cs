@@ -27,6 +27,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            warningPanel3 = new Panel();
+            warningTextBox3 = new TextBox();
+            okWarningButton3 = new Button();
+            this.warningPanel2 = new Panel();
+            this.warningTextBox2 = new TextBox();
+            this.okWarningButton2 = new Button();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.combineUniversitiesPanel = new System.Windows.Forms.Panel();
             this.chooseUniversityOfCombineBothLabel = new System.Windows.Forms.Label();
@@ -176,6 +182,7 @@
             // mainPanel
             // 
             this.mainPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mainPanel.Controls.Add(this.warningPanel);
             this.mainPanel.Controls.Add(this.combineUniversitiesPanel);
             this.mainPanel.Controls.Add(this.addUniversityPanel);
             this.mainPanel.Controls.Add(this.universityComboBox);
@@ -197,6 +204,7 @@
             this.combineUniversitiesPanel.Name = "combineUniversitiesPanel";
             this.combineUniversitiesPanel.Size = new System.Drawing.Size(884, 530);
             this.combineUniversitiesPanel.TabIndex = 24;
+            combineUniversitiesPanel.Hide();
             // 
             // chooseUniversityOfCombineBothLabel
             // 
@@ -230,6 +238,7 @@
             // 
             // addUniversityPanel
             // 
+            this.addUniversityPanel.Controls.Add(this.warningPanel3);
             this.addUniversityPanel.Controls.Add(this.mainInfoButton);
             this.addUniversityPanel.Controls.Add(this.departmentsButton);
             this.addUniversityPanel.Controls.Add(this.studentsButton);
@@ -250,6 +259,7 @@
             this.addUniversityPanel.Name = "addUniversityPanel";
             this.addUniversityPanel.Size = new System.Drawing.Size(881, 533);
             this.addUniversityPanel.TabIndex = 5;
+            addUniversityPanel.Hide();
             // 
             // mainInfoButton
             // 
@@ -1111,6 +1121,29 @@
             this.warningPanel.Name = "warningPanel";
             this.warningPanel.Size = new System.Drawing.Size(309, 240);
             this.warningPanel.TabIndex = 0;
+            warningPanel.Hide();
+            // 
+            // warningPanel2
+            // 
+            this.warningPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.warningPanel2.Controls.Add(this.warningTextBox2);
+            this.warningPanel2.Controls.Add(this.okWarningButton2);
+            this.warningPanel2.Location = new System.Drawing.Point(303, 159);
+            this.warningPanel2.Name = "warningPanel2";
+            this.warningPanel2.Size = new System.Drawing.Size(309, 240);
+            this.warningPanel2.TabIndex = 0;
+            warningPanel2.Hide();
+            // 
+            // warningPanel3
+            // 
+            this.warningPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.warningPanel3.Controls.Add(this.warningTextBox3);
+            this.warningPanel3.Controls.Add(this.okWarningButton3);
+            this.warningPanel3.Location = new System.Drawing.Point(303, 159);
+            this.warningPanel3.Name = "warningPanel3";
+            this.warningPanel3.Size = new System.Drawing.Size(309, 240);
+            this.warningPanel3.TabIndex = 0;
+            warningPanel3.Hide();
             // 
             // warningTextBox
             // 
@@ -1123,6 +1156,28 @@
             this.warningTextBox.Size = new System.Drawing.Size(219, 150);
             this.warningTextBox.TabIndex = 1;
             // 
+            // warningTextBox2
+            // 
+            this.warningTextBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.warningTextBox2.Location = new System.Drawing.Point(41, 25);
+            this.warningTextBox2.Multiline = true;
+            this.warningTextBox2.Name = "warningTextBox2";
+            this.warningTextBox2.ReadOnly = true;
+            this.warningTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.warningTextBox2.Size = new System.Drawing.Size(219, 150);
+            this.warningTextBox2.TabIndex = 1;
+            // 
+            // warningTextBox3
+            // 
+            this.warningTextBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.warningTextBox3.Location = new System.Drawing.Point(41, 25);
+            this.warningTextBox3.Multiline = true;
+            this.warningTextBox3.Name = "warningTextBox3";
+            this.warningTextBox3.ReadOnly = true;
+            this.warningTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.warningTextBox3.Size = new System.Drawing.Size(219, 150);
+            this.warningTextBox3.TabIndex = 1;
+            // 
             // okWarningButton
             // 
             this.okWarningButton.Location = new System.Drawing.Point(126, 187);
@@ -1133,9 +1188,30 @@
             this.okWarningButton.UseVisualStyleBackColor = true;
             this.okWarningButton.Click += new System.EventHandler(this.okWarningButton_Click);
             // 
+            // okWarningButton2
+            // 
+            this.okWarningButton2.Location = new System.Drawing.Point(126, 187);
+            this.okWarningButton2.Name = "okWarningButton2";
+            this.okWarningButton2.Size = new System.Drawing.Size(54, 31);
+            this.okWarningButton2.TabIndex = 0;
+            this.okWarningButton2.Text = "OK";
+            this.okWarningButton2.UseVisualStyleBackColor = true;
+            this.okWarningButton2.Click += new System.EventHandler(this.okWarningButton2_Click);
+            // 
+            // okWarningButton3
+            // 
+            this.okWarningButton3.Location = new System.Drawing.Point(126, 187);
+            this.okWarningButton3.Name = "okWarningButton3";
+            this.okWarningButton3.Size = new System.Drawing.Size(54, 31);
+            this.okWarningButton3.TabIndex = 0;
+            this.okWarningButton3.Text = "OK";
+            this.okWarningButton3.UseVisualStyleBackColor = true;
+            this.okWarningButton3.Click += new System.EventHandler(this.okWarningButton3_Click);
+            // 
             // showUniversityPanel
             // 
-            this.showUniversityPanel.Controls.Add(this.warningPanel);
+            this.showUniversityPanel.Controls.Add(this.warningPanel2);
+            this.showUniversityPanel.Controls.Add(this.showMainInfoAboutUniversityButton);
             this.showUniversityPanel.Controls.Add(this.showAuditoriumsPanel);
             this.showUniversityPanel.Controls.Add(this.showStudentsOfTeacherPanel);
             this.showUniversityPanel.Controls.Add(this.showTeacherPanel);
@@ -1146,11 +1222,11 @@
             this.showUniversityPanel.Controls.Add(this.showAuditoriumsOfUniversityButton);
             this.showUniversityPanel.Controls.Add(this.showTeachersOfUniversityButton);
             this.showUniversityPanel.Controls.Add(this.showDepartmentsOfUniversityButton);
-            this.showUniversityPanel.Controls.Add(this.showMainInfoAboutUniversityButton);
             this.showUniversityPanel.Location = new System.Drawing.Point(5, 3);
             this.showUniversityPanel.Name = "showUniversityPanel";
             this.showUniversityPanel.Size = new System.Drawing.Size(885, 531);
             this.showUniversityPanel.TabIndex = 1;
+            showUniversityPanel.Hide();
             // 
             // showAuditoriumsPanel
             // 
@@ -1577,5 +1653,11 @@
         public ListView showStudentsOfTeaherListView;
         public Panel showAuditoriumsPanel;
         public ListView showAuditorimsListView;
+        public Panel warningPanel2;
+        public TextBox warningTextBox2;
+        public Button okWarningButton2;
+        public Panel warningPanel3;
+        public TextBox warningTextBox3;
+        public Button okWarningButton3;
     }
 }

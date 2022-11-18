@@ -36,7 +36,7 @@ namespace LabTwo.ViewInteractors.Handlers
                 BlockSaveChangesButton();
             }
             else
-                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, warnings);
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel3, itsMainWindow.warningTextBox3, warnings);
         }
         private void BlockSaveChangesButton()
         {

@@ -136,4 +136,10 @@
 
         public string Text { get; private set; }
     }
+    public class UniversityNotChosen : IWarning
+    {
+        public UniversityNotChosen() { Text = "You haven't chosen the university"; }
+
+        public string Text { get; private set; }
+    }
 }

@@ -33,7 +33,7 @@ namespace LabTwo.ViewInteractors.Handlers
         public void ChooseFirstUniversityOrCombineBothUniversities()
         {
             if (itsMainWindow.universitiesToCombineListView.SelectedIndices.Count == 0)
-                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, new List<IWarning>()
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel3, itsMainWindow.warningTextBox3, new List<IWarning>()
                 { new UniversityToCombineNotChosen() });
             else
             {
@@ -50,6 +50,7 @@ namespace LabTwo.ViewInteractors.Handlers
                     itsFirstUniversityChosen = false;
                     University combination = itsFirstUniversity +
                         itsMainWindow.universityController[itsMainWindow.universitiesToCombineListView.SelectedIndices[0]];
+                    itsMainWindow.universityController.AddUniversity(combination);
                     itsMainWindow.universityComboBox.Items.Add(combination.Name);
                     itsMainWindow.chooseUniversityOfCombineBothLabel.Text = "Choose first university:";
                     itsMainWindow.chooseFirstUniversityOfCombineBothButton.Text = "Choose first university:";

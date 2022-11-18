@@ -53,7 +53,7 @@ namespace LabTwo.ViewInteractors.Handlers
                 UniversityView.ShowSubjectsInfo(itsSubjectsInfoPanelFormStorage.Subjects, itsMainWindow.subjectsListView);
             }
             else
-                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, warnings);
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel3, itsMainWindow.warningTextBox3, warnings);
         }
     }
 }

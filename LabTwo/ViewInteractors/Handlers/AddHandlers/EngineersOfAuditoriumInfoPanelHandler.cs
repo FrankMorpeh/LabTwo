@@ -33,7 +33,7 @@ namespace LabTwo.ViewInteractors.Handlers
             if (warnings.Count == 0)
                 itsEngineersForAuditoriumChosenEvent(engineersOfAuditorium);
             else
-                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, warnings);
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel3, itsMainWindow.warningTextBox3, warnings);
 
         }
         public void ShowPanel()

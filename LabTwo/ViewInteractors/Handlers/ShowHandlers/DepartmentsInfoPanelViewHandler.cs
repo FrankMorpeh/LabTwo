@@ -42,7 +42,7 @@ namespace LabTwo.ViewInteractors.Handlers.ShowHandlers
                 itsMainWindow.showInfoPanelController.ShowPanel(itsMainWindow.subjectsOfDepartmentInfoPanelViewHandler);
             }
             else
-                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel, itsMainWindow.warningTextBox, new List<IWarning>() { new DepartmentNotChosen() });
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel2, itsMainWindow.warningTextBox2, new List<IWarning>() { new DepartmentNotChosen() });
         }
     }
 }
