@@ -10,7 +10,7 @@ namespace LabTwo.Controllers
         {
             itsPanelHandlers = new List<IPanelHandler>() { mainWindow.mainInfoPanelViewHandler, mainWindow.departmentsInfoPanelViewHandler
                 , mainWindow.subjectsOfDepartmentInfoPanelViewHandler, mainWindow.teachersInfoPanelViewHandler
-                , mainWindow.studentsOfTeacherInfoPanelViewHandler };
+                , mainWindow.studentsOfTeacherInfoPanelViewHandler, mainWindow.auditoriumsInfoPanelViewHandler };
         }
 
         public void ShowPanel(IPanelHandler panelHandler)

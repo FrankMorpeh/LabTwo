@@ -1,6 +1,7 @@
 using LabTwo.Controllers;
 using LabTwo.Controllers.UniversityController;
 using LabTwo.Converters.UniversityConverters;
+using LabTwo.Models.Auditoriums;
 using LabTwo.Models.University;
 using LabTwo.Models.Workers;
 using LabTwo.Models.Workers.Teachers;
@@ -30,6 +31,7 @@ namespace LabTwo
         public SubjectsOfDepartmentInfoPanelViewHandler subjectsOfDepartmentInfoPanelViewHandler;
         public TeachersInfoPanelViewHandler teachersInfoPanelViewHandler;
         public StudentsOfTeacherInfoPanelViewHandler studentsOfTeacherInfoPanelViewHandler;
+        public AuditoriumsInfoPanelViewHandler auditoriumsInfoPanelViewHandler;
 
         public PanelController panelController;
         public ShowInfoPanelController showInfoPanelController;
@@ -65,6 +67,7 @@ namespace LabTwo
             subjectsOfDepartmentInfoPanelViewHandler = new SubjectsOfDepartmentInfoPanelViewHandler(this);
             teachersInfoPanelViewHandler = new TeachersInfoPanelViewHandler(this);
             studentsOfTeacherInfoPanelViewHandler = new StudentsOfTeacherInfoPanelViewHandler(this);
+            auditoriumsInfoPanelViewHandler = new AuditoriumsInfoPanelViewHandler(this);
 
             panelController = new PanelController(this);
             showInfoPanelController = new ShowInfoPanelController(this);
@@ -73,7 +76,10 @@ namespace LabTwo
                 , Departments = new List<Models.Departments.Department>() { new Models.Departments.Department() { Name = "KIU"
                 , DeaneryCabinetNumber = 123, Subjects = new List<Models.Subjects.Subject>() { new Models.Subjects.Subject("Biology", 3.5) } } }
                 , Workers = new List<Worker>() { new Teacher("Zatvorkins", 44, 16500, new List<Models.Students.Student>() 
-                { new Models.Students.Student("Gaydamaka", 18, "kmkdad", 1) }) } };
+                { new Models.Students.Student("Gaydamaka", 18, "kmkdad", 1) }) }, Auditoriums = new List<Models.Auditoriums.Auditorium>()
+                { new LabAuditorium("LB1", 22, new List<Models.Workers.Engineers.Engineer>()
+                { new Models.Workers.Engineers.Engineer("Sexer", 44, 28000, Models.Workers.Engineers.EngineerClass.First)
+                , new Models.Workers.Engineers.Engineer("Hornet", 35, 18000, Models.Workers.Engineers.EngineerClass.Second) }, 15) } };
             //panelController.ShowPanel(mainInfoPanelViewHandler);
         }
 
@@ -264,6 +270,17 @@ namespace LabTwo
         private void goBackToShowingTeachersButton_Click(object sender, EventArgs e)
         {
             showInfoPanelController.ShowPanel(teachersInfoPanelViewHandler);
+        }
+
+        private void showAuditoriumsOfUniversityButton_Click(object sender, EventArgs e)
+        {
+            showInfoPanelController.ShowPanel(auditoriumsInfoPanelViewHandler);
+        }
+
+        private void backToMainMenuButton_Click(object sender, EventArgs e)
+        {
+            showUniversityPanel.Hide();
+            mainPanel.Show();
         }
     }
 }
