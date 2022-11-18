@@ -71,16 +71,6 @@ namespace LabTwo
 
             panelController = new PanelController(this);
             showInfoPanelController = new ShowInfoPanelController(this);
-
-            //universityToDisplay = new University() { Name = "KHNURE", FoundationYear = 1934, Rank = 85.2
-            //    , Departments = new List<Models.Departments.Department>() { new Models.Departments.Department() { Name = "KIU"
-            //    , DeaneryCabinetNumber = 123, Subjects = new List<Models.Subjects.Subject>() { new Models.Subjects.Subject("Biology", 3.5) } } }
-            //    , Workers = new List<Worker>() { new Teacher("Zatvorkins", 44, 16500, new List<Models.Students.Student>() 
-            //    { new Models.Students.Student("Gaydamaka", 18, "kmkdad", 1) }) }, Auditoriums = new List<Models.Auditoriums.Auditorium>()
-            //    { new LabAuditorium("LB1", 22, new List<Models.Workers.Engineers.Engineer>()
-            //    { new Models.Workers.Engineers.Engineer("Sexer", 44, 28000, Models.Workers.Engineers.EngineerClass.First)
-            //    , new Models.Workers.Engineers.Engineer("Hornet", 35, 18000, Models.Workers.Engineers.EngineerClass.Second) }, 15) } };
-            //panelController.ShowPanel(mainInfoPanelViewHandler);
         }
 
         private void addUniversityButton_Click(object sender, EventArgs e)
