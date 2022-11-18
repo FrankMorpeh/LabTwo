@@ -24,6 +24,7 @@ namespace LabTwo.ViewInteractors.Handlers
         }
         private void AddColumnsToListView()
         {
+            itsMainWindow.auditoriumsListView.Columns.Clear();
             itsMainWindow.auditoriumsListView.Columns.Add("Type");
             itsMainWindow.auditoriumsListView.Columns.Add("Code name");
             itsMainWindow.auditoriumsListView.Columns.Add("Capacity");
@@ -31,6 +32,7 @@ namespace LabTwo.ViewInteractors.Handlers
         }
         private void AddComboBoxVariants()
         {
+            itsMainWindow.auditoriumTypeComboBox.Items.Clear();
             itsMainWindow.auditoriumTypeComboBox.Items.Add("Lecture");
             itsMainWindow.auditoriumTypeComboBox.Items.Add("Lab");
         }

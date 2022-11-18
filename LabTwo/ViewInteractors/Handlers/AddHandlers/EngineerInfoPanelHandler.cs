@@ -23,6 +23,7 @@ namespace LabTwo.ViewInteractors.Handlers
         }
         private void AddColumnsToListView()
         {
+            itsMainWindow.engineerListView.Columns.Clear();
             itsMainWindow.engineerListView.Columns.Add("Name");
             itsMainWindow.engineerListView.Columns.Add("Age");
             itsMainWindow.engineerListView.Columns.Add("Salary");
@@ -30,6 +31,7 @@ namespace LabTwo.ViewInteractors.Handlers
         }
         private void AddVariantsToListBox()
         {
+            itsMainWindow.engineerClassComboBox.Items.Clear();
             itsMainWindow.engineerClassComboBox.Items.Add("First");
             itsMainWindow.engineerClassComboBox.Items.Add("Second");
             itsMainWindow.engineerClassComboBox.Items.Add("Third");

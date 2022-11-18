@@ -20,6 +20,7 @@ namespace LabTwo.ViewInteractors.Handlers
         }
         private void AddColumnsToListView()
         {
+            itsMainWindow.departmentsListView.Columns.Clear();
             itsMainWindow.departmentsListView.Columns.Add("Name");
             itsMainWindow.departmentsListView.Columns.Add("Deanery cabinet");
         }

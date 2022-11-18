@@ -19,6 +19,7 @@ namespace LabTwo.ViewInteractors.Handlers
         }
         private void AddColumnsToListView()
         {
+            itsMainWindow.subjectsListView.Columns.Clear();
             itsMainWindow.subjectsListView.Columns.Add("Name");
             itsMainWindow.subjectsListView.Columns.Add("Credit");
         }

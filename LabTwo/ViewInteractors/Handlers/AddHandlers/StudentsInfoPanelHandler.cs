@@ -20,6 +20,7 @@ namespace LabTwo.ViewInteractors.Handlers
         }
         private void AddColumnsToListView()
         {
+            itsMainWindow.studentsListView.Columns.Clear();
             itsMainWindow.studentsListView.Columns.Add("Name");
             itsMainWindow.studentsListView.Columns.Add("Age");
             itsMainWindow.studentsListView.Columns.Add("Record book");

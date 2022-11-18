@@ -20,6 +20,7 @@ namespace LabTwo.ViewInteractors.Handlers
         }
         private void AddColumnsToListView()
         {
+            itsMainWindow.universitiesToCombineListView.Columns.Clear();
             itsMainWindow.universitiesToCombineListView.Columns.Add("Name");
             itsMainWindow.universitiesToCombineListView.Columns.Add("Foundation year");
             itsMainWindow.universitiesToCombineListView.Columns.Add("Rank");
